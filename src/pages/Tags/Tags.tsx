@@ -1,8 +1,9 @@
 import React from 'react'
-
+import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 const Tags: React.FC = () => {
   return (
-    <div>Tags</div>
+    <div className='card'>
+      <GoHomeBtn />Tags</div>
   )
 }
 

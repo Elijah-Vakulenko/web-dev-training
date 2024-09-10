@@ -1,8 +1,10 @@
 import React from 'react'
-
+import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn'; 
 const Functions: React.FC = () => {
   return (
-    <div>Functions</div>
+    <div className='card'>
+          <GoHomeBtn />
+          Functions</div>
   )
 }
 
