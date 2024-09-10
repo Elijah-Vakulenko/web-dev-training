@@ -1,4 +1,4 @@
-const TypeScript = () => {
+const TypeScript: React.FC = () => {
   return (
      <div className='card' >
           <h2>TypeScript</h2>

@@ -1,4 +1,4 @@
-const NodeJS = () => {
+const NodeJS : React.FC = () => {
   return (
      <div className='card' >
           <h2>Node.js</h2>
