@@ -1,5 +1,3 @@
-import React from 'react'
-
 const NodeJS = () => {
   return (
      <div className='card' >
