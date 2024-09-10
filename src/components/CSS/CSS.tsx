@@ -5,8 +5,6 @@ const CSS = () => {
           <h2>CSS</h2>
           <ul>
             <li>Grid</li>
-            <li>Animation</li>
-            <li>SASS</li>
           </ul>
     </div>
   )

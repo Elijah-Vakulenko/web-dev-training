@@ -1,40 +1,27 @@
 // App.tsx
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import Arrays from './pages/Arrays';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const Arrays = lazy(() => import('./pages/Arrays/Arrays'));
+const Tags = lazy(() => import('./pages/Tags/Tags'));
+const Grid = lazy(() => import('./pages/Grid/Grid'));
+const Functions = lazy(() => import('./pages/Functions/Functions'));
+const Objects = lazy(() => import('./pages/Objects/Objects'));
 
 function App() {
   return (
     <div className="container">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/html">HTML</Link>
-          </li>
-          <li>
-            <Link to="/css">CSS</Link>
-          </li>
-          <li>
-            <Link to="/javascript">JavaScript</Link>
-          </li>
-          <li>
-            <Link to="/reactjs">ReactJS</Link>
-          </li>
-          <li>
-            <Link to="/arrays">Arrays</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="wrapper">
-        <Routes>
-          <Route path="/html" element={<HTML />} />
-          <Route path="/css" element={<CSS />} />
-          <Route path="/javascript" element={<JavaScript />} />
-          <Route path="/reactjs" element={<ReactJS />} />
-          <Route path="/arrays" element={<Arrays />} />
-        </Routes>
-      </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/arrays" element={<Arrays />} />
+              <Route path="/tags" element={<Tags />} />
+              <Route path="/grid" element={<Grid />} />
+              <Route path="/functions" element={<Functions />} />
+              <Route path="/objects" element={<Objects />} />
+            </Routes>
+          </Suspense>
     </div>
   );
 }

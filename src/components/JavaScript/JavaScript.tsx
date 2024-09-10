@@ -1,8 +1,5 @@
-// JavaScript.tsx
-import { lazy, FC, Suspense } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
-
-const Arrays = lazy(() => import('../../pages/Arrays'));
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 const JavaScript: FC = () => {
   return (
@@ -10,16 +7,9 @@ const JavaScript: FC = () => {
       <h2>JavaScript</h2>
       <ul>
         <li>
-          <Link to="/arrays">Go to Arrays</Link>
+          <Link to="/arrays">Arrays</Link>
         </li>
       </ul>
-      
-      {/* Рендеринг компонента Arrays внутри JavaScript */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="arrays" element={<Arrays />} />
-        </Routes>
-      </Suspense>
     </div>
   );
 };

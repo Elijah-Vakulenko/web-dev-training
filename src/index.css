@@ -1,10 +1,6 @@
 :root {
   --main-bg-color: black;
   --main-text-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 body {
@@ -117,7 +113,7 @@ textarea {
 
 .wrapper {
   display: grid;
-  width: 100%;
+  width: 100vw;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 50px;
@@ -126,8 +122,41 @@ textarea {
 }
 
 .card {
-  width: 300px;
+  width: 100%;
   border: 1px solid #a5ecc8;
   border-radius: 15px;
   padding: 20px;
+}
+
+.script {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: gray;
+  color: black;
+}
+
+.console {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: white;
+  color: black;
+}
+
+.task {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 5px;
+  margin-bottom: 50px;
+  border: 1px solid #a5ecc8;
+  border-radius: 8px;
+  color: #a5ecc8;
+  background-color: transparent;
+}
+
+.btn:hover {
+  color: black;
+  background-color: #a5ecc8;
 }

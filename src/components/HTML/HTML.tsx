@@ -5,9 +5,7 @@ const HTML = () => {
       <div className='card' >
           <h2>HTML</h2>
           <ul>
-            <li>Text</li>
-            <li>Inputs</li>
-            <li>Unusual Tags</li>
+            <li>Tags</li>
           </ul>
     </div>
   )
