@@ -14,7 +14,7 @@ console.log(planets[i]);
 
 
     return (
-  <div>
+      <div className='container'>
           <div className='center'><GoHomeBtn /></div>
     
         <div className='card'>JavaScript Testing Page</div>
