@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className='container'>
       <div className='center'>
         <Link to="/test">
           <button className='btn'>TEST PAGE</button>

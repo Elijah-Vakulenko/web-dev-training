@@ -11,7 +11,7 @@ const Test = lazy(() => import('./pages/Test/Test'));
 
 function App() {
   return (
-    <div className="container">
+    <div>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
           <Route path="/" element={<HomePage />} />

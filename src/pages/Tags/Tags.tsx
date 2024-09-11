@@ -17,7 +17,7 @@ const Tags: React.FC = () => {
 `;
 
   return (
-    <div>
+    <div className='container'>
       <GoHomeBtn />
 <h2>fieldset + legend</h2>
       <div className='task'>

@@ -45,7 +45,7 @@ console.log("Total:", total);
 `;
 
   return (
-    <div className="card">
+    <div className="container">
       <GoHomeBtn />
       <h2>Arrays / Масиви</h2>
 

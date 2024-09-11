@@ -13,9 +13,9 @@ body {
 
 .container {
   min-width: 320px;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   min-height: 100vh;
   padding: 0 20px;
   margin: 0 auto;
@@ -47,7 +47,7 @@ body {
 
   @media screen and (min-width: 1024px) {
     display: grid;
-    width: 100vw;
+    /* width: 100vw; */
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 50px;
@@ -101,6 +101,7 @@ body {
 
 .btn {
   padding: 5px;
+  margin-top: 50px;
   margin-bottom: 50px;
   border: 1px solid #a5ecc8;
   border-radius: 8px;
