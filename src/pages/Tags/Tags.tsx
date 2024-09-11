@@ -11,7 +11,7 @@ const Tags: React.FC = () => {
     <li>Ross Geller</li>
     <li>Rachel Green</li>
     <li>Joe Tribbiani</li>
-    <li>Phoebe Buffey</li>
+    <li>Phoebe Buffay</li>
   </ul>
 </fieldset>
 `;

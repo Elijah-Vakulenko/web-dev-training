@@ -32,7 +32,7 @@ let total = 0;
 for (let i = 0; i < cart.length; i += 1) {
   total += cart[i];
 }
-output.log("Total:", total);
+console.log("Total:", total);
 `;
 
   const script2 = `
@@ -41,13 +41,13 @@ let total = 0;
 for (const item of cart) {
   total += item;
 }
-output.log("Total:", total);
+console.log("Total:", total);
 `;
 
   return (
     <div className="card">
       <GoHomeBtn />
-      <h2>Arrays / Масивы</h2>
+      <h2>Arrays / Масиви</h2>
 
       {/* Первый скрипт */}
       <div className="task">
