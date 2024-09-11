@@ -6,7 +6,7 @@ const HTML: FC = () => {
       <div className='card' >
           <h2>HTML</h2>
           <ul>
-         <li> <Link to="/tags">Tags</Link></li>
+         <li> <Link to="/tags">Rare tags / Рідкісні теги</Link></li>
           </ul>
     </div>
   )

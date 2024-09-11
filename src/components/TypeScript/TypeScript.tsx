@@ -3,7 +3,7 @@ const TypeScript: React.FC = () => {
      <div className='card' >
           <h2>TypeScript</h2>
           <ul>
-            <li>Types of</li>
+            <li>TypeScript for React / Типізація для Реакту</li>
           </ul>
     </div>
   )

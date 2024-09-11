@@ -6,11 +6,9 @@ const JavaScript: FC = () => {
     <div className="card">
       <h2>JavaScript</h2>
       <ul>
-
-         <li> <Link to="/functions">Functions</Link></li>
-<li>          <Link to="/arrays">Arrays</Link></li>
-<li>          <Link to="/objects">Objects</Link></li>
-
+        <li><Link to="/functions">Functions / Функції</Link></li>
+        <li><Link to="/arrays">Arrays / Масиви</Link></li>
+        <li><Link to="/objects">Objects / Об'єкти</Link></li>
       </ul>
     </div>
   );

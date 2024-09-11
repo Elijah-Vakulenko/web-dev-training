@@ -1,27 +1,28 @@
-// src/pages/Arrays/Arrays.tsx
 import React from 'react';
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 
-// Типизация для функции executeScript
-const executeScript = (script: string): string => {
-  const consoleOutput: string[] = [];
-  const consoleLog = (output: any) => consoleOutput.push(String(output));
+// Функция для выполнения первого скрипта
+const calculateTotalScript1 = (): string => {
+  const cart = [54, 28, 185, 78, 92, 17, 120];
+  let total = 0;
 
-  // Замена стандартного console.log на нашу функцию
-  const originalConsoleLog = console.log;
-  console.log = consoleLog;
-
-  try {
-    // Выполнение скрипта
-    eval(script);
-  } catch (e: any) {
-    consoleOutput.push(`Error: ${e.message}`);
+  for (let i = 0; i < cart.length; i += 1) {
+    total += cart[i];
   }
 
-  // Восстанавливаем оригинальный console.log
-  console.log = originalConsoleLog;
+  return `Total: ${total}`;
+};
 
-  return consoleOutput.join('\n');
+// Функция для выполнения второго скрипта
+const calculateTotalScript2 = (): string => {
+  const cart = [54, 28, 92, 17];
+  let total = 0;
+
+  for (const item of cart) {
+    total += item;
+  }
+
+  return `Total: ${total}`;
 };
 
 const Arrays: React.FC = () => {
@@ -29,46 +30,45 @@ const Arrays: React.FC = () => {
 const cart = [54, 28, 185, 78, 92, 17, 120];
 let total = 0;
 for (let i = 0; i < cart.length; i += 1) {
-    console.log(cart[i]);
-    total += cart[i];
+  total += cart[i];
 }
-console.log("Total:", total);
+output.log("Total:", total);
 `;
 
   const script2 = `
-const cart = [54, 28, 185, 78, 92, 17, 120];
+const cart = [54, 28, 92, 17];
 let total = 0;
 for (const item of cart) {
-    total += item;
+  total += item;
 }
-console.log("Total:", total);
+output.log("Total:", total);
 `;
 
   return (
-    <div className='card'>
+    <div className="card">
       <GoHomeBtn />
+      <h2>Arrays / Масивы</h2>
 
-      <h2>Arrays</h2>
-
-      <div className='task'>
+      {/* Первый скрипт */}
+      <div className="task">
         <div>
           <h3>Script 1</h3>
-          <pre className='script'>{script1}</pre>
+          <pre className="input">{script1}</pre>
         </div>
         <div>
-          <h4>Console Output:</h4>
-          <pre className='console'>{executeScript(script1)}</pre>
+          <h3>output Output:</h3>
+          <pre className="output">{calculateTotalScript1()}</pre>
         </div>
       </div>
 
-      <div className='task'>
+      <div className="task">
         <div>
           <h3>Script 2</h3>
-          <pre className='script'>{script2}</pre>
+          <pre className="input">{script2}</pre>
         </div>
         <div>
-          <h4>Console Output:</h4>
-          <pre className='console'>{executeScript(script2)}</pre>
+          <h3>output Output:</h3>
+          <pre className="output">{calculateTotalScript2()}</pre>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ body {
   margin: 0;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
+  font-size: 20px;
 }
 
 html {
@@ -112,13 +113,19 @@ textarea {
 }
 
 .wrapper {
-  display: grid;
-  width: 100vw;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  padding: 50px;
-  border: 1px solid #a5ecc8;
-  border-radius: 15px;
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 50px;
+    border: 1px solid #a5ecc8;
+    border-radius: 15px;
+  }
 }
 
 .card {
@@ -128,23 +135,40 @@ textarea {
   padding: 20px;
 }
 
-.script {
+.input {
+  font-size: 9px;
+  width: 100%;
   padding: 15px;
   border-radius: 15px;
   background-color: gray;
   color: black;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+
+  /* height: 100%; */
 }
 
-.console {
+.output {
+  width: 100%;
   padding: 15px;
   border-radius: 15px;
   background-color: white;
   color: black;
+  /* height: 100%; */
 }
 
 .task {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 15px;
+  }
 }
 
 .btn {
@@ -159,4 +183,9 @@ textarea {
 .btn:hover {
   color: black;
   background-color: #a5ecc8;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
