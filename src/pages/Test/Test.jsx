@@ -1,7 +1,9 @@
 import React from 'react'
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 
-const Test: React.FC = () => {
+const Test = () => {
+
+  
 
     return (
   <div>

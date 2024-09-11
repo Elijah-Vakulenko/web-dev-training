@@ -7,7 +7,7 @@ const Tags = lazy(() => import('./pages/Tags/Tags'));
 const Grid = lazy(() => import('./pages/Grid/Grid'));
 const Functions = lazy(() => import('./pages/Functions/Functions'));
 const Objects = lazy(() => import('./pages/Objects/Objects'));
-const Test = lazy(() => import('./pages/Test/Test'));
+const Test = lazy(() => import('./pages/Test/Test.jsx'));
 
 function App() {
   return (
