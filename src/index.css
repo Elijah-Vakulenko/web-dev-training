@@ -118,3 +118,8 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.card ul > li:hover {
+  color: #a5ecc8;
+  font-weight: 700;
+}

@@ -8,7 +8,7 @@ const JavaScript: FC = () => {
       <ul>
         <li>Basic Statements / Базові інструкції</li>
         <li>Methods / Методи</li>
-        <li><Link to="/functions">Functions / Функції</Link></li>
+        <li><Link className='link' to="/functions">Functions / Функції</Link></li>
         <li>Сonditional statements and branching statements / Розгалудження </li>
         <li>Cycles / Цикли </li>
         <li><Link to="/arrays">Arrays / Масиви</Link></li>
