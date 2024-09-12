@@ -1,10 +1,16 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHtml5 } from "react-icons/fa";
+
+import s from './HTML.module.css'
 
 const HTML: FC = () => {
   return (
       <div className='card' >
-          <h2>HTML</h2>
+     <div className={s.title}>
+        <FaHtml5 className={s.icon} />    
+        <h2>HTML</h2>
+     </div>
           <ul>
          <li> <Link to="/tags">Rare tags / Рідкісні теги</Link></li>
           </ul>

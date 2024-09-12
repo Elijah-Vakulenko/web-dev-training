@@ -1,7 +1,13 @@
-const NodeJS : React.FC = () => {
+import { FaNodeJs } from "react-icons/fa";
+import s from './NodeJS.module.css'
+
+const NodeJS: React.FC = () => {
   return (
-     <div className='card' >
-          <h2>Node.js</h2>
+    <div className='card' >
+<div className={s.title}>
+        <FaNodeJs className={s.icon} />
+            <h2>Node.js</h2>
+</div>
           <ul>
             <li>initialization</li>
             <li>Mongo DB</li>

@@ -1,7 +1,13 @@
+import { FaReact } from "react-icons/fa";
+import s from './ReactJs.module.css'
+
 const ReactJS = () => {
   return (
     <div className='card' >
-      <h2>React.js</h2>
+      <div className={s.title}>
+        <FaReact className={s.icon} />
+        <h2>React.js</h2>
+      </div>
       <ul>
         <li>Components</li>
         <li>Props</li>

@@ -1,0 +1,12 @@
+.icon {
+  width: 40px;
+  height: 40px;
+  color: royalblue;
+}
+
+.title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
