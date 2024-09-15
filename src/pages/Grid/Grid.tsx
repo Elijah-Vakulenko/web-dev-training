@@ -1,4 +1,3 @@
-import React from 'react'
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 const Grid: React.FC = () => {
   return (
