@@ -19,6 +19,40 @@ clip-path: polygon(16.6% 16.6%,
             0 50%);
 }
 
+.container {
+    min-width: 320px;
+    /* display: flex;
+  justify-content: center;
+  align-items: center; */
+    min-height: 100vh;
+    padding: 0 20px;
+    margin: 0 auto;
+    /* outline: 1px solid orangered; */
+}
+
+@media screen and (min-width: 375px) {
+    .container {
+        max-width: 375px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+.gap{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .oval{
     width: 150px;
     height: 200px;

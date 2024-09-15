@@ -1,5 +1,6 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn'; 
 import s from './Shapes.module.css'; // Импортируем стили
+import clsx from "clsx";
 
 const Shapes: React.FC = () => {
   // Определяем CSS-код в виде строки, чтобы показать его в текстовом формате
@@ -44,7 +45,7 @@ const Shapes: React.FC = () => {
   `;
 
   return (
-    <div className='container'>
+    <div className={clsx(s.container, s.gap)}>
       <GoHomeBtn />
 
       <div className='wrapper'>
