@@ -1,7 +1,7 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 const Grid: React.FC = () => {
   return (
-    <div className='card'>
+    <div className='container'>
       <GoHomeBtn />Grid</div>
   )
 }
