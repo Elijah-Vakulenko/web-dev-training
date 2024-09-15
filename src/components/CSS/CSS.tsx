@@ -12,9 +12,9 @@ const CSS: FC = () => {
 </div>
           <ul>
         <li> <Link to="/grid">Grid</Link></li>
-        <li>Animations / Анімації </li>
-        <li>Shapes / Форми</li>
-        <li>Gallery Layouts / Дизайн для галерей</li>
+        <li><Link className='link' to="/animations">Animations / Анімації</Link></li>
+        <li><Link className='link' to="/shapes">Shapes / Форми</Link></li>
+        <li><Link className='link' to="/galleries">Gallery Layouts / Дизайн для галерей</Link></li>
           </ul>
     </div>
   )
