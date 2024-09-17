@@ -1,6 +1,11 @@
 :root {
   --main-bg-color: black;
   --main-text-color: white;
+  --surfgreen: #a4deab;
+  --retro: #aebf9b;
+  --darkgreen: #347c70;
+  --pink: #f7546d;
+  --purple: #925ae0;
 }
 
 body {
@@ -49,6 +54,8 @@ body {
     display: grid;
     /* width: 100%; */
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
     border: 1px solid #a5ecc8;
