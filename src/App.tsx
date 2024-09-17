@@ -14,7 +14,7 @@ const Galleries = lazy(() => import('./pages/Galleries/Galleries'));
 const Cycles = lazy(() => import('./pages/Cycles/Cycles'));
 const BasicStatements = lazy(() => import('./pages/BasicStatements/BasicStatements'));
 const BranchStatements = lazy(() => import('./pages/BranchStatements/BranchStatements'));
-
+const Methods = lazy(() => import('./pages/Methods/Methods')) 
 function App() {
   return (
     <div>
@@ -31,6 +31,7 @@ function App() {
               <Route path="/galleries" element={<Galleries />} />
           
               <Route path="/basic-statements" element={<BasicStatements />} />
+              <Route path="/methods" element={<Methods />} />
               <Route path="/functions" element={<Functions />} />
               <Route path="/branch-statements" element={<BranchStatements />} />
               <Route path="/cycles" element={<Cycles />} />
