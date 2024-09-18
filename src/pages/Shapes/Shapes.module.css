@@ -1,14 +1,14 @@
 .triangle{
     width: 200px;
     height: 200px;
-    background: black;
+    background: var(--surfgreen);
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
 .octagon{
     width: 200px;
     height: 200px;
-    background: black;
+    background: var(--pink);
 clip-path: polygon(16.6% 16.6%,
             50% 0,
             83.3% 16.6%,
@@ -56,13 +56,13 @@ clip-path: polygon(16.6% 16.6%,
 .oval{
     width: 150px;
     height: 200px;
-    background: black;
+    background: var(--darkgreen);
     border-radius: 100% / 120% 120% 75% 75%;
 }
 
 .spark{
     width: 200px;
-    background: black;
+    background: var(--purple);
     clip-path: polygon(40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50% );
     aspect-ratio: 1;
 }
