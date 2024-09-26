@@ -8,7 +8,7 @@ const Shapes: React.FC = () => {
     .triangle {
       width: 300px;
       height: 300px;
-      background: black;
+      background: green;
       clip-path: polygon(50% 0, 100% 100%, 0 100%);
     }
   `;
@@ -17,7 +17,7 @@ const Shapes: React.FC = () => {
     .octagon {
       width: 300px;
       height: 300px;
-      background: black;
+      background: pink;
       clip-path: polygon(
         16.6% 16.6%, 50% 0, 83.3% 16.6%, 100% 50%, 
         83.3% 83.3%, 50% 100%, 16.6% 83.3%, 0 50%
@@ -29,7 +29,7 @@ const Shapes: React.FC = () => {
     .oval {
       width: 300px;
       height: 400px;
-      background: black;
+      background: green;
       border-radius: 100% / 120% 120% 75% 75%;
     }
   `;
@@ -38,7 +38,7 @@ const Shapes: React.FC = () => {
     .spark{
     width: 200px;
     aspect-ratio: 1;
-    background: black;
+    background: purple;
     clip-path: polygon(40% 40%, 50% 0, 60% 40%,
     100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%);
     }
