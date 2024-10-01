@@ -19,6 +19,7 @@ const JavaScript: FC = () => {
         <li><Link className='link' to="/cycles">Cycles / Цикли </Link></li>
         <li><Link className='link' to="/arrays">Arrays / Масиви</Link></li>
         <li><Link className='link' to="/objects">Objects / Об'єкти</Link></li>
+        <li><Link className='link' to="/calc">Javascript Calculator</Link></li>
       </ul>
     </div>
   );

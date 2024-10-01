@@ -7,6 +7,7 @@ const Tags = lazy(() => import('./pages/Tags/Tags'));
 const Grid = lazy(() => import('./pages/Grid/Grid'));
 const Functions = lazy(() => import('./pages/Functions/Functions'));
 const Objects = lazy(() => import('./pages/Objects/Objects'));
+const Calc = lazy(() => import('./pages/Calc/Calc'));
 const Test = lazy(() => import('./pages/Test/Test'));
 const Shapes = lazy(() => import('./pages/Shapes/Shapes'));
 const Animations = lazy(() => import('./pages/Animations/Animations'));
@@ -37,6 +38,7 @@ function App() {
               <Route path="/cycles" element={<Cycles />} />
               <Route path="/arrays" element={<Arrays />} />
               <Route path="/objects" element={<Objects />} />
+              <Route path="/calc" element={<Calc />} />
             </Routes>
           </Suspense>
     </div>
