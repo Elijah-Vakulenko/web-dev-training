@@ -64,10 +64,55 @@ age це значення value у інпуті
     }
 `
 const elseIfStatement = `
+//Якщо умов багато, тоді використовуємо else if.
+
+
+let weather: string = 'rainy'; //← задаємо значення погоди - дощить
+
+  console.log(weather);
+
+  //Зробимо невелику функцію з else if.
+
+  function weatherChecker() {
+    if (weather === 'sunny') console.log('Don\'t forget your sunglasses');
+    //↑ Робимо першу умову, якщо вона відповідає значенню true інші умови не оброблятимуться.
+    // Якщо перша умова - false, розгалудження переходить до другої умови ↓.
+  else if (weather === 'rainy') console.log('Grab your raincoat');
+  else if (weather === 'windy') console.log('You should wear a scarf');
+  // Якщо жодна умова if не відповідає true, виконується останній else.
+  else console.log('The weather is awesome today! Have fun!')
+  }
+  
+  weatherChecker(); // ← після перевірки отримаємо повідомлення - вдягніть дощовик
+
+  weather = 'sunny';    // змінюємо погоду на - сонячно
+  console.log(weather);
+  weatherChecker(); // після перевірки отримаємо меседж - не забудь окуляри!
+
+  weather = 'cloudy';  //тепер погода - хмарно
+  console.log(weather);
+  weatherChecker(); // Оскільки перевірка за всіма прописаними варіантами дає false,
+  отримуємо універсальну відповідь прописану в останньому else.
+
 
 `
 
 const ternaryOperator = `
+
+ let hour:number = 18;
+
+  function timeFormatChecker() {
+     console.log(hour < 12 ? 'AM' : 'PM') };
+
+  timeFormatChecker();
+
+  hour = 11;
+  timeFormatChecker();
+
+  hour = 7;
+  timeFormatChecker();
+
+
 `
 
 const BranchStatements: React.FC = () => {
@@ -92,13 +137,14 @@ const [age, setAge] = useState<string>(''); // Стан для віку, збе�
       <GoHomeBtn />
       <div>
         <h3>if branch statesment</h3>
-        <p>instruction if(condition) &#123;statement &#125;</p>
+        <p>instruction if() &#123;&#125;</p>
         <div className="input">
           <pre>{ifStatement}</pre>
         </div>
       </div>
       <div>
         <h3>if...else branch statesment</h3>
+        <p>instruction if() &#123; &#125; else &#123; &#125;</p>
         <div className="input">
           <pre>{ifElseStatement}</pre>
         </div>
@@ -114,6 +160,7 @@ const [age, setAge] = useState<string>(''); // Стан для віку, збе�
       </div>
       <div>
         <h3>else...if branch statesment</h3>
+        <p>if() &#123; &#125;  else if() &#123; &#125;... else if() &#123; &#125; else  &#123; &#125;</p>
         <div className="input">
           <pre>{elseIfStatement}</pre>
         </div>
