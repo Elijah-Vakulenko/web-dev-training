@@ -12,7 +12,7 @@ const HTML: FC = () => {
         <h2>HTML</h2>
      </div>
           <ul>
-         <li> <Link to="/tags">Rare tags / Рідкісні теги</Link></li>
+         <li> <Link className='link' to="/tags">Rare tags / Рідкісні теги</Link></li>
           </ul>
     </div>
   )

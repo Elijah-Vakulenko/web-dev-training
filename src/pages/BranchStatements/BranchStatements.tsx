@@ -111,9 +111,11 @@ const ternaryOperator = `
 
   hour = 7;
   timeFormatChecker();
-
-
 `
+
+const switchCase = `
+`
+
 
 const BranchStatements: React.FC = () => {
   
@@ -169,6 +171,12 @@ const [age, setAge] = useState<string>(''); // Стан для віку, збе�
         <h3>ternary operator</h3>
         <div className="input">
           <pre>{ternaryOperator}</pre>
+        </div>
+      </div>
+      <div>
+        <h3>Switch()</h3>
+        <div className="input">
+          <pre>{switchCase}</pre>
         </div>
       </div>
     </div>
