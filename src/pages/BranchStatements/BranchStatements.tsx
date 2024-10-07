@@ -1,6 +1,8 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn'; 
 import s from './BranchStatements.module.css'
 import React, { useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia, dracula, vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const ifStatement = `
 const age = 10;
@@ -114,6 +116,35 @@ const ternaryOperator = `
 `
 
 const switchCase = `
+
+let weekDay = 'Monday';
+
+switch(weekDay){
+  case 'Monday' :
+    console.log('It,s a hard day...always');
+    break;
+  case 'Tuesday' :
+    console.log('Ok...we survived Monday..it,s going well');
+    break;
+  case 'Wednesday' :
+    console.log('Whad doesn,t kill us makes us stronger');
+    break;
+  case 'Thursday' :
+    console.log('Please. tell me it,s a Friday');
+    break;
+  case 'Friday' :
+    console.log('Party night!');
+    break;
+  case 'Suterday' :
+    console.log('It,s time to clean up your house!');
+    break;
+  case 'Sunday' :
+    console.log('Take a rest today!');
+    break;
+  default: // ← Якщо значення не входить до описаних кейсів встановлюємо дефолтне.
+    console.log('I have no idea what it is...');
+    break;
+}
 `
 
 
@@ -141,14 +172,14 @@ const [age, setAge] = useState<string>(''); // Стан для віку, збе�
         <h3>if branch statesment</h3>
         <p>instruction if() &#123;&#125;</p>
         <div className="input">
-          <pre>{ifStatement}</pre>
+          <SyntaxHighlighter language="jsx" style={okaidia}>{ifStatement}</SyntaxHighlighter>
         </div>
       </div>
       <div>
         <h3>if...else branch statesment</h3>
         <p>instruction if() &#123; &#125; else &#123; &#125;</p>
         <div className="input">
-          <pre>{ifElseStatement}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{ifElseStatement}</SyntaxHighlighter>
         </div>
         <div className={s.wrapper}>
           <form onSubmit={onSubmit} className={s.form}>
@@ -164,19 +195,20 @@ const [age, setAge] = useState<string>(''); // Стан для віку, збе�
         <h3>else...if branch statesment</h3>
         <p>if() &#123; &#125;  else if() &#123; &#125;... else if() &#123; &#125; else  &#123; &#125;</p>
         <div className="input">
-          <pre>{elseIfStatement}</pre>
+          <SyntaxHighlighter language="jsx" style={vscDarkPlus}>{elseIfStatement}</SyntaxHighlighter>
         </div>
       </div>
       <div>
         <h3>ternary operator</h3>
         <div className="input">
-          <pre>{ternaryOperator}</pre>
+          <SyntaxHighlighter language="jsx" style={okaidia}>{ternaryOperator}</SyntaxHighlighter>
         </div>
       </div>
       <div>
         <h3>Switch()</h3>
+        <p>За допомогою світча ми можемо прописати декілька сценаріїв взалежності від значення однієї змінної. Тут на прикладі взалежності від дня тижня ми побачимо в консолі відповідне повідомлення. </p>
         <div className="input">
-          <pre>{switchCase}</pre>
+          <SyntaxHighlighter language="jsx" style={okaidia}>{switchCase}</SyntaxHighlighter>
         </div>
       </div>
     </div>

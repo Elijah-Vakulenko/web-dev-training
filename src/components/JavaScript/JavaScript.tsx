@@ -14,6 +14,7 @@ const JavaScript: FC = () => {
         <li><Link className='link' to="/"></Link></li>
         <li><Link className='link' to="/basic-statements">Basic Statements / Базові інструкції</Link></li>
         <li><Link className='link' to="/methods">Methods / Методи</Link></li>
+        <li><Link className='link' to="/operators">Operators / Оператори</Link></li>
         <li><Link className='link' to="/functions">Functions / Функції</Link></li>
         <li><Link className='link' to="/branch-statements">Сonditional statements and branching statements / Розгалудження</Link> </li>
         <li><Link className='link' to="/cycles">Cycles / Цикли </Link></li>
