@@ -9,6 +9,9 @@ const and = `
 const or = `
 
 `
+const not = `
+
+`
 
 const Operators: React.FC = () => {
   return (
@@ -26,7 +29,7 @@ const Operators: React.FC = () => {
                   </div></li>
               <li><h4>!</h4>
                   <p></p>
-                  <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{and}</SyntaxHighlighter>
+                  <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{not}</SyntaxHighlighter>
                   </div></li>
 
           </ul>
