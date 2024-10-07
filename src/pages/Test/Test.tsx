@@ -53,26 +53,26 @@ let weather: string = 'rainy';
   hour = 7;
   timeFormatChecker();
 
-  let weekDay = 'Friday';
+  let weekDay = 'Monday';
 
 switch(weekDay){
   case 'Monday' :
     console.log('It`s a hard day...always');
     break;
   case 'Tuesday' :
-    console.log('Ok...we survived Monday..its going well')
+    console.log('Ok...we survived Monday..it`s going well');
     break;
   case 'Wednesday' :
-    console.log('Whad doesnt kill us makes us stronger')
+    console.log('Whad doesn`t kill us makes us stronger');
     break;
   case 'Thursday' :
-    console.log('Please. tell me its a Friday')
+    console.log('Please. tell me it`s a Friday');
     break;
   case 'Friday' :
     console.log('Party night!');
     break;
   case 'Suterday' :
-    console.log('Its time to clean up your house!')
+    console.log('It`s time to clean up your house!');
     break;
   case 'Sunday' :
     console.log('Take a rest today!');

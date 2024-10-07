@@ -1,5 +1,14 @@
 import React from 'react'
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import {dracula} from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+const and = `
+
+`
+const or = `
+
+`
 
 const Operators: React.FC = () => {
   return (
@@ -7,9 +16,19 @@ const Operators: React.FC = () => {
           <GoHomeBtn />
           <h3>Логічні оператори</h3>
           <ul>
-            <li><h4>&&</h4></li>
-            <li><h4>||</h4></li>
-            <li><h4>!</h4></li>
+              <li><h4>&&</h4>
+                  <p></p>
+                  <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{and}</SyntaxHighlighter>
+                  </div></li>
+              <li><h4>||</h4>
+                  <p></p>
+                  <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{or}</SyntaxHighlighter>
+                  </div></li>
+              <li><h4>!</h4>
+                  <p></p>
+                  <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{and}</SyntaxHighlighter>
+                  </div></li>
+
           </ul>
     </div>
   )
