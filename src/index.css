@@ -145,3 +145,15 @@ body {
 .link:hover::after {
   width: 100%;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Высота равна высоте вьюпорта */
+  width: 100vw; /* Ширина равна ширине вьюпорта */
+  margin: 0; /* Убираем отступы */
+  position: fixed; /* Фиксируем на экране */
+  top: 0;
+  left: 0;
+}

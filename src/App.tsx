@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { DNA } from 'react-loader-spinner'
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const Arrays = lazy(() => import('./pages/Arrays/Arrays'));
@@ -20,7 +21,14 @@ const Operators = lazy(() => import('./pages/Operators/Operators'))
 function App() {
   return (
     <div>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div className='loader'><DNA
+  visible={true}
+  height="200"
+  width="200"
+  ariaLabel="dna-loading"
+  wrapperStyle={{}}
+  wrapperClass="dna-wrapper"
+  /></div>}>
             <Routes>
           <Route path="/" element={<HomePage />} />
               <Route path="/test" element={<Test />} />
