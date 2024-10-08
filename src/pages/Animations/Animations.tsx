@@ -1,6 +1,8 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn'; 
 import clsx from "clsx";
 import s from './Animation.module.css'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const box1 = `.box1:hover {
     transition: 3s ease;
@@ -16,10 +18,6 @@ const box3 = `.box1:hover {
   }`
 const box4 = `.box4:hover {
   transform: translateX(15px);
-  /* translateX(15px) - moves object for 15px to the right */
-  /* translateX(-15px) - moves object for 15px to the left */
-  /* translateY(15px) - moves object for 15px up */
-  /* translateY(-15px) - moves object for 15px down */
 }`
 const box5 = `.box5:hover {
     transition: 3s ease;
@@ -38,28 +36,36 @@ const Animations:React.FC = () => {
     <h2 className={s.title}>Basic hover animations</h2>
     
   <div className={s.flex}>
-    <div className='wrapper'>
-          <pre>{box1}</pre>
+    <div className={s.wrapper}>
+          <SyntaxHighlighter className={s.code}className={s.code} language="css" style={dracula}>{box1}</SyntaxHighlighter>
           <div className={clsx(s.box, s.box1)}></div>
     </div>
-    <div className='wrapper'>
-          <pre>{box2}</pre>
+    <div className={s.wrapper}>
+           <SyntaxHighlighter className={s.code}language="css" style={dracula}>{box2}</SyntaxHighlighter>
           <div className={clsx(s.box, s.box2)}></div>
     </div>
-    <div className='wrapper'>
-          <pre>{box3}</pre>
+    <div className={s.wrapper}>
+           <SyntaxHighlighter className={s.code}language="css" style={dracula}>{box3}</SyntaxHighlighter>
           <div className={clsx(s.box, s.box3)}></div>
     </div>
-    <div className='wrapper'>
-          <pre>{box4}</pre>
+    <div className={s.wrapper}>
+          <div className={s.code}><SyntaxHighlighter language="css" style={dracula}>{box4}</SyntaxHighlighter>
+            <ul>
+              <li><code className={s.description}>translateX(15px) - moves object for 15px to the right</code></li>
+              <li><code className={s.description}>translateX(-15px) - moves object for 15px to the left</code></li>
+              <li><code className={s.description}>translateY(15px) - moves object for 15px up</code></li>
+              <li><code className={s.description}>translateY(-15px) - moves object for 15px down</code></li>
+            </ul>
+          </div>
           <div className={clsx(s.box, s.box4)}></div>
-    </div>
-    <div className='wrapper'>
-          <pre>{box5}</pre>
+        </div>
+
+    <div className={s.wrapper}>
+           <SyntaxHighlighter className={s.code}language="css" style={dracula}>{box5}</SyntaxHighlighter>
           <div className={clsx(s.box, s.box5)}></div>
     </div>
-    <div className='wrapper'>
-          <pre>{box6}</pre>
+    <div className={s.wrapper}>
+           <SyntaxHighlighter className={s.code}language="css" style={dracula}>{box6}</SyntaxHighlighter>
           <div className={clsx(s.box, s.box6)}></div>
   </div>
   </div>

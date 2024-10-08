@@ -1,4 +1,6 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 // Функция для выполнения первого скрипта
 const calculateTotalScript1 = (): string => {
@@ -52,7 +54,7 @@ console.log("Total:", total);
       <div className="task">
         <div>
           <h3>Script 1</h3>
-          <pre className="input">{script1}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{script1}</SyntaxHighlighter>
         </div>
         <div>
           <h3>output Output:</h3>
@@ -63,7 +65,7 @@ console.log("Total:", total);
       <div className="task">
         <div>
           <h3>Script 2</h3>
-          <pre className="input">{script2}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{script2}</SyntaxHighlighter>
         </div>
         <div>
           <h3>output Output:</h3>

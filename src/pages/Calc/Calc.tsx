@@ -1,8 +1,8 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import s from './Calc.module.css'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const htmlStructure = `
     <div className={s.wrapper}>
@@ -63,7 +63,7 @@ const Calc: React.FC = () => {
               <ul>
           <li><h3>Step 1 - html / css </h3>
             <div className='input'>
-              <SyntaxHighlighter language="jsx" style={solarizedlight}>
+              <SyntaxHighlighter language="jsx" style={dracula}>
                 {htmlStructure}
               </SyntaxHighlighter>
             </div>

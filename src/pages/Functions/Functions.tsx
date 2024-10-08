@@ -1,4 +1,8 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn'; 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
 const Functions: React.FC = () => {
 
   const bmi = `
@@ -20,7 +24,7 @@ return +result.toFixed(1); // в результаті лишаемо одну ц
       <GoHomeBtn />
       <div className='input'>
           <h3>Функція розрахунку індексу маси тіла</h3>
-          <pre>{bmi}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{bmi}</SyntaxHighlighter>
       </div>
     </div>
   )

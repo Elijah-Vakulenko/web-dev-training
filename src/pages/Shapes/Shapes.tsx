@@ -1,6 +1,8 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn'; 
 import s from './Shapes.module.css'; // Импортируем стили
 import clsx from "clsx";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Shapes: React.FC = () => {
   // Определяем CSS-код в виде строки, чтобы показать его в текстовом формате
@@ -51,36 +53,36 @@ const Shapes: React.FC = () => {
       <div className='wrapper'>
           <div className='input'>
             <h3>Spark CSS</h3>
-            <pre>{sparkCSS}</pre>
+            <SyntaxHighlighter language="css" style={dracula}>{sparkCSS}</SyntaxHighlighter>
           </div>
-          <div className='output'>
+          <div className={s.output}>
               <div className={s.spark}></div>
           </div>
       </div>
       <div className='wrapper'>
           <div className='input'>
             <h3>Triangle CSS</h3>
-            <pre>{triangleCSS}</pre>
+            <SyntaxHighlighter className={s.code}language="css" style={dracula}>{triangleCSS}</SyntaxHighlighter>
           </div>
-          <div className='output'>
+          <div className={s.output}>
               <div className={s.triangle}></div>
           </div>
       </div>
       <div className='wrapper'>
           <div className='input'>
             <h3>Octagon CSS</h3>
-            <pre>{octagonCSS}</pre>
+            <SyntaxHighlighter className={s.code}language="css" style={dracula}>{octagonCSS}</SyntaxHighlighter>
           </div>
-          <div className='output'>
+          <div className={s.output}>
               <div className={s.octagon}></div>
           </div>
       </div>
       <div className='wrapper'>
           <div className='input'>
             <h3>Oval CSS</h3>
-            <pre>{ovalCSS}</pre>
+          <SyntaxHighlighter className={s.code} language="css" style={dracula}>{ovalCSS}</SyntaxHighlighter>
           </div>
-          <div className='output'>
+          <div className={s.output}>
               <div className={s.oval}></div>
           </div>
       </div>
