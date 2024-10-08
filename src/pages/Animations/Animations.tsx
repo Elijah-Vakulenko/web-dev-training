@@ -37,7 +37,7 @@ const Animations:React.FC = () => {
     
   <div className={s.flex}>
     <div className={s.wrapper}>
-          <SyntaxHighlighter className={s.code}className={s.code} language="css" style={dracula}>{box1}</SyntaxHighlighter>
+          <SyntaxHighlighter className={s.code} language="css" style={dracula}>{box1}</SyntaxHighlighter>
           <div className={clsx(s.box, s.box1)}></div>
     </div>
     <div className={s.wrapper}>
