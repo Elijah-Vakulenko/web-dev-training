@@ -6,7 +6,7 @@ const NodeJS: React.FC = () => {
     <div className='card' >
 <div className={s.title}>
         <FaNodeJs className={s.icon} />
-            <h2>Node.js</h2>
+            <h2 id="6">Node.js</h2>
 </div>
           <ul>
             <li>initialization</li>

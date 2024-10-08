@@ -23,8 +23,8 @@ function App() {
     <div>
           <Suspense fallback={<div className='loader'><DNA
   visible={true}
-  height="200"
-  width="200"
+  height="350"
+  width="350"
   ariaLabel="dna-loading"
   wrapperStyle={{}}
   wrapperClass="dna-wrapper"

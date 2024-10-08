@@ -6,7 +6,7 @@ const TypeScript: React.FC = () => {
     <div className='card' >
 <div className={s.title}>
         <SiTypescript className={s.icon} />
-            <h2>TypeScript</h2>
+            <h2 id="5">TypeScript</h2>
 </div>
           <ul>
             <li>TypeScript for React / Типізація для Реакту</li>

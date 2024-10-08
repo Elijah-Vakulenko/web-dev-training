@@ -8,7 +8,7 @@ const CSS: FC = () => {
     <div className='card'>
 <div className={s.title}>
         <IoLogoCss3 className={s.icon} />
-            <h2>CSS</h2>
+            <h2 id="2">CSS</h2>
 </div>
           <ul>
         <li><Link className='link' to="/grid">Grid</Link></li>
