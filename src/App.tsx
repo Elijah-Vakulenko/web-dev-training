@@ -21,6 +21,7 @@ const Operators = lazy(() => import('./pages/Operators/Operators'))
 function App() {
   return (
     <div>
+      <div className="logo">Web Dev Training...</div>
           <Suspense fallback={<div className='loader'><DNA
   visible={true}
   height="350"
