@@ -18,10 +18,10 @@ const HomePage = () => {
   return (
     <div>
       <div className={s.nav}>
-  <a className={s.navItem} href="#1">        <FaHtml5 className={s.icon} style={{color:'tomato'} }/>  </a>
-  <a className={s.navItem} href="#2"><IoLogoCss3 className={s.icon} style={{color:'royalblue'} }/></a>
-  <a className={s.navItem} href="#3">    <SiJavascript className={s.icon} style={{color:'aquamarine'} }/></a>
-        <a className={s.navItem} href="#4">    <FaReact className={s.icon} style={{color:'aquamarine'} } /></a>
+  <a className={s.navItem} href="#1">    <FaHtml5 className={s.icon} style={{color:'tomato'} }/>  </a>
+  <a className={s.navItem} href="#2">    <IoLogoCss3 className={s.icon} style={{color:'royalblue'} }/></a>
+  <a className={s.navItem} href="#3">    <SiJavascript className={s.icon} style={{color:'yellow'} }/></a>
+  <a className={s.navItem} href="#4">    <FaReact className={s.icon} style={{color:'aquamarine'} } /></a>
   <a className={s.navItem} href="#5">    <SiTypescript className={s.icon} style={{color:'goldenrod'} }/></a>
   <a className={s.navItem} href="#6">    <FaNodeJs className={s.icon} style={{color:'green'} }/></a>
           </div>
