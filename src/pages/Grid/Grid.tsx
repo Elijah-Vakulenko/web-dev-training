@@ -58,6 +58,7 @@ const siteHTML = `
 const puzzleCSS = `
 .pazzle {
   display: grid;
+  /*↓ Сітка складається з 3х стовпців однакової фракції*/
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(200px, auto);
   grid-gap: 10px;
@@ -105,11 +106,10 @@ const Grid: React.FC = () => {
 
   const [hoveredBox, setHoveredBox] = useState<number | null>(null);
 
-  // Масив текстів для кожного блоку
   const boxTexts = [
     'grid-row: 1/3 - займає рядки від 1го до 3го тобто 1й і 2й',
     ' grid-column: 2/4; - займає стовпчики від 2го до 4го, тобто 2й та 3й',
-    'BOX 3 займає рядки від 3го до 5го',
+    'Без змін, але фактично стоїть на місці  grid-column: 2/3 та grid-row: 2/3;',
     'BOX 4 займає рядки від 4го до 6го',
     'BOX 5 займає рядки від 5го до 7го',
     'BOX 6 займає рядки від 6го до 8го',
@@ -164,11 +164,11 @@ const Grid: React.FC = () => {
             </div>
           ))}
         </div>
- <div style={{display: 'flex'}}>
-          <SyntaxHighlighter language="jsx" style={dracula}>
+ <div style={{display: 'flex', gap: 10}}>
+          <SyntaxHighlighter className={s.codeRew2} language="jsx" style={dracula}>
              {puzzleCSS}
             </SyntaxHighlighter>
-          <SyntaxHighlighter language="jsx" style={dracula}>
+          <SyntaxHighlighter className={s.codeRew2} language="jsx" style={dracula}>
              {puzzleCSS2}
             </SyntaxHighlighter>
  </div>
