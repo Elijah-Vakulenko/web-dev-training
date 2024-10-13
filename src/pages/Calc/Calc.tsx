@@ -58,10 +58,10 @@ const Calc: React.FC = () => {
   return (
  <div className='container'>
           <GoHomeBtn />
-            <h2>How to make a calculator using JS</h2>
+            <h2 className='title'>How to make a calculator using JS</h2>
           <div>
               <ul>
-          <li><h3>Step 1 - html / css </h3>
+          <li><h3 className='title'>Step 1 - html / css </h3>
             <div className='input'>
               <SyntaxHighlighter language="jsx" style={dracula}>
                 {htmlStructure}

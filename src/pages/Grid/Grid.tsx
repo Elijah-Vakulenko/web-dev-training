@@ -130,8 +130,8 @@ const Grid: React.FC = () => {
       <GoHomeBtn />
     
       <div>
-        <h2 style={{marginBottom:25}}>Site Structure</h2>
-        <p style={{ marginBottom: 25 }}>Можемо розділити сітку на логічні сегменти. Наприклад зробити типову розмітку сайту за функціональним зонуванням: хедер, сайдбар, контент та футер.</p>
+        <h2 className='title'>Site Structure</h2>
+        <p className='description'>Можемо розділити сітку на логічні сегменти. Наприклад зробити типову розмітку сайту за функціональним зонуванням: хедер, сайдбар, контент та футер.</p>
         <div className={s.site}>
           <div className={clsx(s.commonSite, s.header)}>HEADER</div>
           <div className={clsx(s.commonSite, s.sidebar)}>SIDEBAR</div>

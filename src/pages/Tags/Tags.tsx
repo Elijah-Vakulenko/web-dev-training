@@ -22,7 +22,7 @@ const Tags: React.FC = () => {
   return (
     <div className='container'>
       <GoHomeBtn />
-<h2>fieldset + legend</h2>
+<h2 className='title'>fieldset + legend</h2>
       <div className='task'>
         <div className="input">
           <div>

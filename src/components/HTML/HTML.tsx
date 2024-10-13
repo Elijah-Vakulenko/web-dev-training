@@ -13,6 +13,7 @@ const HTML: FC = () => {
      </div>
           <ul>
          <li> <Link className='link' to="/tags">Rare tags / Рідкісні теги</Link></li>
+         <li> <Link className='link' to="/text">Text styles / Текстове оформлення</Link></li>
           </ul>
     </div>
   )
