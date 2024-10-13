@@ -32,34 +32,34 @@ const Img: React.FC = () => {
               <h2 className="title">Image filters</h2>
             <div className={s.gridy}>
                   <img className={clsx(s.img)} src={girl} alt="girl" ></img>
-                  <SyntaxHighlighter language="jsx" style={dracula}>{`Original Image`}</SyntaxHighlighter>
+                  <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`Original Image`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.hue)} src={girl} alt="girl" ></img>
-                  <SyntaxHighlighter language="jsx" style={dracula}>{`.hue {
+                  <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`.hue {
       filter: hue-rotate(90deg);
     }`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.blur)} src={girl} alt="girl" ></img>
-                      <SyntaxHighlighter language="jsx" style={dracula}>{`.blur {
+                      <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`.blur {
       filter: blur(2px);
     }`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.sepia)} src={girl} alt="girl" ></img>
-                    <SyntaxHighlighter language="jsx" style={dracula}>{`.sepia {
+                    <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`.sepia {
       filter: sepia(100%);
     }
     `}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.grayscale)} src={girl} alt="girl" ></img>
-                    <SyntaxHighlighter language="jsx" style={dracula}>{`.grayscale {
+                    <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`.grayscale {
       filter: grayscale(100%);
     }`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.brightness)} src={girl} alt="girl" ></img>
-                    <SyntaxHighlighter language="jsx" style={dracula}>{`.brightness {
+                    <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`.brightness {
       filter: brightness(200%);
     }`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.invert)} src={girl} alt="girl" ></img>
-                    <SyntaxHighlighter language="jsx" style={dracula}>{`.invert {
+                    <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`.invert {
       filter: invert(100%);
     }`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.opacity)} src={girl} alt="girl" ></img>
-                    <SyntaxHighlighter language="jsx" style={dracula}>{`.opacity {
+                    <SyntaxHighlighter className={s.font} language="jsx" style={dracula}>{`.opacity {
       filter: opacity(50%);
     }`}</SyntaxHighlighter>
             </div>

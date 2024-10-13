@@ -7,7 +7,7 @@ const Tags: React.FC = () => {
 
   const fieldsetTag = `
 <fieldset>
-  <legend>September 2024</legend>
+  <legend>Friends</legend>
   <ul class="List">
     <li>Chandler Bing</li>
     <li>Monica Geller</li>
