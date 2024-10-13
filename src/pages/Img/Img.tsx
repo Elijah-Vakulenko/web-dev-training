@@ -2,7 +2,7 @@ import React from 'react'
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-// import girl from '../../../public/img/girl-in-the-train.jpg'
+import girl from '../../../public/img/girl-in-the-train.jpg'
 // import coffee from '../../../public/img/coffee.jpg'
 // import lumineers from '../../../public/img/lumineers.jpg'
 import clsx from "clsx";
@@ -31,7 +31,7 @@ const Img: React.FC = () => {
           <div>
               <h2 className="title">Image filters</h2>
             <div className={s.gridy}>
-                  <img className={clsx(s.img)} src="../../../public/img/girl-in-the-train.jpg" alt="girl" ></img>
+                  <img className={clsx(s.img)} src="{girl}" alt="girl" ></img>
                   <SyntaxHighlighter language="jsx" style={dracula}>{`Original Image`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.hue)} src="../../../public/img/girl-in-the-train.jpg" alt="girl" ></img>
                   <SyntaxHighlighter language="jsx" style={dracula}>{`.hue {
