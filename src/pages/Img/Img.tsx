@@ -31,7 +31,7 @@ const Img: React.FC = () => {
           <div>
               <h2 className="title">Image filters</h2>
             <div className={s.gridy}>
-                  <img className={clsx(s.img)} src="{girl}" alt="girl" ></img>
+                  <img className={clsx(s.img)} src={girl} alt="girl" ></img>
                   <SyntaxHighlighter language="jsx" style={dracula}>{`Original Image`}</SyntaxHighlighter>
                   <img className={clsx(s.img, s.hue)} src="../../../public/img/girl-in-the-train.jpg" alt="girl" ></img>
                   <SyntaxHighlighter language="jsx" style={dracula}>{`.hue {
