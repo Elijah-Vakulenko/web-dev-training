@@ -26,7 +26,7 @@ const images = [
   },
   {
     id: 5,
-    url: '/img/lemons',
+    url: '/img/lemon.jpg',
     title: 'lemons'
   },
   {
@@ -43,6 +43,26 @@ const images = [
     id: 8,
     url: '/img/suitcase.jpg',
     title: 'suitcase'
+  }
+  {
+    id: 9,
+    url: '/img/books.jpg',
+    title: 'books'
+  },
+  {
+    id: 10,
+    url: '/img/gypsophila.jpg',
+    title: 'gypsophila'
+  },
+  {
+    id: 11,
+    url: '/img/wheat.jpg',
+    title: 'wheat'
+  },
+  {
+    id: 12,
+    url: '/img/diary.jpg',
+    title: 'diary'
   }
 ];
 
