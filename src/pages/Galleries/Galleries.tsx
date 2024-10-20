@@ -18,6 +18,31 @@ const images = [
     id: 3,
     url: '/img/guitar.jpg',
     title: 'Guitar'
+  },
+  {
+    id: 4,
+    url: '/img/girl-in-the-train.jpg',
+    title: 'Girl'
+  },
+  {
+    id: 5,
+    url: '/img/lemons',
+    title: 'lemons'
+  },
+  {
+    id: 6,
+    url: '/img/lumineers.jpg',
+    title: 'Flowers on the floor'
+  },
+  {
+    id: 7,
+    url: '/img/sunflowers.jpg',
+    title: 'sunflowers and girl'
+  },
+  {
+    id: 8,
+    url: '/img/suitcase.jpg',
+    title: 'suitcase'
   }
 ];
 
