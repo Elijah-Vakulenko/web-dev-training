@@ -26,7 +26,7 @@ const images = [
   },
   {
     id: 5,
-    url: '/img/lemon.jpg',
+    url: '/img/lemons.jpg',
     title: 'lemons'
   },
   {
