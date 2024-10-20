@@ -107,19 +107,19 @@ const Operators: React.FC = () => {
           <GoHomeBtn />
           <h3>Логічні оператори</h3>
           <ul>
-              <li><h4>&&</h4>
+              <li><h4 className='title'>&&</h4>
                   <p></p>
                   <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{and}</SyntaxHighlighter>
                   </div></li>
-              <li><h4>||</h4>
+              <li><h4 className='title'>||</h4>
                   <p></p>
                   <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{or}</SyntaxHighlighter>
                   </div></li>
-              <li><h4>!</h4>
+              <li><h4 className='title'>!</h4>
                   <p></p>
                   <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{not}</SyntaxHighlighter>
                   </div></li>
-              <li><h4>Як вираховувати складні вирази</h4>
+              <li><h4 className='title'>Як вираховувати складні вирази</h4>
                   <p></p>
                   <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{tips}</SyntaxHighlighter>
           </div></li>
