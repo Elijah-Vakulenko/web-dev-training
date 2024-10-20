@@ -135,16 +135,15 @@ const Operators: React.FC = () => {
           `}>
           </Task>
           <Task
-            problem='Напиши скрипт перевірки підписки користувача 
-            і надання йому доступу до контенту.
-            Існує три види підписки: free, pro, vip;
-            Доступ до контенту мають тільки pro  та vip;'
+            problem='Напиши скрипт, який перевіряє можливість відкрити чат з користувачем. Для цього, користувач має бути: другом, онлайн, без режима НЕ ТУРБУВАТИ.'
             solution={`
-            const sub = 'free';
-            if(sub === 'pro' || sub === 'vip'){
-              console.log('Have fun!')
-            } else {
-              You don't have a permission!')}
+            const isOnline = true;
+            const isFriend = true;
+            const isDnd = true;
+
+            const canOpenChat = isOnline && isFriend && !isDnd;
+            console.log('Можна відкрити чат', canOpenChat) //← true
+
           `}>
           </Task>
           <Task
