@@ -119,12 +119,39 @@ const Operators: React.FC = () => {
                   <p></p>
                   <div className="input"><SyntaxHighlighter language="jsx" style={dracula}>{tips}</SyntaxHighlighter>
           </div></li>
-        <li>
+        <li style={{display:'flex', gap: 10,flexDirection: 'column'}}>
           <h4 className='title'>Задачі</h4>
           <Task
-          problem={`Напиши скрипт перевірки підписки користувача і надання йому доступу до контенту.
-            - існує три види підписки: free, pro, vip;
-            - доступ до контенту мають тільки pro  та vip;`}
+            problem='Напиши скрипт перевірки підписки користувача 
+            і надання йому доступу до контенту.
+            Існує три види підписки: free, pro, vip;
+            Доступ до контенту мають тільки pro  та vip;'
+            solution={`
+            const sub = 'free';
+            if(sub === 'pro' || sub === 'vip'){
+              console.log('Have fun!')
+            } else {
+              You don't have a permission!')}
+          `}>
+          </Task>
+          <Task
+            problem='Напиши скрипт перевірки підписки користувача 
+            і надання йому доступу до контенту.
+            Існує три види підписки: free, pro, vip;
+            Доступ до контенту мають тільки pro  та vip;'
+            solution={`
+            const sub = 'free';
+            if(sub === 'pro' || sub === 'vip'){
+              console.log('Have fun!')
+            } else {
+              You don't have a permission!')}
+          `}>
+          </Task>
+          <Task
+            problem='Напиши скрипт перевірки підписки користувача 
+            і надання йому доступу до контенту.
+            Існує три види підписки: free, pro, vip;
+            Доступ до контенту мають тільки pro  та vip;'
             solution={`
             const sub = 'free';
             if(sub === 'pro' || sub === 'vip'){

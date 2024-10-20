@@ -17,11 +17,11 @@ const Task: React.FC<TaskProps> = ({ problem, solution }) => {
 
   return (
     <div className={s.container}>
-      <h3 className={s.problem}>{problem}</h3>
+      <p className={s.problem}>{problem}</p>
       <button className={s.btn} onClick={toggleSolution}>
         {isOpen ? 'Сховати' : 'Відповідь'}
       </button>
-      {isOpen && <p className={s.solution}> <SyntaxHighlighter language="jsx" style={dracula}>{solution}</SyntaxHighlighter></p>}
+      {isOpen && <SyntaxHighlighter language="jsx" style={dracula}>{solution}</SyntaxHighlighter>}
     </div>
   );
 };
