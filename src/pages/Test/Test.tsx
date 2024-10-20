@@ -20,70 +20,94 @@ const Test: React.FC = () => {
 // console.log(num.toFixed(2));
 
 //-----------------------------------------------------------------------------------
-let weather: string = 'rainy';
+// let weather: string = 'rainy';
 
-  console.log(weather);
+//   console.log(weather);
 
-  function weatherChecker() {
-    if (weather === 'sunny') console.log('Don\'t forget your sunglasses');
-  else if (weather === 'rainy') console.log('Grab your raincoat');
-  else if (weather === 'windy') console.log('You should wear a scarf');
-  else console.log('The weather is awesome today! Have fun!')
-  }
+//   function weatherChecker() {
+//     if (weather === 'sunny') console.log('Don\'t forget your sunglasses');
+//   else if (weather === 'rainy') console.log('Grab your raincoat');
+//   else if (weather === 'windy') console.log('You should wear a scarf');
+//   else console.log('The weather is awesome today! Have fun!')
+//   }
   
-  weatherChecker();
+//   weatherChecker();
 
-  weather = 'sunny';
-  console.log(weather);
-  weatherChecker();
+//   weather = 'sunny';
+//   console.log(weather);
+//   weatherChecker();
 
-  weather = 'cloudy';
-  console.log(weather);
-  weatherChecker();
+//   weather = 'cloudy';
+//   console.log(weather);
+//   weatherChecker();
 
-  let hour:number = 18;
-  function timeFormatChecker() {
-    console.log(hour < 12 ? 'AM' : 'PM')
-  };
-  timeFormatChecker();
-  hour = 11;
+//   let hour:number = 18;
+//   function timeFormatChecker() {
+//     console.log(hour < 12 ? 'AM' : 'PM')
+//   };
+//   timeFormatChecker();
+//   hour = 11;
 
-  timeFormatChecker();
+//   timeFormatChecker();
 
-  hour = 7;
-  timeFormatChecker();
+//   hour = 7;
+//   timeFormatChecker();
 
-  let weekDay = 'Monday';
+//   let weekDay = 'Monday';
 
-switch(weekDay){
-  case 'Monday' :
-    console.log('It`s a hard day...always');
-    break;
-  case 'Tuesday' :
-    console.log('Ok...we survived Monday..it`s going well');
-    break;
-  case 'Wednesday' :
-    console.log('Whad doesn`t kill us makes us stronger');
-    break;
-  case 'Thursday' :
-    console.log('Please. tell me it`s a Friday');
-    break;
-  case 'Friday' :
-    console.log('Party night!');
-    break;
-  case 'Suterday' :
-    console.log('It`s time to clean up your house!');
-    break;
-  case 'Sunday' :
-    console.log('Take a rest today!');
-    break;
-  default:
-    console.log('I have no idea what it is...')
+// switch(weekDay){
+//   case 'Monday' :
+//     console.log('It`s a hard day...always');
+//     break;
+//   case 'Tuesday' :
+//     console.log('Ok...we survived Monday..it`s going well');
+//     break;
+//   case 'Wednesday' :
+//     console.log('Whad doesn`t kill us makes us stronger');
+//     break;
+//   case 'Thursday' :
+//     console.log('Please. tell me it`s a Friday');
+//     break;
+//   case 'Friday' :
+//     console.log('Party night!');
+//     break;
+//   case 'Suterday' :
+//     console.log('It`s time to clean up your house!');
+//     break;
+//   case 'Sunday' :
+//     console.log('Take a rest today!');
+//     break;
+//   default:
+//     console.log('I have no idea what it is...')
+// }
+
+
+
+// Напиши скрипт для відображення годин і хвилин, який би виконував такі умови:
+//   - це рядок формату '14 г. 26 хв.'
+//     - якщо значення змінної minutes дорівнює нулю, тоді має виводитися тільки 14 г.
+    
+  // debugger;
+  // const hours = 14
+  // const minutes = 26
+  // let timestring;
+  
+  // if (minutes === 0) { timestring = `${hours} г.` } else {
+  //   timestring = `${hours} г. ${minutes} хв.`
+  // }
+
+  // console.log(timestring)
+  
+  //або замість if/else використовуємо тернарний вираз одразу у оголошенні змінної timestring:
+  //const timestring = `${hours} г. + minutes === 0 ? '' : ${minutes} хв.`
+  //↑ тобто timestring дорівнюватиме 14 г. а далі виконується умова, якщо хвилини === 0 тоді виводиться пустий рядок, якщо ні, тоді значення хвилин.
+
+let apples = 0;
+let stock;
+if(apples <= 0) {
+  stock = false
 }
-
-
-
-
+  if (!stock) { console.log('Apples are available') } else { console.log('There is no apple in stock') };
 
     return (
       <div className='container'>
