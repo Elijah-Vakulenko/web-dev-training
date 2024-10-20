@@ -43,7 +43,7 @@ const images = [
     id: 8,
     url: '/img/suitcase.jpg',
     title: 'suitcase'
-  }
+  },
   {
     id: 9,
     url: '/img/books.jpg',
