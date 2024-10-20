@@ -9,10 +9,11 @@ const HTML: FC = () => {
       <div className='card' >
      <div className={s.title}>
         <FaHtml5 className={s.icon} />    
-        <h2>HTML</h2>
+        <h2 id="1" >HTML</h2>
      </div>
           <ul>
          <li> <Link className='link' to="/tags">Rare tags / Рідкісні теги</Link></li>
+         <li> <Link className='link' to="/text">Text styles / Текстове оформлення</Link></li>
           </ul>
     </div>
   )

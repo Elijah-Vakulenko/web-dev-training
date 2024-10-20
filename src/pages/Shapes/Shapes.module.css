@@ -1,68 +1,85 @@
-.triangle{
-    width: 200px;
-    height: 200px;
-    background: var(--surfgreen);
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+.triangle {
+  width: 200px;
+  height: 200px;
+  background: var(--surfgreen);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
-.octagon{
-    width: 200px;
-    height: 200px;
-    background: var(--pink);
-clip-path: polygon(16.6% 16.6%,
-            50% 0,
-            83.3% 16.6%,
-            100% 50%,
-            83.3% 83.3%,
-            50% 100%,
-            16.6% 83.3%,
-            0 50%);
+.octagon {
+  width: 200px;
+  height: 200px;
+  background: var(--pink);
+  clip-path: polygon(
+    16.6% 16.6%,
+    50% 0,
+    83.3% 16.6%,
+    100% 50%,
+    83.3% 83.3%,
+    50% 100%,
+    16.6% 83.3%,
+    0 50%
+  );
 }
 
 .container {
-    min-width: 320px;
-    /* display: flex;
+  min-width: 320px;
+  /* display: flex;
   justify-content: center;
   align-items: center; */
-    min-height: 100vh;
-    padding: 0 20px;
-    margin: 0 auto;
-    /* outline: 1px solid orangered; */
+  min-height: 100vh;
+  padding: 0 20px;
+  margin: 0 auto;
+  /* outline: 1px solid orangered; */
 }
 
 @media screen and (min-width: 375px) {
-    .container {
-        max-width: 375px;
-    }
+  .container {
+    max-width: 375px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 768px;
-    }
+  .container {
+    max-width: 768px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        max-width: 1440px;
-    }
+  .container {
+    max-width: 1440px;
+  }
 }
 
-.gap{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.oval{
-    width: 150px;
-    height: 200px;
-    background: var(--darkgreen);
-    border-radius: 100% / 120% 120% 75% 75%;
+.oval {
+  width: 150px;
+  height: 200px;
+  background: var(--darkgreen);
+  border-radius: 100% / 120% 120% 75% 75%;
 }
 
-.spark{
-    width: 200px;
-    background: var(--purple);
-    clip-path: polygon(40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50% );
-    aspect-ratio: 1;
+.spark {
+  width: 200px;
+  background: var(--wine);
+  clip-path: polygon(
+    40% 40%,
+    50% 0,
+    60% 40%,
+    100% 50%,
+    60% 60%,
+    50% 100%,
+    40% 60%,
+    0 50%
+  );
+  aspect-ratio: 1;
+}
+
+.output {
+  background-color: gray;
+  padding: 20px;
+  border-radius: 15px;
 }

@@ -1,0 +1,47 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav {
+  border-radius: 50px;
+  border: 1px solid var(--main);
+  padding: 15px;
+  margin: 30px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  top: 5%; /* Центруємо по вертикалі */
+  right: 10px;
+  background-color: black;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+    top: 35%;
+    transform: translateY(-90%);
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 40%;
+  }
+}
+
+.navItem {
+  transition: 2s ease;
+  &:hover {
+    transform: translateX(-10px);
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+}

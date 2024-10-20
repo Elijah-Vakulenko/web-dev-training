@@ -6,7 +6,7 @@ const ReactJS = () => {
     <div className='card' >
       <div className={s.title}>
         <FaReact className={s.icon} />
-        <h2>React.js</h2>
+        <h2 id="4">React.js</h2>
       </div>
       <ul>
         <li>Components</li>

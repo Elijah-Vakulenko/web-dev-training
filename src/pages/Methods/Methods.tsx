@@ -1,5 +1,9 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 import s from './Methods.module.css'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
 const str = `
 const x = 10;
 
@@ -74,25 +78,25 @@ const Methods: React.FC = () => {
      <div className={s.wrapper}>
         <div className='input'>
           <h3>Перетворення у рядок</h3>
-          <pre>{str }</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{str}</SyntaxHighlighter>
         </div>
         <div className='input'>
           <h3>Перетворення у число</h3>
-          <pre>{num}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{num}</SyntaxHighlighter>
           <h3>методи parseInt / parseFloat</h3>
-          <pre>{strToNum}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{strToNum}</SyntaxHighlighter>
         </div>
         <div className='input'>
           <h3>Math</h3>
-          <pre>{math }</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{math}</SyntaxHighlighter>
         </div>
         <div className='input'>
           <h3>Заміна значень - replace()</h3>
-          <pre>{repl}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{repl}</SyntaxHighlighter>
         </div>
         <div className='input'>
           <h3>Кількість знаків після коми - toFixed()</h3>
-          <pre>{fix}</pre>
+          <SyntaxHighlighter language="jsx" style={dracula}>{fix}</SyntaxHighlighter>
         </div>
      </div>
       

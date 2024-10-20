@@ -8,7 +8,7 @@ const JavaScript: FC = () => {
     <div className="card">
 <div className={s.title}>
         <SiJavascript className={s.icon} />
-        <h2>JavaScript</h2>
+        <h2 id="3">JavaScript</h2>
 </div>
       <ul>
         <li><Link className='link' to="/"></Link></li>
@@ -25,5 +25,5 @@ const JavaScript: FC = () => {
     </div>
   );
 };
-
+ 
 export default JavaScript;
