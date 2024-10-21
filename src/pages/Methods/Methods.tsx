@@ -66,6 +66,20 @@ console.log(num.toFixed(2));
 
 //↑ Метод лишає стільки знаків після коми, скільки зазначено в дужках.`
 
+
+const slice = ``
+const lowerUpper = ``
+const includes = ``
+const startsEnds = ``
+const indOf = ``
+const trim = ``
+
+
+
+
+
+
+
 const Methods: React.FC = () => {
 
 
@@ -97,6 +111,22 @@ const Methods: React.FC = () => {
         <div className='input'>
           <h3>Кількість знаків після коми - toFixed()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{fix}</SyntaxHighlighter>
+        </div>
+
+        <div className='input'>
+          <h2>Методи рядків</h2>
+          <h3>slice()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{slice}</SyntaxHighlighter>
+          <h3>toLowerCase() / toUpperCase()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{lowerUpper}</SyntaxHighlighter>
+          <h3>includes()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{includes}</SyntaxHighlighter>
+          <h3>indexOf()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{indOf}</SyntaxHighlighter>
+          <h3>startsWith() / endsWith()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{startsEnds}</SyntaxHighlighter>
+          <h3>trim()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{trim}</SyntaxHighlighter>
         </div>
      </div>
       
