@@ -2,7 +2,7 @@ import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 import s from './Methods.module.css'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
+import Task from '../../components/Task/Task'
 
 const str = `
 const x = 10;
@@ -67,12 +67,84 @@ console.log(num.toFixed(2));
 //↑ Метод лишає стільки знаків після коми, скільки зазначено в дужках.`
 
 
-const slice = ``
-const lowerUpper = ``
-const includes = ``
-const startsEnds = ``
-const indOf = ``
-const trim = ``
+const slice = `Метод обрізає рядок відповідно до вказаного індексу, або діапазону індексів. 
+Індексація відбувається від 0, тобто СКРИПТ має такі індекси - 0 1 2 3 4 5, 
+де С це 0, а Т це 5.
+
+const musicBand = 'The Beatles';
+
+const newName = musicBand.slice(4); 
+console.log(newName) // Beatles
+
+
+//В діапазоні вибірка йде від індексу що нам потрібен до того індексу де ми маємо зупинитись.
+//В цьому прикладі, з The Beatles нам потрібен корінь слова - Beat, а це індекси 4,5,6,7 тобто діапазон (4, 8)
+const root = musicBand.slice(4, 8)
+console.log(root) //Beat
+
+Також можемо використовувати мінусовий індекс.
+Наприклад в нас є змінна:
+const band = '-Beatles-';
+const new_band = band.slice(1, -1);
+console.log(new_band); // Beatles`
+
+const lowerUpper = `Методи зміни регістру літер: toLowerCase() - нижній регістр та toUpperCase() - верхній регістр.
+
+const singerName = 'George Harrison';
+
+const lowerCaseName = singerName.toLowerCase();
+console.log(lowerCaseName); //george harrison
+
+const upperCaseName = singerName.toUpperCase();
+console.log(upperCaseName); //GEORGE HARRISON
+`
+
+const includes = `Метод перевіряє чи містить рядок вказані символи.
+const text = 'The beatles is my favorite music band';
+const music = text.includes('music');
+const sound = text.includes('sound');
+console.log(music); //true
+console.log(sound); //false
+`
+
+const startsEnds = `Методи startsWith() та endsWith() перевіряють чи починається рядок з якогось символу чи слова, або закінчується відповідним фрагментом чи символом.
+
+const url = 'http://google.com';
+const check = url.endsWith('.com');
+const check2 = url.startsWith('https://');
+console.log(check) //true
+console.log(check2) //false
+
+//перевіримо чи наше посилання починається з літери 'g' після протоколу.
+// Для цього через кому після пошукового фрагменту додамо індекс з якого треба перевіряти.
+
+const check3 = url.startsWith('g', 7);
+console.log(check3) //true
+`
+
+const indOf = `
+Шукає індекс символу.
+метод indexOf() - починає шукати з початку рядка
+lastIndexOf() - шукає з кінця.
+
+В консолі видає номер індексу з якого починається символ чи слово.
+Якщо покук за ключевим словом не дав результатів, в консолі бачимо -1.
+
+  const dev = 'I am a fullstack developer. Did you know?';
+
+  const devcheck = dev.indexOf('dev');
+  console.log(devcheck); //17
+
+  const devcheck2 = dev.lastIndexOf('know');
+  console.log(devcheck2); //36
+
+  const devcheck3 = dev.indexOf('BBC');
+  console.log(devcheck3); // -1
+
+`
+const trim = `Видаляє зайві пробіли з початку і кінця. 
+
+`
 
 
 
@@ -128,6 +200,18 @@ const Methods: React.FC = () => {
           <h3>trim()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{trim}</SyntaxHighlighter>
         </div>
+
+        <div>
+          <h2>Задачі на використання методів рядка</h2>
+          <Task
+            problem='Напиши скрипт який перевіряє чи закінчується значення
+ змінної link символом /. Якщо ні, додай до кінця значення link цей символ.'
+            solution={`let link = 'https://google.com';
+  if (!link.endsWith('/')) { //← Якщо посилання НЕ закінчується слешем, тоді
+    link += '/'; // ← за допомогою канкатенації додаємо до змінної слеш.
+  } else {console.log('no slash needed')}`}></Task>
+        </div>
+
      </div>
       
 

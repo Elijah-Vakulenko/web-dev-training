@@ -102,12 +102,10 @@ const Test: React.FC = () => {
   //const timestring = `${hours} г. + minutes === 0 ? '' : ${minutes} хв.`
   //↑ тобто timestring дорівнюватиме 14 г. а далі виконується умова, якщо хвилини === 0 тоді виводиться пустий рядок, якщо ні, тоді значення хвилин.
 
-let apples = 0;
-let stock;
-if(apples <= 0) {
-  stock = false
-}
-  if (!stock) { console.log('Apples are available') } else { console.log('There is no apple in stock') };
+let link = 'https://google.com';
+  if (!link.endsWith('/')) {
+    link += '/';
+  } else {console.log('no slash needed')}
 
     return (
       <div className='container'>
