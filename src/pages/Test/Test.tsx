@@ -102,10 +102,28 @@ const Test: React.FC = () => {
   //const timestring = `${hours} г. + minutes === 0 ? '' : ${minutes} хв.`
   //↑ тобто timestring дорівнюватиме 14 г. а далі виконується умова, якщо хвилини === 0 тоді виводиться пустий рядок, якщо ні, тоді значення хвилин.
 
-let link = 'https://google.com';
-  if (!link.endsWith('/')) {
-    link += '/';
-  } else {console.log('no slash needed')}
+// let price = 1500;
+// const targetPrice = 800;
+// while(price > targetPrice && !targetPrice < 800 ){
+//   console.log('Чи не могли б ви зробити знижку?');
+//   price -= Math.min(Math.round(Math.random() * 200), price - targetPrice);
+//   //↑ Тут ми зменшуємо ціну застосовуючи рандомайзер та заокруглення до цілого, а потім Math.min  обирає найменше число
+//   // між рандомним і різницею нашої ціни та бажаної ціни(це робить неможливим падіння ціни меньше 800, 
+//   //оскільки якщо на останній ітерації рандомне число буде бльшим за різницю цін, то буде обрана саме різниця цін, що при мінусуванні дасть нам рівно 800).
+//   console.log('Можу віддати за -', price, 'гривень');
+// }
+//   console.log('Добре, купую!');
+
+
+// let i = 10;
+// while(i > 0) {
+//   console.log('lets count - ', i);
+//   i--;
+//   }
+  
+let counter = 1
+do{counter += 1;
+console.log(counter)} while (counter < 10);
 
     return (
       <div className='container'>

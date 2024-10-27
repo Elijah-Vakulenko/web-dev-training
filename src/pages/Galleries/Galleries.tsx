@@ -117,12 +117,11 @@ const Galleries: React.FC = () => {
           </Masonry>
         </ResponsiveMasonry>
       </div>
-
       <div>
         <h2 className="title">Random size Grid</h2>
         <div className={s.gridcontainer}>
         {images.map((image, index) => (
-<div className={clsx(s.gridItem, s[`gridItem${randomNumbers[index]}`])} key={image.id}>
+          <div className={clsx(s.gridItem, s[`gridItem${randomNumbers[index]}`])} key={image.id}>
             <img
               src={image.url}
               alt={`Image ${image.id}`}
@@ -151,9 +150,28 @@ const Galleries: React.FC = () => {
             </div>
           )}
         </Modal>
-     </div>
       </div>
-          </div>
+      <div>
+          <h2 className="title">Grid + img as a background</h2>
+      <div style={{ backgroundImage: `url('https://example.com/sample.jpg')` }}></div>
+
+       {images.map((image: Image, index: number) => (
+  <div
+    key={image.id}
+    className={s.gridBG}
+    onClick={() => handleImageClick(index)}
+  >
+    <div
+      className={clsx(s.box)}
+      style={{ backgroundImage: `url(${image.url})` }}
+    ></div>
+  </div>
+))}
+
+        
+      </div>
+      </div>
+  </div>
   );
 };
 

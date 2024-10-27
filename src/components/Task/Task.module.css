@@ -1,23 +1,24 @@
- .container{
-    border: 1px solid var(--main);
-    border-radius: 5px;
-    padding: 10px;
+.container {
+  border: 1px solid var(--main);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 
- }
- 
- .problem {
-     margin: 0;
-     font-size: 16px;
- }
+.problem {
+  margin: 0;
+  font-size: 16px;
+}
 
 .btn {
-    margin-top: 10px;
-         padding: 5px 10px;
-         cursor: pointer;
-        background-color: var(--main);
-color: black;
-border: none;
-border-radius: 5px; }
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: var(--main);
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
 
 /* .solution {
 margin-top: 10px;
