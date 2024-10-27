@@ -52,24 +52,40 @@ console.log(counter)} while (counter < 10);
 
 const Cycles: React.FC = () => { 
 
-       const startGame = () => {
-    const random = Math.round(Math.random() * 100);
-let userValue: number;
+      const startGame = () => {
+  const random = Math.round(Math.random() * 100);
+  let userValue: number | null = null;
 
-    console.log(random); // Для налагодження
+  console.log(random); // Для налаживания
 
-    while (userValue !== random) {
-      userValue = parseInt(prompt('Введіть свою здогадку'), 10);
-
-      if (userValue === random) {
-        alert('Ти виграв!!!');
-      } else if (userValue > random) {
-        alert('Твоя здогадка завелика');
-      } else {
-        alert('Твоя здогадка менша');
-      }
+  // Цикл, продолжается пока пользователь не угадает число
+  while (userValue !== random) {
+    const input = prompt('Введіть свою здогадку');
+    
+    // Проверка: если input равен null, пользователь отменил ввод
+    if (input === null) {
+      alert("Гру скасовано");
+      break;
     }
-  };
+
+    // Парсим строку, проверяем, что это число
+    userValue = parseInt(input, 10);
+
+    if (isNaN(userValue)) {
+      alert("Будь ласка, введіть допустиме число.");
+      continue;
+    }
+
+    if (userValue === random) {
+      alert('Ти виграв!!!');
+    } else if (userValue > random) {
+      alert('Твоя здогадка завелика');
+    } else {
+      alert('Твоя здогадка менша');
+    }
+  }
+};
+
 
   return (
     <div className='container'>
