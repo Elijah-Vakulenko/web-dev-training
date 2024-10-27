@@ -29,20 +29,38 @@ while(price > targetPrice && !targetPrice < 800 ){
 }
   console.log('Добре, купую!');`
 
-const game = `const random = Math.round(Math.random() * 100);
- let userValue = null;
- console.log(random);
- while(userValue !== random){
-   userValue = parseInt(prompt('Введіть свою здогадку'), 10); 
-   
-   if (userValue === random) {
-     alert('Ти виграв!!!');
-   } else if (userValue > random) {
-    alert('Твоя здогадка завелика')
-  } else {
-    alert('Твоя здогадка менша')
+const game = `const startGame = () => {
+  const random = Math.round(Math.random() * 100);
+  let userValue: number | null = null;
+
+  console.log(random); // виводимо загадане число у консоль для перевірки роботи коду
+
+  while (userValue !== random) {
+    const input = prompt('Введіть свою здогадку');
+    
+    // Перевірка: якщо input дорівнює null, тоді відміняємо введення числа
+    if (input === null) {
+      alert("Гру скасовано");
+      break;
+    }
+//перетворюємо на введене число беспосередньо у тип даних number
+    userValue = parseInt(input, 10);
+
+    // якщо введено не числове значення, викликаємо попередження
+    if (isNaN(userValue)) {
+      alert("Будь ласка, введіть допустиме число.");
+      continue;
+    }
+
+    if (userValue === random) {
+      alert('Ти виграв!!!');
+    } else if (userValue > random) {
+      alert('Твоя здогадка завелика');
+    } else {
+      alert('Твоя здогадка менша');
+    }
   }
-  }`
+};`
 
 
 const doWhile = `let counter = 1
@@ -52,23 +70,20 @@ console.log(counter)} while (counter < 10);
 
 const Cycles: React.FC = () => { 
 
-      const startGame = () => {
+  const startGame = () => {
   const random = Math.round(Math.random() * 100);
   let userValue: number | null = null;
 
-  console.log(random); // Для налаживания
+  console.log(random); 
 
-  // Цикл, продолжается пока пользователь не угадает число
   while (userValue !== random) {
     const input = prompt('Введіть свою здогадку');
-    
-    // Проверка: если input равен null, пользователь отменил ввод
+
     if (input === null) {
       alert("Гру скасовано");
       break;
     }
 
-    // Парсим строку, проверяем, что это число
     userValue = parseInt(input, 10);
 
     if (isNaN(userValue)) {
