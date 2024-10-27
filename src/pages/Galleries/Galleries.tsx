@@ -1,11 +1,107 @@
 import React, { useState, useEffect } from 'react';
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import {dracula} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import s from './Galleries.module.css';
 import Modal from "react-modal";
 import clsx from "clsx";
 
-// Масив зображень
+const masonry = `
+npm install react-responsive-masonry
+
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+ 
+const images = [
+  { id: 1, url: '/img/chapter-two.jpg', title: 'Chapter two' },
+  { id: 2, url: '/img/coffee.jpg', title: 'Coffee' },
+  { id: 3, url: '/img/guitar.jpg', title: 'Guitar' }
+];
+
+<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 1023: 4, 1440: 5 }}>
+          <Masonry className={s.masonryGrid}>
+            {images.map((image: Image, index: number) => (
+              <div key={image.id} className={s.imageWrapper} onClick={() => handleImageClick(index, images)}>
+                <img
+                  src={image.url}
+                  alt={image.title}
+                  className={s.image}
+                />
+              </div>
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+`
+
+const randomGrid = `<div className={s.gridcontainer}>
+          {images2.map((image, index) => (
+            <div className={clsx(s.gridItem, s[\`gridItem\${randomNumbers[index]}\`])} key={image.id}>
+              <img
+                src={image.url}
+                alt={\`Image \${image.id}\`}
+                onClick={() => handleImageClick(index, images2)}
+              />
+            </div>
+          ))}
+        </div>`
+
+const backgroundGrid = `<div className={s.gridy}>
+  {images.map((image: Image, index: number) => {
+
+const getClassName = () => {
+      if (index % 5 === 0) return clsx(s.box, s.doubleRaw); 
+      if (index % 5 === 1) return clsx(s.box, s.doubleCol); 
+      if (index % 5 === 2) return s.box;                    
+      if (index % 5 === 3) return clsx(s.box, s.doubleRaw); 
+      if (index % 5 === 4) return clsx(s.box, s.doubleCol); 
+    };
+
+    return (
+      <div
+        key={image.id}
+        className={getClassName()}
+        style={{ backgroundImage: \`url(\${image.url})\` }}
+        onClick={() => handleImageClick(index, images)}
+      >{image.title}
+      </div>
+    );
+  })}
+</div>
+
+.gridy {
+  flex-basis: 50%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+}
+
+.box {
+  border-radius: 8px;
+  background-color: #222;
+  background-blend-mode: exclusion;
+  color: transparent;
+  background-size: cover;
+  background-position: top;
+  transition: all 2s ease-in-out;
+  &:hover {
+    background-position: center;
+    background-color: #999;
+    background-blend-mode: initial;
+    cursor: pointer;
+  }
+}
+
+.doubleRaw {
+  background-position: left;
+  grid-row: span 2;
+}
+
+.doubleCol {
+  grid-column: span 2;
+}
+`
+
 const images = [
   { id: 1, url: '/img/chapter-two.jpg', title: 'Chapter two' },
   { id: 2, url: '/img/coffee.jpg', title: 'Coffee' },
@@ -21,6 +117,25 @@ const images = [
   { id: 12, url: '/img/diary.jpg', title: 'Diary' }
 ];
 
+const images2 = [
+  { id: 1, url: '/img/coast.jpg', title: 'Coast' },
+  { id: 3, url: '/img/sakura.jpg', title: 'Sakura' },
+  { id: 4, url: '/img/lass.jpg', title: 'Lass' },
+  { id: 5, url: '/img/book-and-glasses.jpg', title: 'Book and Glasses' },
+  { id: 6, url: '/img/writerscorner.jpg', title: 'Writer\'s Corner' },
+  { id: 7, url: '/img/girlinglasses.jpg', title: 'Girl in Glasses' },
+  { id: 8, url: '/img/clock.jpg', title: 'Clock' },
+  { id: 9, url: '/img/plates.jpg', title: 'Plates' },
+  { id: 11, url: '/img/drawing.jpg', title: 'Drawing' },
+  { id: 12, url: '/img/dreamcatcher.jpg', title: 'Dreamcatchers' },
+  { id: 13, url: '/img/houseandlake.jpg', title: 'House and Lake' },
+  { id: 14, url: '/img/naturemort.jpg', title: 'Nature Mort' },
+  { id: 15, url: '/img/sunset.jpg', title: 'Sunset' },
+  { id: 17, url: '/img/usa.jpg', title: 'USA' },
+  { id: 18, url: '/img/prideandprejudice.jpg', title: 'Pride and Prejudice' }
+];
+
+
 interface Image {
   id: number;
   url: string;
@@ -30,11 +145,17 @@ interface Image {
 const Galleries: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-
+  const [selectedGallery, setSelectedGallery] = useState<Image[] | null>(null); 
   const [randomNumbers] = useState<number[]>(() => 
-    images.map(() => Math.floor(Math.random() * 6) + 1)
+    images2.map(() => Math.floor(Math.random() * 6) + 1)
   );
-  // Налаштування стилів для модального вікна
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSolution = () => {
+    setIsOpen(!isOpen);
+  };
+
   const customStyles = {
     content: {
       padding: "0",
@@ -51,34 +172,31 @@ const Galleries: React.FC = () => {
     },
   };
 
-  // Обробка кліку на зображення для відкриття модального вікна
-  const handleImageClick = (index: number) => {
+  const handleImageClick = (index: number, gallery: Image[]) => {
     setSelectedImageIndex(index);
+    setSelectedGallery(gallery); 
     setIsModalOpen(true);
   };
 
-  // Закриття модального вікна
   const closeModal = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setIsModalOpen(false);
     setSelectedImageIndex(null);
+    setSelectedGallery(null);
   };
 
-  // Перехід до наступного зображення
   const handleNext = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((prevIndex) => (prevIndex! + 1) % images.length);
+    if (selectedImageIndex !== null && selectedGallery) {
+      setSelectedImageIndex((prevIndex) => (prevIndex! + 1) % selectedGallery.length);
     }
   };
 
-  // Перехід до попереднього зображення
   const handlePrev = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((prevIndex) => (prevIndex! - 1 + images.length) % images.length);
+    if (selectedImageIndex !== null && selectedGallery) {
+      setSelectedImageIndex((prevIndex) => (prevIndex! - 1 + selectedGallery.length) % selectedGallery.length);
     }
   };
 
-  // Обробка натискань клавіш (стрілки для навігації та Esc для закриття)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen) return;
@@ -92,7 +210,6 @@ const Galleries: React.FC = () => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
@@ -106,7 +223,7 @@ const Galleries: React.FC = () => {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 1023: 4, 1440: 5 }}>
           <Masonry className={s.masonryGrid}>
             {images.map((image: Image, index: number) => (
-              <div key={image.id} className={s.imageWrapper} onClick={() => handleImageClick(index)}>
+              <div key={image.id} className={s.imageWrapper} onClick={() => handleImageClick(index, images)}>
                 <img
                   src={image.url}
                   alt={image.title}
@@ -116,62 +233,86 @@ const Galleries: React.FC = () => {
             ))}
           </Masonry>
         </ResponsiveMasonry>
+        <button style={{ margin: '10px 0' }} className='btn' onClick={toggleSolution}>
+          {isOpen ? 'Сховати' : 'Показати структуру та стилі'}
+        </button>
+        {isOpen && <SyntaxHighlighter language="jsx" style={dracula}>{masonry}</SyntaxHighlighter>}
       </div>
+{/* ---------------------------------------------------------------------------------- */}
       <div>
         <h2 className="title">Random size Grid</h2>
         <div className={s.gridcontainer}>
-        {images.map((image, index) => (
-          <div className={clsx(s.gridItem, s[`gridItem${randomNumbers[index]}`])} key={image.id}>
-            <img
-              src={image.url}
-              alt={`Image ${image.id}`}
-              onClick={() => handleImageClick(index)}
-            />
-          </div>
-        ))}
-        <Modal
-          style={customStyles}
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          overlayClassName={s.overlay}
-          contentLabel="Image Modal"
-          appElement={document.getElementById("root") || undefined} // Перевірка на null
-        >
-          {selectedImageIndex !== null && (
-            <div className={s.modalcontent}>
-              <button className={s.prevbutton} onClick={handlePrev}>←</button>
-              <img 
-                src={images[selectedImageIndex].url} 
-                alt={`Image ${images[selectedImageIndex].id}`}
-                style={{ maxWidth: "90vw", maxHeight: "90vh" }}
+          {images2.map((image, index) => (
+            <div className={clsx(s.gridItem, s[`gridItem${randomNumbers[index]}`])} key={image.id}>
+              <img
+                src={image.url}
+                alt={`Image ${image.id}`}
+                onClick={() => handleImageClick(index, images2)}
               />
-              <button className={s.nextbutton} onClick={handleNext}>→</button>
-              <button className={s.closebutton} onClick={closeModal}>X</button>
             </div>
-          )}
-        </Modal>
+          ))}
+        </div>
       </div>
-      <div>
-          <h2 className="title">Grid + img as a background</h2>
-      <div style={{ backgroundImage: `url('https://example.com/sample.jpg')` }}></div>
+      <button style={{ margin: '10px 0' }} className='btn' onClick={toggleSolution}>
+          {isOpen ? 'Сховати' : 'Показати структуру та стилі'}
+        </button>
+        {isOpen && <SyntaxHighlighter language="jsx" style={dracula}>{randomGrid}</SyntaxHighlighter>}
 
-       {images.map((image: Image, index: number) => (
-  <div
-    key={image.id}
-    className={s.gridBG}
-    onClick={() => handleImageClick(index)}
-  >
-    <div
-      className={clsx(s.box)}
-      style={{ backgroundImage: `url(${image.url})` }}
-    ></div>
-  </div>
-))}
+      <Modal
+        style={customStyles}
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        overlayClassName={s.overlay}
+        contentLabel="Image Modal"
+        appElement={document.getElementById("root") || undefined}
+      >
+        {selectedImageIndex !== null && selectedGallery && (
+          <div className={s.modalcontent}>
+            <button className={s.prevbutton} onClick={handlePrev}>←</button>
+            <img 
+              src={selectedGallery[selectedImageIndex].url} 
+              alt={`Image ${selectedGallery[selectedImageIndex].id}`}
+              style={{ maxWidth: "90vw", maxHeight: "90vh" }}
+            />
+            <button className={s.nextbutton} onClick={handleNext}>→</button>
+            <button className={s.closebutton} onClick={closeModal}>X</button>
+          </div>
+        )}
+      </Modal>
+{/* ---------------------------------------------------------------------------------- */}
+      
+<h2 className="title">Grid pattern + img as a background</h2>
+<div className={s.gridy}>
+  {images.map((image: Image, index: number) => {
 
-        
+const getClassName = () => {
+      if (index % 5 === 0) return clsx(s.box, s.doubleRaw); 
+      if (index % 5 === 1) return clsx(s.box, s.doubleCol); 
+      if (index % 5 === 2) return s.box;                    
+      if (index % 5 === 3) return clsx(s.box, s.doubleRaw); 
+      if (index % 5 === 4) return clsx(s.box, s.doubleCol); 
+    };
+
+    return (
+      <div
+        key={image.id}
+        className={getClassName()}
+        style={{ backgroundImage: `url(${image.url})` }}
+        onClick={() => handleImageClick(index, images)}
+      >{image.title}
       </div>
-      </div>
-  </div>
+    );
+  })}
+</div>
+      <button style={{ margin: '10px 0' }} className='btn' onClick={toggleSolution}>
+          {isOpen ? 'Сховати' : 'Показати структуру та стилі'}
+        </button>
+        {isOpen && <SyntaxHighlighter language="jsx" style={dracula}>{backgroundGrid}</SyntaxHighlighter>}
+      
+    </div>
+
+
+    
   );
 };
 
