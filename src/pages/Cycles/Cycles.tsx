@@ -54,7 +54,7 @@ const Cycles: React.FC = () => {
 
        const startGame = () => {
     const random = Math.round(Math.random() * 100);
-    let userValue = null;
+    let userValue;
     console.log(random); // Для налагодження
 
     while (userValue !== random) {
