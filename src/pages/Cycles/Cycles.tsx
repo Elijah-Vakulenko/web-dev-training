@@ -54,7 +54,8 @@ const Cycles: React.FC = () => {
 
        const startGame = () => {
     const random = Math.round(Math.random() * 100);
-    let userValue;
+let userValue: number | null = null;
+
     console.log(random); // Для налагодження
 
     while (userValue !== random) {
@@ -145,7 +146,7 @@ const Cycles: React.FC = () => {
   }`}></Task>
         <Task problem='Напиши скрипт, який підраховує суму всіх парних чисел, які входять в діапазон чисел у змінних від min до max. Наприклад, якщо min=0 и max=5, то діапазон 0-5, і в ньому два парних числа - 2 і 4, їх сума 6. const min = 10; const max = 50; let total = 0;' solution={`const min = 10;
 const max = 50;
-let total = 0;
+  let total = 0;
 
   for (let i = min; i <= max; i++){
     if (i % 2 === 0) { total += i; }
