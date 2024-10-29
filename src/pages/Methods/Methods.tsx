@@ -161,7 +161,7 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
   const hours = String(Math.floor(userNumber / 60)).padStart(2, '0');
   //↑ переводимо у рядок, округлюємо, ділимо введене число на 60
   const minutes = String(userNumber % 60).padStart(2, '0');
-    //↑ переводимо у рядок, визначаємо залишок від ділення на 60 для введеного числа
+  //↑ переводимо у рядок, визначаємо залишок від ділення на 60 для введеного числа
   const convertedTime = `${hours}:${minutes}`;
   console.log(convertedTime);
 // Додатково ↓
