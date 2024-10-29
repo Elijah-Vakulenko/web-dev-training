@@ -155,6 +155,7 @@ const Methods: React.FC = () => {
 
   const startConverter = () => { 
     const userNumber = prompt('Введіть своє число').trim();
+    const userNumber = userInput !== null ? Number(userInput) : NaN;
   console.log(userNumber);
 
   const hours = String(Math.floor(userNumber / 60)).padStart(2, '0');
