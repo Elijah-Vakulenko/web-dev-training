@@ -167,7 +167,7 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
 // Додатково ↓
   if (userNumber < 5999) {
     alert(convertedTime);
-  } else if (isNaN(userNumber) || userNumber === '') {
+  } else if (isNaN(userNumber)) {
     alert('you should type a number')
   } else {
     alert('Your Number is too big. The program has a deal only with hours and minutes in a 00:00 format.')
