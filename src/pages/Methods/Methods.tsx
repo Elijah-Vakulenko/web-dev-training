@@ -145,8 +145,7 @@ lastIndexOf() - шукає з кінця.
 const trim = `Видаляє зайві пробіли з початку і кінця. 
 
 `
-
-
+const pad = ``
 
 
 
@@ -154,9 +153,25 @@ const trim = `Видаляє зайві пробіли з початку і кі
 
 const Methods: React.FC = () => {
 
+  const startConverter = () => { 
+    const userNumber = prompt('Введіть своє число').trim();
+  console.log(userNumber);
 
-
-
+  const hours = String(Math.floor(userNumber / 60)).padStart(2, '0');
+  //↑ переводимо у рядок, округлюємо, ділимо введене число на 60
+  const minutes = String(userNumber % 60).padStart(2, '0');
+    //↑ переводимо у рядок, визначаємо залишок від ділення на 60 для введеного числа
+  const convertedTime = `${hours}:${minutes}`;
+  console.log(convertedTime);
+// Додатково ↓
+  if (userNumber < 5999) {
+    alert(convertedTime);
+  } else if (isNaN(userNumber) || userNumber === '') {
+    alert('you should type a number')
+  } else {
+    alert('Your Number is too big. The program has a deal only with hours and minutes in a 00:00 format.')
+  }
+  }
 
   return (
      <div className='container'>
@@ -199,6 +214,8 @@ const Methods: React.FC = () => {
           <SyntaxHighlighter language="jsx" style={dracula}>{startsEnds}</SyntaxHighlighter>
           <h3>trim()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{trim}</SyntaxHighlighter>
+          <h3>padStart()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{pad}</SyntaxHighlighter>
         </div>
 
         <div>
@@ -225,7 +242,7 @@ if (!url.endsWith('/') && url.includes('my-site')) {
 }
 console.log(url);`}></Task>
           <Task
-            problem=''
+            problem='Перевірити чи містять рядки заборонені ключові слова. const blacklistedWord1 = spam; const blacklistedWord2 = sale;'
           solution={`const blacklistedWord1 = 'spam';
 const blacklistedWord2 = 'sale';
 
@@ -244,8 +261,26 @@ if (includesBanWords) {
   console.log(message);
 }`}></Task>
           <Task
-            problem=''
-          solution={``}></Task>
+            problem='Напишіть програму, яка отримає від користувача число(кількість хвилин) та виведе в консоль рядок у форматі годин та хвилин. Наприклад 70 === 01:10.'
+          solution={`const userNumber = prompt('Введіть своє число').trim();
+  console.log(userNumber);
+
+  const hours = String(Math.floor(userNumber / 60)).padStart(2, '0');
+  //↑ переводимо у рядок, округлюємо, ділимо введене число на 60
+  const minutes = String(userNumber % 60).padStart(2, '0');
+    //↑ переводимо у рядок, визначаємо залишок від ділення на 60 для введеного числа
+  const convertedTime = \`\${hours}:\${minutes}\`;
+  console.log(convertedTime);
+// Додатково ↓
+  if (userNumber < 5999) {
+    alert(convertedTime);
+  } else if (isNaN(userNumber) || userNumber === '') {
+    alert('you should type a number')
+  } else {
+    alert('Your Number is too big. The program has a deal only with hours and minutes in a 00:00 format.')
+  }
+` }></Task>
+          <button style={{ margin: '8px 0'}} className='btn' type="button" onClick={startConverter}>Запустити TimeConverter</button>
           <Task
             problem=''
           solution={``}></Task>

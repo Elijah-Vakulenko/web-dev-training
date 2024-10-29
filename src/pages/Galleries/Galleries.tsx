@@ -6,6 +6,9 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import s from './Galleries.module.css';
 import Modal from "react-modal";
 import clsx from "clsx";
+import { SlArrowLeftCircle } from "react-icons/sl";
+import { SlArrowRightCircle } from "react-icons/sl";
+import { SlClose } from "react-icons/sl";
 
 const masonry = `
 npm install react-responsive-masonry
@@ -268,14 +271,14 @@ const Galleries: React.FC = () => {
       >
         {selectedImageIndex !== null && selectedGallery && (
           <div className={s.modalcontent}>
-            <button className={s.prevbutton} onClick={handlePrev}>←</button>
+            <button className={s.prevbutton} onClick={handlePrev}><SlArrowLeftCircle /></button>
             <img 
               src={selectedGallery[selectedImageIndex].url} 
               alt={`Image ${selectedGallery[selectedImageIndex].id}`}
               style={{ maxWidth: "90vw", maxHeight: "90vh" }}
             />
-            <button className={s.nextbutton} onClick={handleNext}>→</button>
-            <button className={s.closebutton} onClick={closeModal}>X</button>
+            <button className={s.nextbutton} onClick={handleNext}><SlArrowRightCircle /></button>
+            <button className={s.closebutton} onClick={closeModal}><SlClose /></button>
           </div>
         )}
       </Modal>

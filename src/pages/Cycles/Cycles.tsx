@@ -183,7 +183,21 @@ const max = 50;
     if (i % 2 === 0) { total += i; }
   }
 console.log(total) //630`}></Task>
-    <Task problem='' solution={``}></Task>
+        <Task problem='Напишіть цикл, який виводить у консоль усі парні числа від min до max. const max = 50; const min = 23;'
+          solution={`const max = 50;
+const min = 23;
+
+for (let i = min; i <= max; i++){
+    if (i % 2 ===0) {
+        console.log(i)
+    }
+}`}></Task>
+        <Task problem=''
+          solution={``}></Task>
+        <Task problem=''
+          solution={``}></Task>
+        <Task problem=''
+          solution={``}></Task>
       </div>
 
     </div>
