@@ -12,6 +12,7 @@
 }
 
 .image {
+  border-radius: 8px;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -150,7 +151,7 @@
   transition: all 2s ease-in-out;
   &:hover {
     background-position: center;
-    background-color: #999;
+    background-color: rgba(165, 236, 100, 0.5);
     background-blend-mode: initial;
     cursor: pointer;
   }

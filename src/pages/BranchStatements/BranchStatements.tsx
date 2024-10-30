@@ -3,6 +3,7 @@ import s from './BranchStatements.module.css'
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia, dracula, vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Task from '../../components/Task/Task';
 
 const ifStatement = `
 const age = 10;
@@ -150,13 +151,32 @@ switch(weekDay){
 
 const BranchStatements: React.FC = () => {
   
-const [age, setAge] = useState<string>(''); // Стан для віку, зберігається як рядок
+const [age, setAge] = useState<string>(''); 
 
-  // Функція для обробки відправлення форми
+  const startUserCheck = () => { 
+    const loginRequest = prompt('Type your login')?.trim();
+const correctLogin = 'Адмін';
+const correctPassword = 'Я головний';
+
+  if (loginRequest === correctLogin) {
+    const passwordRequest = prompt('Enter your password')?.trim();
+    if (passwordRequest === correctPassword) {
+      alert('Здрастуйте!');
+    } else if (passwordRequest === '' || passwordRequest === null) {
+      alert('Скасовано');
+    } else {
+      alert('Невірний пароль!');
+    } 
+  } else if (loginRequest === '' || loginRequest === null) {alert('Скасовано');
+} else {
+  alert('Я вас не знаю');
+  };
+  }
+  
   const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault(); // Запобігаємо перезавантаженню сторінки
+    event.preventDefault(); 
 
-    const yourAge = Number(age); // Перетворюємо рядок у число
+    const yourAge = Number(age); 
 
     if (yourAge < 18) {
       alert('Ооо... так тобі ще не достатньо рочків...');
@@ -210,6 +230,64 @@ const [age, setAge] = useState<string>(''); // Стан для віку, збе�
         <div className="input">
           <SyntaxHighlighter language="jsx" style={okaidia}>{switchCase}</SyntaxHighlighter>
         </div>
+      </div>
+      <div>
+        <h2 className="title">Задачі по розгалудженню</h2>
+        <Task problem='Напишіть код, який: запитуватиме логін за допомогою prompt-та логувати результат у консоль браузера. Якщо відвідувач вводить "Адмін",
+  то prompt запитує пароль.Якщо нічого не ввели або натиснуто клавішу Esc - вивести рядок "Скасовано". В іншому випадку вивести рядок "Я вас не знаю".
+    
+  Пароль перевіряти так:
+  Якщо введено пароль "Я головний",
+  то вивести рядок "Здрастуйте!"
+  інакше виводити рядок "Невірний пароль!"' solution={`const loginRequest = prompt('Type your login')?.trim();
+const correctLogin = 'Адмін';
+const correctPassword = 'Я головний';
+
+//Зверніть увагу, що в нас конструкція else if в тілі якої ще одна конструкція else if
+
+//↓ Перша частина (якщо логін - Адмін)
+  if (loginRequest === correctLogin) {
+    const passwordRequest = prompt('Enter your password')?.trim();
+    if (passwordRequest === correctPassword) {
+      alert('Здрастуйте!');
+    } else if (passwordRequest === '' || passwordRequest === null) {
+      alert('Скасовано');
+    } else {
+      alert('Невірний пароль!');
+    } // друга частина - якщо поле пусте чи логін не відповідає correctLogin
+  } else if (loginRequest === '' || loginRequest === null) {alert('Скасовано');
+} else {
+  alert('Я вас не знаю');
+  };
+  
+  //Щоб подивитися в дії натисніть на кнопку User check`}></Task>
+        <button style={{margin : '8px 0'}} className='btn' onClick={startUserCheck}>User check</button>
+        <Task problem='Напишіть через свіч пошук автора мови програмування. Пишемо назву мови у шаблонному рядку отримує відповідь мова та автор:
+ PHP  - Расмус Лердорф;
+C#  - група інженерів компанії Microsoft під керівництвом Андерса Хейлсберга та Скотта Вільтаумота;
+ JS - Брендан Ейх;
+ Swift  - Кріс Латтнер;
+ Java  - Джеймс Гослінг; Python Гвідо ван Россум' solution={`function findAuthor(language) {
+    switch (language) {
+        case "C#":
+            return "група інженерів компанії Microsoft під керівництвом Андерса Хейлсберга та Скотта Вільтаумота";
+        case "PHP":
+            return "Расмус Лердорф";
+        case "Swift":
+            return "Кріс Латтнер";
+        case "JS":
+            return "Брендан Ейх";
+        case "Java":
+            return "Джеймс Гослінг";
+        case "Python":
+            return "Гвідо ван Россум";
+        default:
+            return "None";
+    }
+}
+ console.log(findAuthor("dfd"));`}></Task>
+        <Task problem='' solution={``}></Task>
+          
       </div>
     </div>
   )

@@ -9,7 +9,6 @@ const Test: React.FC = () => {
     
 
 
-
     return (
       <div className='container'>
           <div className='center'><GoHomeBtn /></div>
