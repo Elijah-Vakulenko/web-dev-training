@@ -1,5 +1,21 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar {
+  background-color: var(--gray);
+  /* position: fixed; */
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--main);
+  height: 50px;
+  border: 1px dashed var(--main);
+  border-radius: 8px;
 }

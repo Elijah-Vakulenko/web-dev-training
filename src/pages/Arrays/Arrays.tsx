@@ -1,30 +1,18 @@
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import s from './Arrays.module.css'
 
-// Функция для выполнения первого скрипта
-const calculateTotalScript1 = (): string => {
-  const cart = [54, 28, 185, 78, 92, 17, 120];
-  let total = 0;
+const arr = `
+const borsh = ['potato', 'beetroot', 
+'carrot', 'onion', 'chicken', 
+'pork', 'seasonings', 'salt', 
+'sour cream', 'water', 'beans', 
+'cabbage', 'spring onion']
 
-  for (let i = 0; i < cart.length; i += 1) {
-    total += cart[i];
-  }
-
-  return `Total: ${total}`;
-};
-
-// Функция для выполнения второго скрипта
-const calculateTotalScript2 = (): string => {
-  const cart = [54, 28, 92, 17];
-  let total = 0;
-
-  for (const item of cart) {
-    total += item;
-  }
-
-  return `Total: ${total}`;
-};
+console.table(borsh)
+//В консолі побачимо таку табличку →
+`
 
 const Arrays: React.FC = () => {
   const script1 = `
@@ -45,20 +33,38 @@ for (const item of cart) {
 console.log("Total:", total);
 `;
 
+  const borsh = ['potato', 'beetroot', 'carrot', 'onion', 'chicken',
+    'pork', 'seasonings', 'salt', 'sour cream', 'water', 'beans',
+    'cabbage', 'spring onion'];
+  
   return (
     <div className="container">
       <GoHomeBtn />
       <h2>Arrays / Масиви</h2>
+<div className={s.table}>
+  <SyntaxHighlighter language="jsx" style={dracula}>{arr}</SyntaxHighlighter>
+  <table>
+          <thead>
+            <tr>
+              <th>(index)</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {borsh.map((value, index) => (
+              <tr key={index}>
+                <td>{index}</td>
+                <td style={{color : 'tomato'}}>'{value}'</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+</div>
 
-      {/* Первый скрипт */}
       <div className="task">
         <div>
           <h3>Script 1</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{script1}</SyntaxHighlighter>
-        </div>
-        <div>
-          <h3>output Output:</h3>
-          <pre className="output">{calculateTotalScript1()}</pre>
         </div>
       </div>
 
@@ -66,10 +72,6 @@ console.log("Total:", total);
         <div>
           <h3>Script 2</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{script2}</SyntaxHighlighter>
-        </div>
-        <div>
-          <h3>output Output:</h3>
-          <pre className="output">{calculateTotalScript2()}</pre>
         </div>
       </div>
     </div>

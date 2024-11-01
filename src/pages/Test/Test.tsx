@@ -7,7 +7,11 @@ const Test: React.FC = () => {
   
   const task = ``
     
+const borsh = ['potato', 'beetroot', 'carrot', 'onion', 'chicken', 
+'pork', 'seasonings', 'salt', 'sour cream', 'water', 'beans', 
+'cabbage', 'spring onion']
 
+  console.table(borsh);
 
     return (
       <div className='container'>

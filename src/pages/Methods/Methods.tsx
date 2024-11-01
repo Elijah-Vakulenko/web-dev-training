@@ -145,7 +145,15 @@ lastIndexOf() - шукає з кінця.
 const trim = `Видаляє зайві пробіли з початку і кінця. 
 
 `
-const pad = ``
+const pad = `Значення для форматування зазначаються через кому. 
+Перше значення - це кількість символів в рядку яка має бути, 
+а друге - який саме символ має рендеретись, якщо кількість символів в рядку меньше ніж зазначено, пишеться в лапках.
+
+const hours = 5;
+const minutes = 7;
+const convertedTime = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0');
+console.log(convertedTime); //05:07
+`
 
 
 
@@ -177,6 +185,20 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
   return (
      <div className='container'>
       <GoHomeBtn />
+      <div >
+        <ul className={s.sidebar}>
+          <li><a href="#math">Math</a></li>
+          <li><a href="#replace">replace()</a></li>
+          <li><a href="#fix">toFixed()</a></li>
+          <li><a href="#slice">slice()</a></li>
+          <li><a href="#case">toLowerCase() / toUpperCase()</a></li>
+          <li><a href="#includes">includes()</a></li>
+          <li><a href="#with">startsWith() / endsWith()</a></li>
+          <li><a href="#index">indexOf()</a></li>
+          <li><a href="#trim">trim()</a></li>
+          <li><a href="#pad">padStart()</a></li>
+        </ul>
+      </div>
      <div className={s.wrapper}>
         <div className='input'>
           <h3>Перетворення у рядок</h3>
@@ -185,37 +207,38 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
         <div className='input'>
           <h3>Перетворення у число</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{num}</SyntaxHighlighter>
-          <h3>методи parseInt / parseFloat</h3>
+          <h3 id='parse'>методи parseInt / parseFloat</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{strToNum}</SyntaxHighlighter>
         </div>
         <div className='input'>
-          <h3>Math</h3>
+          <h3 id='math'>Math</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{math}</SyntaxHighlighter>
         </div>
         <div className='input'>
-          <h3>Заміна значень - replace()</h3>
+          <h3 id='replace'>Заміна значень - replace()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{repl}</SyntaxHighlighter>
         </div>
         <div className='input'>
-          <h3>Кількість знаків після коми - toFixed()</h3>
+          <h3 id='fix'>Кількість знаків після коми - toFixed()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{fix}</SyntaxHighlighter>
         </div>
 
         <div className='input'>
           <h2>Методи рядків</h2>
-          <h3>slice()</h3>
+          <h3 id='slice'>slice()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{slice}</SyntaxHighlighter>
-          <h3>toLowerCase() / toUpperCase()</h3>
+          <h3 id='case'>toLowerCase() / toUpperCase()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{lowerUpper}</SyntaxHighlighter>
-          <h3>includes()</h3>
+          <h3 id='includes'>includes()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{includes}</SyntaxHighlighter>
-          <h3>indexOf()</h3>
+          <h3 id='index'>indexOf()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{indOf}</SyntaxHighlighter>
-          <h3>startsWith() / endsWith()</h3>
+          <h3 id='with'>startsWith() / endsWith()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{startsEnds}</SyntaxHighlighter>
-          <h3>trim()</h3>
+          <h3 id='trim'>trim()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{trim}</SyntaxHighlighter>
-          <h3>padStart()</h3>
+          <h3 id='pad' >padStart()</h3>
+          <p className='description'>Форматує рядок, додаючи на початок рядку (padStart) чи в кінець рядку (padEnd) зазначені символи, підганяючи його до відповідного зразку/формату. Найчастіший приклад використання це оформлення дати та часу, де потрібне двознакове вираження (5 годин перетворити на '05')</p>
           <SyntaxHighlighter language="jsx" style={dracula}>{pad}</SyntaxHighlighter>
         </div>
 
@@ -285,6 +308,12 @@ if (includesBanWords) {
           <Task
             problem=''
           solution={``}></Task>
+        </div>
+ <div className='input'>
+          <h2>Методи масивів</h2>
+          <h3 id='slice'>slice()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{}</SyntaxHighlighter>
+          
         </div>
 
      </div>

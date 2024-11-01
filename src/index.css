@@ -126,17 +126,18 @@ body {
   border-radius: 8px;
   color: #a5ecc8;
   background-color: transparent;
+
+  &:hover {
+    color: black;
+    background-color: #a5ecc8;
+  }
 }
 
-.btn:hover {
-  color: black;
-  background-color: #a5ecc8;
-}
 /* -------------------------------------------------------------------------- */
-.center {
+/* .center {
   display: flex;
   justify-content: center;
-}
+} */
 
 .card ul > li:hover {
   color: #a5ecc8;
@@ -145,6 +146,7 @@ body {
 /* -------------------------------------------------------------------------- */
 .link::after {
   content: "";
+  border-radius: 8px;
   display: block;
   width: 0;
   height: 3px;
@@ -176,7 +178,6 @@ body {
   }
 
   @media screen and (min-width: 1024px) {
-    margin-top: 30px;
     margin-bottom: 20px;
   }
 
@@ -184,14 +185,23 @@ body {
   }
 }
 
-.description {
-  @media screen and (min-width: 768px) {
-    margin-bottom: 15px;
-  }
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
 
-  @media screen and (min-width: 1024px) {
-  }
+table th,
+table td {
+  color: black;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
 
-  @media screen and (min-width: 1440px) {
-  }
+table tr {
+  background-color: white;
+}
+
+/* Сірий фон для непарних рядків */
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
 }

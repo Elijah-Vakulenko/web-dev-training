@@ -150,6 +150,7 @@ const Operators: React.FC = () => {
 
           `}>
           </Task>
+          
         </li>
 
           </ul>

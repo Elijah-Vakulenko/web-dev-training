@@ -5,8 +5,7 @@ import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Tags: React.FC = () => {
 
-  const fieldsetTag = `
-<fieldset>
+  const fieldsetTag = `<fieldset>
   <legend>Friends</legend>
   <ul class="List">
     <li>Chandler Bing</li>
