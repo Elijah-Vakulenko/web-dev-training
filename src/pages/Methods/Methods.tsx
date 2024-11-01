@@ -312,7 +312,7 @@ if (includesBanWords) {
  <div className='input'>
           <h2>Методи масивів</h2>
           <h3 id='slice'>slice()</h3>
-          <SyntaxHighlighter language="jsx" style={dracula}>{}</SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx" style={dracula}>{slice}</SyntaxHighlighter>
           
         </div>
 
