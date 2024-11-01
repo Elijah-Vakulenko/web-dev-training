@@ -7,12 +7,39 @@ const arr = `
 const borsh = ['potato', 'beetroot', 
 'carrot', 'onion', 'chicken', 
 'pork', 'seasonings', 'salt', 
-'sour cream', 'water', 'beans', 
-'cabbage', 'spring onion']
+'sour cream', 'tap water', 'beans', 
+'cabbage', 'spring onion'];
+
+//Дістаємо значення елементк масиву за його індексом:
+console.log(borsh[0]); //'potato'
+
+//Перевизначення елементу:
+borsh[9] = water;
 
 console.table(borsh)
 //В консолі побачимо таку табличку →
 `
+
+const arr2 = `const friends = ['Ross Geller', 'Rachel Green', 
+'Chandler Bing', 'Monica Geller', 'Joe Tribiani', 'Phoebe Buffey'];
+
+console.log(friends.length) //6
+
+//Індекс останнього елемента:
+console.log(friends.length - 1) //5
+console.log(friends[5]) //'Phoebe Buffey'
+
+
+//Додавання елементу:
+friends[6] = 'Mike';
+console.log(friends); 
+//'Ross Geller', 'Rachel Green', 'Chandler Bing', 'Monica Geller', 'Joe Tribiani', 'Phoebe Buffey', 'Mike'
+
+//Видалення елементу:
+delete friends[6];
+
+`
+
 
 const Arrays: React.FC = () => {
   const script1 = `
@@ -40,7 +67,8 @@ console.log("Total:", total);
   return (
     <div className="container">
       <GoHomeBtn />
-      <h2>Arrays / Масиви</h2>
+      <h2 className='title'>Arrays / Масиви</h2>
+      <p className='description'> Масиви це складні типи даних. Значення масиву мають свою нумерацію, яка називається індексом. Нумерація починається з нуля. Тобто перший елемент масиву має індекс [0]. </p>
 <div className={s.table}>
   <SyntaxHighlighter language="jsx" style={dracula}>{arr}</SyntaxHighlighter>
   <table>
@@ -59,7 +87,9 @@ console.log("Total:", total);
             ))}
           </tbody>
         </table>
-</div>
+      </div>
+      <p>Довжину масиву для різних операцій дістаємо за допомогою властивості 'length'.</p>
+      <SyntaxHighlighter language="jsx" style={dracula}>{arr2}</SyntaxHighlighter>
 
       <div className="task">
         <div>

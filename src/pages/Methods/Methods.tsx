@@ -155,7 +155,17 @@ const convertedTime = String(hours).padStart(2, '0') + ':' + String(minutes).pad
 console.log(convertedTime); //05:07
 `
 
+const join = ``
 
+const split = ``
+
+const sliceArr = ``
+
+const concat = ``
+
+const indexArr = ``
+  
+const push = ``
 
 
 
@@ -185,19 +195,38 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
   return (
      <div className='container'>
       <GoHomeBtn />
-      <div >
-        <ul className={s.sidebar}>
-          <li><a href="#math">Math</a></li>
-          <li><a href="#replace">replace()</a></li>
-          <li><a href="#fix">toFixed()</a></li>
-          <li><a href="#slice">slice()</a></li>
-          <li><a href="#case">toLowerCase() / toUpperCase()</a></li>
-          <li><a href="#includes">includes()</a></li>
-          <li><a href="#with">startsWith() / endsWith()</a></li>
-          <li><a href="#index">indexOf()</a></li>
-          <li><a href="#trim">trim()</a></li>
-          <li><a href="#pad">padStart()</a></li>
-        </ul>
+      <div className={s.sidebar}>
+       <div className={s.anchor}>
+          <h4>Number methods:</h4>
+          <ul className={s.list}>
+            <li><a className={s.link} href="#math">Math</a></li>
+            <li><a className={s.link} href="#fix">toFixed()</a></li>
+          </ul>
+       </div>
+       <div className={s.anchor}>
+          <h4>String methods:</h4>
+          <ul className={s.list}>
+            <li><a className={s.link} href="#replace">replace()</a></li>
+            <li><a className={s.link} href="#slice">slice()</a></li>
+            <li><a className={s.link} href="#case">toLowerCase() / toUpperCase()</a></li>
+            <li><a className={s.link} href="#includes">includes()</a></li>
+            <li><a className={s.link} href="#with">startsWith() / endsWith()</a></li>
+            <li><a className={s.link} href="#index">indexOf()</a></li>
+            <li><a className={s.link} href="#trim">trim()</a></li>
+            <li><a className={s.link} href="#pad">padStart()</a></li>
+          </ul>
+       </div>
+       <div className={s.anchor}>
+          <h4>Array methods:</h4>
+          <ul className={s.list}>
+            <li><a className={s.link} href="#join">join()</a></li>
+            <li><a className={s.link} href="#sliceArr">slice()</a></li>
+            <li><a className={s.link} href="#split">split()</a></li>
+            <li><a className={s.link} href="#concat">concat()</a></li>
+            <li><a className={s.link} href="#push">push() / pop()</a></li>
+            <li><a className={s.link} href="#indexArr">indexOf()</a></li>
+          </ul>
+       </div>
       </div>
      <div className={s.wrapper}>
         <div className='input'>
@@ -305,17 +334,32 @@ if (includesBanWords) {
   }
 ` }></Task>
           <button style={{ margin: '8px 0'}} className='btn' type="button" onClick={startConverter}>Запустити TimeConverter</button>
-          <Task
-            problem=''
-          solution={``}></Task>
+          
         </div>
  <div className='input'>
           <h2>Методи масивів</h2>
-          <h3 id='slice'>slice()</h3>
-          <SyntaxHighlighter language="jsx" style={dracula}>{slice}</SyntaxHighlighter>
-          
+          <h3 id='join'>join()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{join}</SyntaxHighlighter>
+          <h3 id='split'>split()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{split}</SyntaxHighlighter>
+          <h3 id='sliceArr'>slice()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{sliceArr}</SyntaxHighlighter>
+          <h3 id='concat'>concat()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{concat}</SyntaxHighlighter>
+          <h3 id='indexArr'>indexOf()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{indexArr}</SyntaxHighlighter>
+          <h3 id='push'>push()/pop()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{push}</SyntaxHighlighter>
         </div>
-
+<Task
+            problem=''
+          solution={``}></Task>
+        <Task
+            problem=''
+          solution={``}></Task>
+        <Task
+            problem=''
+          solution={``}></Task>
      </div>
       
 

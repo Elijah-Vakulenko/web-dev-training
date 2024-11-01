@@ -10,12 +10,25 @@
   padding: 10px;
   margin: 10px 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 8px;
-  align-items: center;
-  justify-content: center;
   color: var(--main);
-  height: 50px;
+
   border: 1px dashed var(--main);
   border-radius: 8px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.link:hover {
+  color: var(--pink);
+}
+
+.anchor {
+  display: flex;
+  gap: 8px;
 }
