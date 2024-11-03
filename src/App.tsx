@@ -2,10 +2,12 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { DNA } from 'react-loader-spinner';
 
+
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const Arrays = lazy(() => import('./pages/Arrays/Arrays'));
 const Tags = lazy(() => import('./pages/Tags/Tags'));
 const Text = lazy(() => import('./pages/Text/Text'));
+const QuickGuide = lazy(() => import('./pages/QuickGuide/QuickGuide'));
 const Grid = lazy(() => import('./pages/Grid/Grid'));
 const Img = lazy(() => import('./pages/Img/Img'));
 const Functions = lazy(() => import('./pages/Functions/Functions'));
@@ -33,6 +35,7 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/tags" element={<Tags />} />
           <Route path="/text" element={<Text />} />
+          <Route path="/quick-guide" element={<QuickGuide />} />
           <Route path="/grid" element={<Grid />} />
           <Route path="/img" element={<Img />} />
           <Route path="/shapes" element={<Shapes />} />

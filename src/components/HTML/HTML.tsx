@@ -14,6 +14,7 @@ const HTML: FC = () => {
           <ul>
          <li> <Link className='link' to="/tags">Rare tags / Рідкісні теги</Link></li>
          <li> <Link className='link' to="/text">Text styles / Текстове оформлення</Link></li>
+         <li> <Link className='link' to="/quick-guide">Quick guide HTML / Гайд зі швидкої роботи у розмітці</Link></li>
           </ul>
     </div>
   )
