@@ -30,9 +30,6 @@ body {
 /* -------------------------------------------------------------------------- */
 .container {
   min-width: 320px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   min-height: 100vh;
   padding: 0 20px;
   margin: 0 auto;
@@ -134,10 +131,6 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* .center {
-  display: flex;
-  justify-content: center;
-} */
 
 .card ul > li:hover {
   color: #a5ecc8;
@@ -184,7 +177,7 @@ body {
   @media screen and (min-width: 1440px) {
   }
 }
-
+/*---------------------------------------------------------------------------*/
 table {
   width: 50%;
   border-collapse: collapse;
@@ -201,7 +194,6 @@ table tr {
   background-color: white;
 }
 
-/* Сірий фон для непарних рядків */
 table tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
