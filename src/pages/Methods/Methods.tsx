@@ -155,7 +155,13 @@ const convertedTime = String(hours).padStart(2, '0') + ':' + String(minutes).pad
 console.log(convertedTime); //05:07
 `
 
-const join = ``
+const join = `Склеює елементи масиву до купи, вставляючи між ними переданий символ чи слово.
+Символ, який має розмежовувати елементи масиву задається в дужках.
+
+const theBeatles = ['John Lennon', 'Paul McCartney', 'George Harrison', 'Ringo Starr'];
+theBeatles.join('|');
+console.log(theBeatles)
+//John Lennon|Paul McCartney|George Harrison|Ringo Starr` 
 
 const split = ``
 
@@ -165,7 +171,9 @@ const concat = ``
 
 const indexArr = ``
   
-const push = ``
+const push = `const plov = ['rise', 'pork', 'carrot', 'garlic', 'salt']`
+
+const shift = ``
 
 
 
@@ -225,6 +233,7 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
             <li><a className={s.link} href="#concat">concat()</a></li>
             <li><a className={s.link} href="#push">push() / pop()</a></li>
             <li><a className={s.link} href="#indexArr">indexOf()</a></li>
+            <li><a className={s.link} href="#shift">shift() / unshift()</a></li>
           </ul>
        </div>
       </div>
@@ -350,6 +359,8 @@ if (includesBanWords) {
           <SyntaxHighlighter language="jsx" style={dracula}>{indexArr}</SyntaxHighlighter>
           <h3 id='push'>push()/pop()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{push}</SyntaxHighlighter>
+          <h3 id='shift'>shift()/unshift()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{shift}</SyntaxHighlighter>
         </div>
 <Task
             problem=''
