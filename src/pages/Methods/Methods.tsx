@@ -159,11 +159,30 @@ const join = `Склеює елементи масиву до купи, вста
 Символ, який має розмежовувати елементи масиву задається в дужках.
 
 const theBeatles = ['John Lennon', 'Paul McCartney', 'George Harrison', 'Ringo Starr'];
-theBeatles.join('|');
-console.log(theBeatles)
-//John Lennon|Paul McCartney|George Harrison|Ringo Starr` 
+  const bandList = theBeatles.join('|');
+  console.log(bandList);
+//John Lennon|Paul McCartney|George Harrison|Ringo Starr
+const newList = theBeatles.join('\\n'); //\\n - робить перенос рядку
+  console.log(newList);
+//John Lennon
+//Paul McCartney
+//George Harrison
+//Ringo Starr
 
-const split = ``
+Результатом повертає рядок.` 
+
+const split = `Створює масив з частинок, на які розрізає рядок. 
+Спліт застосовується до рядка, перетворюючи його на масив.
+розрізання проходить по заданому символу чи слову в дужках.
+
+const str = 'I*Love*New*York';
+const str2 = 'I Love Sumy';
+const arr = str.split('*');
+console.log(arr); //['I', 'Love', 'New', 'York']
+
+const arr2 = str2.split(' ');
+console.log(arr2);
+`
 
 const sliceArr = ``
 
