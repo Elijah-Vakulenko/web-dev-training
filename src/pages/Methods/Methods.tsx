@@ -140,10 +140,8 @@ lastIndexOf() - шукає з кінця.
 
   const devcheck3 = dev.indexOf('BBC');
   console.log(devcheck3); // -1
-
 `
 const trim = `Видаляє зайві пробіли з початку і кінця. 
-
 `
 const pad = `Значення для форматування зазначаються через кому. 
 Перше значення - це кількість символів в рядку яка має бути, 
@@ -184,15 +182,64 @@ const arr2 = str2.split(' ');
 console.log(arr2);
 `
 
-const sliceArr = ``
+const sliceArr = `Обрізає масив у вибраному діапазоні елементів.
+Діапазон індексів задається в дужках, якщо дужки залишити порожніми, тоді метод створює копію масива.
 
-const concat = ``
+const cars = ['audi', 'toyota', 'honda', 'nissan', 'volkswagen', 'daewoo']; 
+const japanese = cars.slice(1, 4);
+console.log(japanese); //toyota,honda,nissan
+`
 
-const indexArr = ``
+const concat = `Зліплює декілька масивів в один за допомогою канкатенації.
+const mondler = ['Monica Geller', 'Chandler Bing'];
+const weWereOnABreakCouple = ['Ross Geller', 'Rachel Green'];
+const friends = [].concat(mondler, weWereOnABreakCouple, ['Phoebe Buffey', 'Joey Tribbiani']);
+  console.log(friends); // Monica Geller,Chandler Bing,Ross Geller,Rachel Green,Phoebe Buffey,Joey Tribbiani`
+
+const indexArr = `
+Метод перевіряє наявність зазначеного у душках символа чи слова та видає індекс елемента. Накшталт методу includes() який повертає булеве true | false.
+const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+const earth = planets.indexOf('Earth');
+  console.log(earth); //2
+
+Метод знаходить індекс першшого знайденого лементу який відповідає запиту, 
+то ж якщо в масиві два однакових елемента, метод спрацює тільки на першому.
+
+  const numbers = [5, 0, 3, 9, 1, 4, 7, 9, 4, 5];
+  const nine = numbers.indexOf(9);
+  console.log(nine); // 3`
   
-const push = `const plov = ['rise', 'pork', 'carrot', 'garlic', 'salt']`
+const push = `Метод push() - додає новий елемент в кінець масиву. Також повертає нову довжину масиву.
+Метод pop() - видаляє останній елемент масиву та повертає його.
 
-const shift = ``
+  const food = ['rise', 'pork', 'egg', 'cake'];
+  const breakfast = food.push('apple juice', 'salad');
+  console.log(breakfast); // 6  ['rise', 'pork', 'egg', 'cake', 'apple juice', 'salad'];
+  const dinner = food.pop();
+  console.log(dinner); // 'salad'
+`
+
+const shift = `
+Метод shift() - видаляє перший елемент масиву та повертає в консоль видалений елемент.
+Метод unshift() - додає на почток вказаний у дожках елемент чи декілька елементів. Повертає нову довжину масива.
+
+  const food = ['rise', 'pork', 'egg', 'cake'];
+  const breakfast = food.unshift('apple juice', 'salad');
+  console.log(breakfast); // 6  [ 'apple juice', 'salad', 'rise', 'pork', 'egg', 'cake'];
+  const dinner = food.shift();
+  console.log(dinner); // 'apple juice';
+`
+
+const splice = `
+Метод видаляє, додає чи замінює елементи по наданому індексу.
+В дужках приймає першим аргументом номер індекса з яким буде проводитись операція. Другим аргументом приймає індекс до якого буде видалення. 
+Третій аргумент це рядок чи число яке буде вставлено чи на яке буде замінено елемент.
+якщо другий аргумент 0 тоді на місце вказаного першого індекса додасться новий елемент посунувши наступні. 
+Якщо другий аргумент 1 тоді казаний індекс видалиться якщо 2 тоді видаляться вказаний індекс і наступний елемент. 
+Тобто другий аргумент зазначає кількість видалених елементів.
+  const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+planets.splice(2, 1, 'Terra Nova'); ← тут починаємо з 2го індекса (3й елемент), видаляємо 1 елемент та додаємо новий, по факту робимо заміну.
+  console.log(planets);//Mercury,Venus,Terra Nova,Mars,Jupiter,Saturn,Uranus,Neptune`
 
 
 
@@ -253,6 +300,7 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
             <li><a className={s.link} href="#push">push() / pop()</a></li>
             <li><a className={s.link} href="#indexArr">indexOf()</a></li>
             <li><a className={s.link} href="#shift">shift() / unshift()</a></li>
+            <li><a className={s.link} href="#splice">splice()</a></li>
           </ul>
        </div>
       </div>
@@ -380,6 +428,8 @@ if (includesBanWords) {
           <SyntaxHighlighter language="jsx" style={dracula}>{push}</SyntaxHighlighter>
           <h3 id='shift'>shift()/unshift()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{shift}</SyntaxHighlighter>
+          <h3 id='splice'>splice()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{splice}</SyntaxHighlighter>
         </div>
 <Task
             problem=''
