@@ -4,9 +4,9 @@ import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
 const Test: React.FC = () => {
 
 //------------------------------------------------------------------------------------
-  const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
-planets.splice(2, 1, 'Terra Nova');
-  console.log(planets);//Mercury,Venus,Terra Nova,Mars,Jupiter,Saturn,Uranus,Neptune
+ const ukrainianCities = ['Київ', 'Львів', 'Харків', 'Одеса', 'Дніпро', 'Запоріжжя', 'Івано-Франківськ', 'Тернопіль', 'Чернівці', 'Вінниця', 'Полтава', 'Суми', 'Чернігів', 'Черкаси', 'Хмельницький', 'Рівне', 'Житомир', 'Ужгород', 'Луцьк', 'Миколаїв', 'Херсон', 'Донецьк', 'Луганськ', 'Кропивницький', 'Сімферополь'];
+  const cityNumberEleven = ukrainianCities.at(11);
+  console.log(cityNumberEleven);
   
     return (
       <div className='container'>

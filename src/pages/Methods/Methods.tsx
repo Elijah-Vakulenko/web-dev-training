@@ -59,7 +59,6 @@ const fix = greetings.replace('World', 'Friend');
 `
 
 const fix = `
-
 const num = 3.1415926;
 
 console.log(num.toFixed(2));
@@ -193,8 +192,8 @@ console.log(japanese); //toyota,honda,nissan
 const concat = `Зліплює декілька масивів в один за допомогою канкатенації.
 const mondler = ['Monica Geller', 'Chandler Bing'];
 const weWereOnABreakCouple = ['Ross Geller', 'Rachel Green'];
-const friends = [].concat(mondler, weWereOnABreakCouple, ['Phoebe Buffey', 'Joey Tribbiani']);
-  console.log(friends); // Monica Geller,Chandler Bing,Ross Geller,Rachel Green,Phoebe Buffey,Joey Tribbiani`
+const friends = [].concat(mondler, weWereOnABreakCouple, ['Phoebe Buffay', 'Joey Tribbiani']);
+  console.log(friends); // Monica Geller,Chandler Bing,Ross Geller,Rachel Green,Phoebe Buffay,Joey Tribbiani`
 
 const indexArr = `
 Метод перевіряє наявність зазначеного у душках символа чи слова та видає індекс елемента. Накшталт методу includes() який повертає булеве true | false.
@@ -208,6 +207,11 @@ const earth = planets.indexOf('Earth');
   const numbers = [5, 0, 3, 9, 1, 4, 7, 9, 4, 5];
   const nine = numbers.indexOf(9);
   console.log(nine); // 3`
+
+const at = `Виводить елемент за вказаним індексом.
+ const ukrainianCities = ['Київ', 'Львів', 'Харків', 'Одеса', 'Дніпро', 'Запоріжжя', 'Івано-Франківськ', 'Тернопіль', 'Чернівці', 'Вінниця', 'Полтава', 'Суми', 'Чернігів', 'Черкаси', 'Хмельницький', 'Рівне', 'Житомир', 'Ужгород', 'Луцьк', 'Миколаїв', 'Херсон', 'Донецьк', 'Луганськ', 'Кропивницький', 'Сімферополь'];
+  const cityNumberEleven = ukrainianCities.at(11);
+  console.log(cityNumberEleven); //Суми `
   
 const push = `Метод push() - додає новий елемент в кінець масиву. Також повертає нову довжину масиву.
 Метод pop() - видаляє останній елемент масиву та повертає його.
@@ -221,7 +225,7 @@ const push = `Метод push() - додає новий елемент в кін
 
 const shift = `
 Метод shift() - видаляє перший елемент масиву та повертає в консоль видалений елемент.
-Метод unshift() - додає на почток вказаний у дожках елемент чи декілька елементів. Повертає нову довжину масива.
+Метод unshift() - додає на почток вказаний у дужках елемент чи декілька елементів. Повертає нову довжину масива.
 
   const food = ['rise', 'pork', 'egg', 'cake'];
   const breakfast = food.unshift('apple juice', 'salad');
@@ -241,7 +245,76 @@ const splice = `
 planets.splice(2, 1, 'Terra Nova'); ← тут починаємо з 2го індекса (3й елемент), видаляємо 1 елемент та додаємо новий, по факту робимо заміну.
   console.log(planets);//Mercury,Venus,Terra Nova,Mars,Jupiter,Saturn,Uranus,Neptune`
 
+const filter = `Використовуємо, для того щоб створити окремий масив, 
+де елементами будуть тільки ті, що задовольняють нашу певну умову, тобто відфільтровані.
+Щоб прописати умову нам потрібна колбек фунція, на відміну від попередній методів, 
+цей не можна застосувати просто до масиву, необхідна функція.
 
+  const fiboNumbers = [2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711];
+  const evenFilteredNumbers = fiboNumbers.filter(number => number % 2 === 0);
+  console.log(evenFilteredNumbers); // [2,8,34,144,610,2584,10946]
+
+ const friends = ['Ross Geller', 'Rachel Green', 'Chandler Bing', 'Monica Geller', 'Joey Tribbiani', 'Phoebe Buffay'];
+  const nameStartsWithR = friends.filter(friend => friend.startsWith('R'));
+  console.log(nameStartsWithR);//[Ross Geller,Rachel Green]
+`
+
+const map = `Створюємо новий масив, проходячись по кожному елементу і змініючи його за умовою, яка нас задовольняє. 
+Наприклад в мене є масив з назвами обласних центрів. Я хочу зробити новий масив, де всі ці міста будуть написані великими літерами:
+
+  const ukrainianCities = ['Київ', 'Львів', 'Харків', 'Одеса', 'Дніпро', 'Запоріжжя', 'Івано-Франківськ', 'Тернопіль', 'Чернівці', 'Вінниця', 'Полтава', 'Суми', 'Чернігів', 'Черкаси', 'Хмельницький', 'Рівне', 'Житомир', 'Ужгород', 'Луцьк', 'Миколаїв', 'Херсон', 'Донецьк', 'Луганськ', 'Кропивницький', 'Сімферополь'];
+const upperCaseCities = ukrainianCities.map(city => city.toUpperCase());
+console.log(upperCaseCities); //['КИЇВ', 'ЛЬВІВ', 'ХАРКІВ', 'ОДЕСА', 'ДНІПРО', 'ЗАПОРІЖЖЯ', 'ІВАНО-ФРАНКІВСЬК', 'ТЕРНОПІЛЬ', 'ЧЕРНІВЦІ', 'ВІННИЦЯ', 'ПОЛТАВА', 'СУМИ', 'ЧЕРНІГІВ', 'ЧЕРКАСИ', 'ХМЕЛЬНИЦЬКИЙ', 'РІВНЕ', 'ЖИТОМИР', 'УЖГОРОД', 'ЛУЦЬК', 'МИКОЛАЇВ', 'ХЕРСОН', 'ДОНЕЦЬК', 'ЛУГАНСЬК', 'КРОПИВНИЦЬКИЙ', 'СІМФЕРОПОЛЬ']
+
+  const biggestCities = ['Київ', 'Харків', 'Одеса', 'Дніпро', 'Донецьк'];
+  const overMillionPopulation = biggestCities.map(city => city + ' - має населення більше 1-го мільйона');
+  console.log(overMillionPopulation);//Київ - має населення більше 1-го мільйона,Харків - має населення більше 1-го мільйона,Одеса - має населення більше 1-го мільйона,Дніпро - має населення більше 1-го мільйона,Донецьк - має населення більше 1-го мільйона
+`
+
+const arrPlayground = `const str = 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
+  const arr1 = str.split(', ');
+  console.log(arr1); //  ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  
+  const arr2 = arr1.join('~*~');
+  console.log(arr2); // Monday~*~Tuesday~*~Wednesday~*~Thursday~*~Friday~*~Saturday~*~Sunday
+
+  const arr3 = arr1.slice(0, 5);
+  console.log(arr3); //Monday,Tuesday,Wednesday,Thursday,Friday
+
+  const arr4 = [].concat(arr3, ['Saturday', 'Sunday']);
+  console.log(arr4); //Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday
+
+  const arr5 = arr1.indexOf('Friday');
+  console.log(arr5); //4
+
+  const arr6 = arr1.at(2);
+  console.log(arr6); //Wednesday
+
+  const arr7 = arr1.includes('Sunday');
+  console.log(arr7); //true
+
+  const arr8 = arr1.splice(1, 2);
+  console.log(arr8);// Tuesday,Wednesday
+
+  const arr9 = arr8.unshift('MONDAY');
+  console.log(arr9);//3
+
+  const arr10 = arr1.shift();
+  console.log(arr10);//Monday
+
+  const arr11 = arr1.pop();
+  console.log(arr11);//Sunday
+
+  const arr12 = arr4.push('Monday');
+  console.log(arr12);//8
+
+  const arr13 = arr1.filter(day => day === 'Friday');
+  console.log(arr13);//[Friday]
+
+  const arr14 = arr1.map((day, index) => day.toUpperCase() + ' has an index of ' + index);
+console.log(arr14); //THURSDAY has an index of 0,FRIDAY has an index of 1,SATURDAY has an index of 2
+
+`
 
 const Methods: React.FC = () => {
 
@@ -299,8 +372,11 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
             <li><a className={s.link} href="#concat">concat()</a></li>
             <li><a className={s.link} href="#push">push() / pop()</a></li>
             <li><a className={s.link} href="#indexArr">indexOf()</a></li>
+            <li><a className={s.link} href="#at">at()</a></li>
             <li><a className={s.link} href="#shift">shift() / unshift()</a></li>
             <li><a className={s.link} href="#splice">splice()</a></li>
+            <li><a className={s.link} href="#filter">filter()</a></li>
+            <li><a className={s.link} href="#map">map()</a></li>
           </ul>
        </div>
       </div>
@@ -424,12 +500,21 @@ if (includesBanWords) {
           <SyntaxHighlighter language="jsx" style={dracula}>{concat}</SyntaxHighlighter>
           <h3 id='indexArr'>indexOf()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{indexArr}</SyntaxHighlighter>
+          <h3 id='at'>at()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{at}</SyntaxHighlighter>
           <h3 id='push'>push()/pop()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{push}</SyntaxHighlighter>
           <h3 id='shift'>shift()/unshift()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{shift}</SyntaxHighlighter>
           <h3 id='splice'>splice()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{splice}</SyntaxHighlighter>
+          <h2>Методи які працюють через функцію</h2>
+          <h3 id='filter'>filter()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{filter}</SyntaxHighlighter>
+          <h3 id='map'>map()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{map}</SyntaxHighlighter>
+          <p>А тепер, маючи арсенал найбільш використовуваних методів, давайте пограємось, застосовуючи методи до одного й того самого масиву. Для початку масива в нас немає, а є рядок з лнями тижня. Простий список, давайте перетворимо його на масив і трохи побавимось.</p>
+          <SyntaxHighlighter language="jsx" style={dracula}>{arrPlayground}</SyntaxHighlighter>
         </div>
 <Task
             problem=''
