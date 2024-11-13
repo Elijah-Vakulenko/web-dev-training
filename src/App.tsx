@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { DNA } from 'react-loader-spinner';
+import ToTheTopBtn from './components/ToTheTopBtn/ToTheTopBtn';
 
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
@@ -53,6 +54,7 @@ function App() {
           <Route path="*" element={<NotFound />} /> 
         </Routes>
       </Suspense>
+      <ToTheTopBtn /> 
     </div>
   );
 }
