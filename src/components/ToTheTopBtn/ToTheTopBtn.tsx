@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BiSolidUpArrow } from 'react-icons/bi';
+import { LuArrowBigUpDash } from "react-icons/lu";
 import clsx from 'clsx';
 import s from './ToTheTopBtn.module.css';
 import throttle from 'lodash.throttle';
@@ -35,7 +35,8 @@ const ToTheTopBtn: React.FC = () => {
       onClick={scrollToTop}
       aria-label="Back to top"
     >
-      <BiSolidUpArrow />
+      <LuArrowBigUpDash className={s.arrow} />
+
     </button>
   );
 };
