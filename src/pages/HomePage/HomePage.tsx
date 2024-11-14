@@ -15,25 +15,27 @@ import { FaNodeJs } from "react-icons/fa";
 import { useEffect } from 'react';
 
 const HomePage = () => {
- useEffect(() => {
-    const sidebar = document.querySelector(`.${s.nav}`);
-    const container = document.querySelector('.container');
+useEffect(() => {
+  const sidebar = document.querySelector(`.${s.nav}`) as HTMLElement | null;
+  const container = document.querySelector('.container') as HTMLElement | null;
 
-    const handleScroll = () => {
+  const handleScroll = () => {
+    if (container && sidebar) {
       const containerTop = container.getBoundingClientRect().top;
       if (containerTop < 0) {
         sidebar.style.top = `${Math.abs(containerTop) + 20}px`; // Регулируйте смещение
       } else {
         sidebar.style.top = '0'; // Исходная позиция
       }
-    };
+    }
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+  
   return (
     <div>
    
