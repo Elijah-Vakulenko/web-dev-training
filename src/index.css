@@ -38,7 +38,7 @@ body {
   min-height: 100vh;
   padding: 0 20px;
   margin: 0 auto;
-  /* outline: 1px solid orangered; */
+  outline: 1px solid orangered;
   position: relative;
 }
 
@@ -59,8 +59,9 @@ body {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1240px) {
   .container {
+    min-width: 1240px;
     max-width: 1440px;
   }
 }
