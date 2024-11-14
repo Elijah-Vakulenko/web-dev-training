@@ -72,7 +72,7 @@ const Test: React.FC = () => {
           }}
         ></textarea>
 
-        <button onClick={handleRunCode}>Run Code</button>
+        <button className='btn' onClick={handleRunCode}>Run Code</button>
 
         {/* Виведення результатів виконання коду */}
         <div className="output">

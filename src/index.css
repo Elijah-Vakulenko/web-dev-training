@@ -111,6 +111,8 @@ body {
   background-color: white;
   color: black;
   /* height: 100%; */
+  white-space: pre-wrap;
+    
 }
 
 .task {
