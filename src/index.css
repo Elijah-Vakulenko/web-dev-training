@@ -25,7 +25,7 @@ body {
 
 @font-face {
   font-family: Consolas;
-  src: url(../public/font/Consolas.ttf) format("truetype");
+  src: url(../public/font/CONSOLA.TTF) format("truetype");
 }
 
 .logo {
@@ -116,6 +116,7 @@ body {
 }
 
 .output {
+  font-family: "Consolas", monospace;
   width: 100%;
   padding: 15px;
   border-radius: 8px;
