@@ -50,7 +50,7 @@ useEffect(() => {
           </div>
         <div className='center'>
           <Link to="/test">
-            <button style={{ marginTop: '65px', marginBottom: '15px'}} className='btn'>TEST PAGE</button>
+            <button style={{ marginTop: '65px', marginBottom: '15px'}} className='btn'>TESTING PAGE</button>
           </Link>
         </div>
         <div className={s.layout}>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css'; // Тема для підсвічування синтаксису
 import GoHomeBtn from '../../components/GoHomeBtn/GoHomeBtn';
+import s from './Test.module.css'
+import clsx from "clsx";
 
 const Test: React.FC = () => {
   const [code, setCode] = useState<string>('');  // Змінна для коду користувача
@@ -59,33 +61,43 @@ const Test: React.FC = () => {
       </div>
       <div className="card">
         <h1>JavaScript Testing Page</h1>
-        <p>Відкрийте dev Tools для відображення консолі.</p>
+        {/* <p>Відкрийте dev Tools для відображення консолі.</p> */}
 
-        <textarea
-          value={code}
-          onChange={handleCodeChange}
-          placeholder="Напишіть тут код..."
-          style={{
-            width: '100%',
-            height: '200px',
-            fontSize: '14px',
-            padding: '10px',
-            fontFamily: 'Consolas, monospace',
-            backgroundColor: '#2d2d2d',
-            color: '#f8f8f2',
-            lineHeight: '1.5',
-          }}
-        ></textarea>
-
-        <button className='btn' onClick={handleRunCode}>Run Code</button>
-
-        {/* Виведення результатів виконання коду */}
-        <div className="output">
-          <pre>{output}</pre>
-        </div>
-
-        {/* Для підсвічування синтаксису */}
-        <pre className="language-javascript" dangerouslySetInnerHTML={{ __html: highlightedCode }}></pre>
+   <div className={s.layout}>
+          <div>
+            <textarea
+              value={code}
+              onChange={handleCodeChange}
+              placeholder="Напишіть ваш JavaScript код тут..."
+              style={{
+                width: '100%',
+                height: '200px',
+                fontSize: '14px',
+                padding: '10px',
+                fontFamily: 'Consolas, monospace',
+                backgroundColor: '#2d2d2d',
+                borderRadius:'8px',
+                color: '#f8f8f2',
+                lineHeight: '1.5',
+              }}
+            ></textarea>
+    
+            <button className={s.btn} onClick={handleRunCode}>Run Code</button>
+          </div>
+  
+          {/* Виведення результатів виконання коду */}
+          <div className={clsx('output', s.console)}>
+            <pre>{output}</pre>
+          </div>
+  
+          {/* Для підсвічування синтаксису */}
+          <div>
+            <p>Your final code looks like:</p>
+            <pre  style={{
+                borderRadius:'8px',
+              }} className="language-javascript" dangerouslySetInnerHTML={{ __html: highlightedCode }}></pre></div>
+         
+   </div>
       </div>
     </div>
   );

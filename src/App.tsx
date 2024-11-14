@@ -30,7 +30,7 @@ const NotFound = () => <h2>404 - Page Not Found</h2>;
 function App() {
   return (
     <div>
-      <div className="logo"><FaDev /><Link to="/">Web Dev Training...</Link></div>
+      <div className='container'><div className="logo"><FaDev /><Link to="/">Web Dev Training...</Link></div></div>
       <Suspense fallback={<div className='loader'><DNA visible={true} height="350" width="350" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" /></div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />

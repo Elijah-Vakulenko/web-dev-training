@@ -1,7 +1,7 @@
 :root {
   --main: #a5ecc8;
   --main-bg-color: #101415;
-  --main-text-color: white;
+  --main-text-color: #f5f0d2;
   --surfgreen: #a4deab;
   --retro: #aebf9b;
   --darkgreen: #347c70;
@@ -23,6 +23,11 @@ body {
   font-size: 20px;
 }
 
+@font-face {
+  font-family: Consolas;
+  src: url(../public/font/Consolas.ttf) format("truetype");
+}
+
 .logo {
   display: flex;
   gap: 8px;
@@ -30,15 +35,15 @@ body {
   color: var(--main);
   font-family: "Arsenal SC", sans-serif;
   font-size: 28px;
-  padding: 20px;
+  padding-top: 20px;
 }
 /* -------------------------------------------------------------------------- */
 .container {
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 0 20px;
   margin: 0 auto;
-  outline: 1px solid orangered;
+  /* outline: 1px solid orangered; */
   position: relative;
 }
 
@@ -100,7 +105,7 @@ body {
   font-size: 9px;
   width: 100%;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 8px;
   background-color: gray;
   color: black;
   @media screen and (min-width: 768px) {
@@ -113,8 +118,8 @@ body {
 .output {
   width: 100%;
   padding: 15px;
-  border-radius: 15px;
-  background-color: white;
+  border-radius: 8px;
+  background-color: var(--main-text-color);
   color: black;
   /* height: 100%; */
   white-space: pre-wrap;
