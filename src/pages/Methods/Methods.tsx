@@ -201,7 +201,7 @@ const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uran
 const earth = planets.indexOf('Earth');
   console.log(earth); //2
 
-Метод знаходить індекс першшого знайденого лементу який відповідає запиту, 
+Метод знаходить індекс першшого знайденого елементу який відповідає запиту, 
 то ж якщо в масиві два однакових елемента, метод спрацює тільки на першому.
 
   const numbers = [5, 0, 3, 9, 1, 4, 7, 9, 4, 5];
@@ -214,7 +214,7 @@ const ukrainianCities = ['Київ', 'Львів', 'Харків', 'Одеса',
   console.log(cityNumberEleven); //Суми `
   
 const push = `Метод push() - додає новий елемент в кінець масиву. Також повертає нову довжину масиву.
-Метод pop() - видаляє останній елемент масиву та повертає його.
+Метод pop() - видаляє останній елемент масиву та повертає його. Дужки лишаємо порожніми.
 
   const food = ['rise', 'pork', 'egg', 'cake'];
   const breakfast = food.push('apple juice', 'salad');
@@ -513,7 +513,7 @@ if (includesBanWords) {
           <SyntaxHighlighter language="jsx" style={dracula}>{filter}</SyntaxHighlighter>
           <h3 id='map'>map()</h3>
           <SyntaxHighlighter language="jsx" style={dracula}>{map}</SyntaxHighlighter>
-          <p>А тепер, маючи арсенал найбільш використовуваних методів, давайте пограємось, застосовуючи методи до одного й того самого масиву. Для початку масива в нас немає, а є рядок з лнями тижня. Простий список, давайте перетворимо його на масив і трохи побавимось.</p>
+          <p>А тепер, маючи арсенал найбільш використовуваних методів, давайте пограємось, застосовуючи методи до одного й того самого масиву. Для початку масива в нас немає, а є рядок з днями тижня. Простий список, давайте перетворимо його на масив і трохи побавимось.</p>
           <SyntaxHighlighter language="jsx" style={dracula}>{arrPlayground}</SyntaxHighlighter>
         </div>
 <Task

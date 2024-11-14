@@ -68,6 +68,22 @@ do {counter += 1;
 console.log(counter)} while (counter < 10);
 `    
 
+const forarr = `
+Для початку виведемо окремо кожен елемент масиву в консоль.
+
+ const hpCharacters = ["Harry Potter", "Hermione Granger",
+ "Ron Weasley", "Albus Dumbledore", "Severus Snape", "Lord Voldemort",
+ "Minerva McGonagall", "Rubeus Hagrid", "Sirius Black"];
+  for (let i = 0; i < hpCharacters.length; i++){
+    console.log(hpCharacters[i]);
+  }
+  ↑ ми створили цикл з початковим індексом 0, сказали що цикл буде діяти,
+   доти індекс меньше за довжину масиву(тобто кількість елементів в ньому)
+  і як результат на кожній ітерації виводити елемент з поточним індексом в консоль та збільшувати індекс інкрементом.
+  `
+
+const forof = ``
+
 const Cycles: React.FC = () => { 
 
   const startGame = () => {
@@ -192,6 +208,22 @@ for (let i = min; i <= max; i++){
         console.log(i)
     }
 }`}></Task>
+        
+    <div>
+          <h2 className='title'>Ітерація по масиву</h2>
+          <h3>Цикл for</h3>
+        <p className='description'></p>
+           <SyntaxHighlighter language="jsx" style={dracula}>
+        {forarr}
+        </SyntaxHighlighter>
+        
+          <h3>Цикл for...of</h3>
+        <p className='description'></p>
+           <SyntaxHighlighter language="jsx" style={dracula}>
+        {forof}
+        </SyntaxHighlighter>
+      </div>
+
         <Task problem=''
           solution={``}></Task>
         <Task problem=''

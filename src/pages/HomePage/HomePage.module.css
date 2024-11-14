@@ -39,9 +39,15 @@
 }
 
 .navItem {
-  transition: 2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease;
+  padding: 4px;
+  border-radius: 8px;
   &:hover {
-    transform: translateX(-10px);
+    box-shadow: 0 0 15px -1px var(--darkgreen);
+    transform: scale(1.1);
   }
 }
 
