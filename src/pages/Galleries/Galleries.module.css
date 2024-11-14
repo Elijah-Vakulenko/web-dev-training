@@ -165,3 +165,18 @@
 .doubleCol {
   grid-column: span 2;
 }
+
+.galleryOne,
+.galleryTwo {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.warning {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}

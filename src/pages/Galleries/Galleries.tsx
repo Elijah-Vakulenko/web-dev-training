@@ -223,7 +223,7 @@ const Galleries: React.FC = () => {
       <GoHomeBtn />
       <div>
         <h2 className="title">Masonry Layout</h2>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 1023: 4, 1440: 5 }}>
+        <ResponsiveMasonry className={s.galleryOne} columnsCountBreakPoints={{ 350: 1, 750: 2, 1023: 4, 1440: 5 }}>
           <Masonry className={s.masonryGrid}>
             {images.map((image: Image, index: number) => (
               <div key={image.id} className={s.imageWrapper} onClick={() => handleImageClick(index, images)}>
@@ -236,14 +236,15 @@ const Galleries: React.FC = () => {
             ))}
           </Masonry>
         </ResponsiveMasonry>
+        <p className={s.warning}>This gallery layout is not visible on a mobile device. Use tablet or a computer. You can still check the code by pressing the button bellow</p>
         <button style={{ margin: '10px 0' }} className='btn' onClick={toggleSolution}>
           {isOpen ? 'Сховати' : 'Показати структуру та стилі'}
         </button>
         {isOpen && <SyntaxHighlighter language="jsx" style={dracula}>{masonry}</SyntaxHighlighter>}
       </div>
 {/* ---------------------------------------------------------------------------------- */}
-      <div>
-        <h2 className="title">Random size Grid</h2>
+             <h2 className="title">Random size Grid</h2>
+      <div className={s.galleryTwo}>
         <div className={s.gridcontainer}>
           {images2.map((image, index) => (
             <div className={clsx(s.gridItem, s[`gridItem${randomNumbers[index]}`])} key={image.id}>
@@ -256,6 +257,7 @@ const Galleries: React.FC = () => {
           ))}
         </div>
       </div>
+          <p className={s.warning}>This gallery layout is not visible on a mobile device. Use tablet or a computer. You can still check the code by pressing the button bellow</p>
       <button style={{ margin: '10px 0' }} className='btn' onClick={toggleSolution}>
           {isOpen ? 'Сховати' : 'Показати структуру та стилі'}
         </button>

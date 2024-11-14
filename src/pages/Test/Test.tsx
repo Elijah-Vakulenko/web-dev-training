@@ -37,10 +37,15 @@ const Test: React.FC = () => {
     try {
       // Створюємо функцію без eval, передаючи consoleOverride
       const func = new Function('console', code); // Створюємо функцію з коду
-      func(consoleOverride); // Викликаємо функцію з нашими переоприділеними методами console
+      func(consoleOverride); // Викликаємо функцію з нашими перевизначеними методами console
       setOutput('Code executed successfully');  // Виведення повідомлення, що код успішно виконано
     } catch (error) {
-      setOutput(`Error: ${error.message}`);  // Якщо помилка, відобразимо її
+      // Обробка помилки з перевіркою типу
+      if (error instanceof Error) {
+        setOutput(`Error: ${error.message}`);
+      } else {
+        setOutput('An unknown error occurred');
+      }
     }
   };
 
