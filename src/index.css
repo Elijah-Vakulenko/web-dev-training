@@ -1,10 +1,11 @@
 :root {
   --main: #a5ecc8;
-  --main-bg-color: black;
+  --main-bg-color: #101415;
   --main-text-color: white;
   --surfgreen: #a4deab;
   --retro: #aebf9b;
   --darkgreen: #347c70;
+  --card: #2d4841;
   --pink: #f7546d;
   --purple: #514366;
   --wine: #583039;
@@ -23,7 +24,11 @@ body {
 }
 
 .logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
   color: var(--main);
+  font-family: "Arsenal SC", sans-serif;
   font-size: 28px;
   padding: 20px;
 }
@@ -34,6 +39,7 @@ body {
   padding: 0 20px;
   margin: 0 auto;
   /* outline: 1px solid orangered; */
+  position: relative;
 }
 
 @media screen and (min-width: 375px) {
@@ -73,8 +79,13 @@ body {
 }
 
 .card {
+  background: rgb(45, 72, 65);
+  background: linear-gradient(
+    41deg,
+    rgba(45, 72, 65, 1) 2%,
+    rgba(4, 4, 4, 1) 100%
+  );
   width: 100%;
-  border: 1px solid #a5ecc8;
   border-radius: 15px;
   padding: 20px;
 }
@@ -116,10 +127,10 @@ body {
 }
 /* -------------------------------------------------------------------------- */
 .btn {
-  padding: 5px;
+  padding: 8px;
   margin-top: 50px;
   margin-bottom: 50px;
-  border: 1px solid #a5ecc8;
+  border: 1px solid var(--darkgreen);
   border-radius: 8px;
   color: #a5ecc8;
   background-color: transparent;

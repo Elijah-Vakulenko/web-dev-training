@@ -8,25 +8,33 @@
   border-radius: 50px;
   border: 1px solid var(--main);
   padding: 15px;
-  margin: 30px;
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   gap: 16px;
-  top: 5%; /* Центруємо по вертикалі */
-  right: 10px;
-  background-color: black;
+  top: 5%;
+  right: 14%;
+  z-index: 2;
+
+  background-color: var(--main-bg-color);
+  box-shadow: 0 0 15px -1px var(--darkgreen);
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out,
+    background-color 250ms ease-in-out, opacity 250ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 20px -2px var(--darkgreen);
+  }
 
   @media screen and (min-width: 768px) {
-    padding: 20px;
-    top: 35%;
-    transform: translateY(-90%);
+    top: 5%;
+    right: 5%;
+    flex-direction: column;
+    width: 70px;
   }
 
   @media screen and (min-width: 1024px) {
-    top: 40%;
   }
 }
 
