@@ -1,7 +1,5 @@
 :root {
   --main: #a5ecc8;
-  --main-bg-color: #101415;
-  --main-text-color: #f5f0d2;
   --surfgreen: #a4deab;
   --retro: #aebf9b;
   --darkgreen: #347c70;
@@ -9,10 +7,63 @@
   --pink: #f7546d;
   --purple: #514366;
   --wine: #583039;
+
+  /*------black-----*/
+  --main-bg-color: #101415;
+  --slate-shadow: #101415;
+  --earthly-mocha: #110904;
+  --velvet-aubergine: #190b14;
+  --chocolate-noir: #262020;
+  --midnight-sapphire: #0b1623;
+  --forest-shadow: #0e1514;
+  /*-----coffee-----*/
+  --main-text-color: #f5f0d2;
+  --cream: #f4e4c2;
   --beige: #ddd7a7;
+  --sand: #d2bf87;
   --ohre: #9a7936;
-  --gray: #67705f;
+  --mud: #625332;
+  --grey: #67705f;
+  --coal: #353b3b;
+  --clay: #a86631;
+  --nut: #b18663;
   --wood: #5b3624;
+  --coffee: #311b14;
+
+  /*---cold---*/
+  --blue: #32a6d5;
+  --lighblue: #7ad8fe;
+  --darkblue: #142d4d;
+
+  /*---warm---*/
+
+  /*---greenish---*/
+  /* --lightgreen:#e9f5db;
+  #cfe1b8;
+  #b5c99a;
+  #97a97c;
+  #87986a;
+  #718355; */
+
+  /*---font+bg---*/
+
+  --crystal-blue: #b2d1ee;
+  --chocolate-brown: #9a5311;
+
+  --royal-blue: #2060cd;
+  --golden-yellow: #fbd47f;
+
+  --cocoa-brown: #1e1818;
+  --corn-flower-blue: #7177f0;
+
+  --misty-white: #dcdac1;
+  --tuscan-orange: #ca633e;
+
+  --county-green: #014921;
+  --porcelain-white: #e8e5e5;
+
+  --pink-lace: #ffc1fd;
+  --dark-olive-green: #616336;
 }
 
 body {
@@ -84,7 +135,7 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px;
-    border: 1px solid #a5ecc8;
+    border: 1px solid var(--main);
     border-radius: 15px;
   }
 }
@@ -106,7 +157,7 @@ body {
   width: 100%;
   padding: 15px;
   border-radius: 8px;
-  background-color: gray;
+  background-color: grey;
   color: black;
   @media screen and (min-width: 768px) {
     font-size: 14px;
@@ -145,19 +196,19 @@ body {
   margin-bottom: 50px;
   border: 1px solid var(--darkgreen);
   border-radius: 8px;
-  color: #a5ecc8;
+  color: var(--main);
   background-color: transparent;
 
   &:hover {
     color: black;
-    background-color: #a5ecc8;
+    background-color: var(--main);
   }
 }
 
 /* -------------------------------------------------------------------------- */
 
 .card ul > li:hover {
-  color: #a5ecc8;
+  color: var(--main);
   font-weight: 700;
 }
 /* -------------------------------------------------------------------------- */
@@ -188,7 +239,7 @@ body {
 }
 
 .dna-wrapper circle {
-  fill: #347c70 !important;
+  fill: var(--darkgreen) !important;
   clip-path: polygon(
     16.6% 16.6%,
     50% 0,
@@ -202,7 +253,7 @@ body {
 }
 
 .dna-wrapper circle:nth-child(even) {
-  fill: #a4deab !important;
+  fill: var(--main) !important;
 }
 
 /* -------------------------------------------------------------------------- */
