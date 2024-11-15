@@ -88,9 +88,105 @@ console.log(planets[i])//Mercury, Earth, Jupiter, Uranus
 }
 
 ↑ Тут перебираємо елементи через один (і+=2).
+
+const theBeatles = ['John Lennon', 'Paul McCartney', 'George Harrison', 'Ringo Starr'];
+for(i = 0; i < theBeatles.length; i++){
+theBeatles[i] = theBeatles[i].toUpperCase(); 
+}
+console.log(theBeatles); //JOHN LENNON,PAUL MCCARTNEY,GEORGE HARRISON,RINGO STARR
+↑ Змінюємо елементи масиву
+
+
+А тепер нам треба кожне число масиву помножити на два і порахувати суму.
+const fiboNumbers = [2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377];
+let total = 0; // ← створюємо змінну для зберігання суми всіх чисел
+for(let i = 0; i < fiboNumbers.length; i++){
+fiboNumbers[i] *= 2;
+total += fiboNumbers[i]}
+console.log(total);//1968
+
   `
 
-const forof = ``
+const forof = `
+for..of не працює з індексами, ми звертаємося безпосередньо до кожної одиниці/елементу.
+Використовуємо, коли нам не потрібно змінювати елементи.
+
+const colors = ['🟣', '🟢', '🔴', '🔵', '🟠', '🟡', '🟤', '⚪', '⚫'];
+
+for (const color of colors){ //← Створюємо змінну з назвою яка відповідає однині від назви масиву
+
+  //Тепер перебираючи кожен колір дамо йому короткий опис за допомогою switch(){}.
+
+switch(color){
+  case '🟢' :
+    console.log('🟢 - color of nature');
+    break;
+  case '🔴' :
+    console.log('🔴- color of passion');
+    break;
+  case '🟣' :
+    console.log('🟣 - my favorite color');
+    break;
+  case '🔵' :
+    console.log('🔵 - color of the clear sky');
+    break;
+  case '🟤' :
+    console.log('🟤 - color of the earth');
+    break;
+  case '🟡' :
+    console.log('🟡 - color of happiness');
+    break;
+  case '🟠' :
+    console.log('🟠 - color of energy');
+    break;
+  case '⚪' :
+    console.log('⚪ - color of purity');
+    break;
+  case '⚫' :
+    console.log('⚫ - color of mystery');
+    break;
+  default: 
+    console.log('no color found - ' + color);
+    break;
+};
+};
+//🟣 - my favorite color
+//🟢 - color of nature
+//🔴- color of passion
+//🔵 - color of the clear sky
+//🟠 - color of energy
+//🟡 - color of happiness
+//🟤 - color of the earth
+//⚪ - color of purity
+//⚫ - color of mystery
+
+Тут знайдемо кольори світлофору:
+
+const colors = ['🟣', '🟢', '🔴', '🔵', '🟠', '🟡', '🟤', '⚪', '⚫'];
+const trafficLights = [];
+
+for(const color of colors){
+if(color === '🔴' || color === '🟢'|| color === '🟡' ){
+trafficLights.push(color)}
+}
+console.log(trafficLights)//🟢,🔴,🟡
+
+Наприклад до кожного елементу додамо ціну. Використаємо методи Math.round та Math.random
+
+const fruits = ['🍒', '🍇', '🍌', '🍉', '🍏', '🍍', '🥝', '🍊', '🍓'];
+for (const fruit of fruits) {
+  console.log(\`\${fruit} - \${Math.round(Math.random() * 100)} грн\`);
+//🍒 - 97 грн
+//🍇 - 54 грн
+//🍌 - 80 грн
+//🍉 - 43 грн
+//🍏 - 97 грн
+//🍍 - 12 грн
+//🥝 - 23 грн
+//🍊 - 7 грн
+//🍓 - 97 грн
+}
+`
 
 const Cycles: React.FC = () => { 
 
@@ -232,12 +328,57 @@ for (let i = min; i <= max; i++){
         </SyntaxHighlighter>
       </div>
 
-        <Task problem=''
-          solution={``}></Task>
-        <Task problem=''
-          solution={``}></Task>
-        <Task problem=''
-          solution={``}></Task>
+    <Task
+    problem='Напиши скрипт для перебору масиву fruits.
+ Для кожного елемента масиву виведи в консоль рядок
+ у форматі номер_елемента: значення_елемента.
+ Нумерація елементів повинна починатися з 1.'
+          solution={`const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
+for (let i = 0; i < fruits.length; i++) {
+const message = \`\${i + 1}) \${fruits[i]}\`;
+console.log(message);
+ }`}></Task>
+        <Task problem='Напиши скрипт, який підраховує суму всіх парних чисел у масиві.'
+          solution={`const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
+let total = 0;
+for(const number of numbers){
+if(number % 2 === 0){
+total += number}
+}
+console.log(total);//86`}></Task>
+        <Task problem='Напиши скрипт пошуку найменшого числа у масиві. Код повинен працювати для будь-якого масиву чисел. Використовуй цикл для розв\`язання задачі.'
+          solution={`const values = [2, 17, 94, 1, 23, 37];
+let min = values[0];
+for (let i = min; i < values.length; i++){
+if(values[i] < min){
+min = values[i]}}
+console.log(min);//94
+
+або більш лаконічне, без зайвого з for..of
+for (const value of values) {
+   if (value < min) {
+   min = value;}
+}
+console.log(min); //94
+`}></Task>
+        <Task problem='
+Функція createArrayOfNumbers(min, max) приймає два параметра:
+
+min - ціле число, з якого починаються обчислення
+max - ціле число, до якого включно триватимуть обчислення
+Доповни код функції createArrayOfNumbers(min, max) таким чином, щоб вона повертала масив усіх цілих чисел від значення min до max включно." '
+          solution={`function createArrayOfNumbers(min, max) {
+  let arr = [];
+  for (let i = min; i <= max; i++) {
+    console.log(\`arr.push(\${i})\`);
+    arr.push(i);
+  }
+  console.log(arr)
+  return arr;
+}
+createArrayOfNumbers(3, 9)//3,4,5,6,7,8,9
+`}></Task>
+
       </div>
 
     </div>

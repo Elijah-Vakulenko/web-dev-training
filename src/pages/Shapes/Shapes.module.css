@@ -102,7 +102,7 @@
   );
 }
 .trapezoid {
-  background-color: var(--main-bg-color);
+  background-color: var(--darkblue);
   width: 200px;
   height: 200px;
   clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
@@ -130,7 +130,7 @@
 }
 
 .halfcircle {
-  background-color: orangered;
+  background-color: var(--blue);
   width: 200px;
   height: 200px;
   clip-path: ellipse(50% 50% at 50% 100%);
@@ -175,7 +175,7 @@
 }
 
 .closeCross {
-  background-color: tomato;
+  background-color: var(--corn-flower-blue);
   width: 200px;
   height: 200px;
   clip-path: polygon(
@@ -210,7 +210,7 @@
 .starDavid {
   width: 200px;
   height: 200px;
-  background-color: lightblue;
+  background-color: var(--lightblue);
   clip-path: polygon(
     0% 75%,
     0% 75%,

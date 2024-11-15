@@ -516,12 +516,22 @@ if (includesBanWords) {
           <p>А тепер, маючи арсенал найбільш використовуваних методів, давайте пограємось, застосовуючи методи до одного й того самого масиву. Для початку масива в нас немає, а є рядок з днями тижня. Простий список, давайте перетворимо його на масив і трохи побавимось.</p>
           <SyntaxHighlighter language="jsx" style={dracula}>{arrPlayground}</SyntaxHighlighter>
         </div>
-<Task
-            problem=''
-          solution={``}></Task>
+           <Task problem='Напиши скрипт для обчислення площі прямокутника зі сторонами,
+ * значення яких зберігаються у змінній values у вигляді рядка.
+ * Значення гарантовано розділені пробілом.'
+          solution={`const values = '8 11';
+const numbers = values.split(' ');
+const width = +numbers[0];
+const height = +numbers[1];
+const area = width * height;
+console.log(area);`}></Task>
+
         <Task
-            problem=''
-          solution={``}></Task>
+            problem=' Напиши скрипт, який виводить у консоль усі слова рядка крім першого і останнього. Результуючий рядок не повинен починатися або закінчуватися символ пробілу.
+Скрипт повинен працювати для будь-якого рядка.'
+          solution={`const string = 'Welcome to the future';
+const result = string.split(' ').slice(1, -1).join(' ').trim();
+console.log(result);`}></Task>
         <Task
             problem=''
           solution={``}></Task>
