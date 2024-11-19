@@ -55,6 +55,7 @@ console.log(user);
 `;
 
 
+const objxmpl = `
 const car = {
   company: 'Honda',
   model: 'Civic IMA',
@@ -114,7 +115,7 @@ const images = [
     width: '100', 
     height: '100' 
   }
-];
+];`
 
 
 const Objects: React.FC = () => {
@@ -123,6 +124,7 @@ const Objects: React.FC = () => {
       <GoHomeBtn />
 
       <SyntaxHighlighter language="jsx" style={dracula}>{obj}</SyntaxHighlighter>
+      <SyntaxHighlighter language="jsx" style={dracula}>{objxmpl}</SyntaxHighlighter>
 
 
                <Task
