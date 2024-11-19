@@ -188,6 +188,10 @@ for (const fruit of fruits) {
 }
 `
 
+const forin = ``;
+
+const forobj = ``;
+
 const Cycles: React.FC = () => { 
 
   const startGame = () => {
@@ -326,7 +330,7 @@ for (let i = min; i <= max; i++){
            <SyntaxHighlighter language="jsx" style={dracula}>
         {forof}
         </SyntaxHighlighter>
-      </div>
+    </div>
 
     <Task
     problem='Напиши скрипт для перебору масиву fruits.
@@ -379,6 +383,21 @@ max - ціле число, до якого включно триватимуть
 createArrayOfNumbers(3, 9)//3,4,5,6,7,8,9
 `}></Task>
 
+        
+        <div>
+          <h2 className='title'>Ітерація по об'єкту</h2>
+          <h3>Цикл for in</h3>
+        <p className='description'></p>
+           <SyntaxHighlighter language="jsx" style={dracula}>
+        {forin}
+        </SyntaxHighlighter>
+        
+          <h3>Цикл for</h3>
+        <p className='description'></p>
+           <SyntaxHighlighter language="jsx" style={dracula}>
+        {forobj}
+        </SyntaxHighlighter>
+    </div>
       </div>
 
     </div>
