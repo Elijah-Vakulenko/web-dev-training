@@ -316,6 +316,58 @@ console.log(arr14); //THURSDAY has an index of 0,FRIDAY has an index of 1,SATURD
 `
 
 
+
+
+const objkeys = `Повертає масив (array), який містить усі імена властивостей (ключі) переданого об'єкта.
+
+const obj = { a: 1, b: 2, c: 3 };
+console.log(Object.keys(obj)); // ['a', 'b', 'c']
+`
+
+const objval = `Повертає масив, який містить значення властивостей переданого об'єкта.
+const data = { a: 10, b: 20, c: 5, d: 40 };
+
+// Знайти всі значення більше 15
+const filtered = Object.values(data).filter(value => value > 15);
+
+console.log(filtered); // [20, 40]
+
+const scores = { math: 90, science: 85, history: 88 };
+
+// Сумуємо всі оцінки
+const total = Object.values(scores).reduce((sum, value) => sum + value, 0);
+
+console.log(total); // 263
+
+const userRoles = { admin: "John", editor: "Jane", viewer: "Alice" };
+
+// Перевіряємо, чи є "Jane" серед значень
+const hasEditor = Object.values(userRoles).includes("Jane");
+
+console.log(hasEditor); // true
+
+const userAges = { Alice: 25, Bob: 30, Charlie: 35 };
+
+// Отримуємо масив значень
+const ages = Object.values(userAges);
+
+console.log(ages); // [25, 30, 35]
+
+const temperatures = { morning: 15, afternoon: 20, evening: 10 };
+
+Object.values(temperatures).forEach(temp => {
+    console.log(\`emperature: \${temp}°C\`);
+});
+// Output:
+// Temperature: 15°C
+// Temperature: 20°C
+// Temperature: 10°C
+
+`
+
+const objass = `Копіює властивості одного або кількох об'єктів у цільовий об'єкт і повертає цей об'єкт.
+Тобто склеює декілька об'єктів як метод рядка concat() або створює копію оригінального об'єкту, якщо першим параметром передати пусті фігурні дужки {}
+
 const originalObject = {
   x: 42,
   y: 27,
@@ -323,8 +375,8 @@ const originalObject = {
 }
 
 function copyFun(originalObject) {
-  const copy = Object.assign({}, originalObject);
-  for (const key of Object.keys(copy)) {
+  const copy = Object.assign({}, originalObject); //← Створюємо копію об'єкта originalObject
+  for (const key of Object.keys(copy)) { //перебираємо саме ключі, їхні значення будуть збільшуватись на 1.
     copy[key] += 1;
   }
   return copy;
@@ -333,14 +385,29 @@ function copyFun(originalObject) {
 const result = copyFun(originalObject);
 console.log(result); //[43, 28, 9]
 
+А тепер давайте склеємо декілька об'єктів:
 
-const objkeys = `Повертає масив (array), який містить усі імена властивостей (ключі) переданого об'єкта.`
+const objA = {
+  winter: ['December', 'January', 'Fabruary'],
+  spring: ['March', 'April', 'May'],
+}
 
-const objval = `Повертає масив, який містить значення властивостей переданого об'єкта.`
+const objB = {
+  summer: ['June', 'July', 'August'],
+}
+const objC = {
+  autumn: ['September', 'October', 'November'],
+}
 
-const objass = `Копіює властивості одного або кількох об'єктів у цільовий об'єкт і повертає цей об'єкт.`
+const months = Object.assign(objA, objB, objC);
+console.log(months);// {winter: Array(3), spring: Array(3), summer: Array(3), autumn: Array(3)}
+`
 
-const objentr = `Повертає масив, який містить пари [ключ, значення] кожної властивості об'єкта. Кожна пара є масивом.`
+const objentr = `Повертає масив, який містить пари [ключ, значення] кожної властивості об'єкта. Кожна пара є масивом.
+
+const obj = { a: 1, b: 2, c: 3 };
+console.log(Object.entries(obj)); // [['a', 1], ['b', 2], ['c', 3]]
+`
 
 const Methods: React.FC = () => {
 
