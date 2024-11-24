@@ -313,8 +313,34 @@ const arrPlayground = `const str = 'Monday, Tuesday, Wednesday, Thursday, Friday
 
   const arr14 = arr1.map((day, index) => day.toUpperCase() + ' has an index of ' + index);
 console.log(arr14); //THURSDAY has an index of 0,FRIDAY has an index of 1,SATURDAY has an index of 2
-
 `
+
+
+const originalObject = {
+  x: 42,
+  y: 27,
+  z: 8,
+}
+
+function copyFun(originalObject) {
+  const copy = Object.assign({}, originalObject);
+  for (const key of Object.keys(copy)) {
+    copy[key] += 1;
+  }
+  return copy;
+}
+
+const result = copyFun(originalObject);
+console.log(result); //[43, 28, 9]
+
+
+const objkeys = `Повертає масив (array), який містить усі імена властивостей (ключі) переданого об'єкта.`
+
+const objval = `Повертає масив, який містить значення властивостей переданого об'єкта.`
+
+const objass = `Копіює властивості одного або кількох об'єктів у цільовий об'єкт і повертає цей об'єкт.`
+
+const objentr = `Повертає масив, який містить пари [ключ, значення] кожної властивості об'єкта. Кожна пара є масивом.`
 
 const Methods: React.FC = () => {
 
@@ -377,6 +403,15 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
             <li><a className={s.link} href="#splice">splice()</a></li>
             <li><a className={s.link} href="#filter">filter()</a></li>
             <li><a className={s.link} href="#map">map()</a></li>
+          </ul>
+       </div>
+       <div className={s.anchor}>
+          <h4>Object methods:</h4>
+          <ul className={s.list}>
+            <li><a className={s.link} href="#keys">Object.keys()</a></li>
+            <li><a className={s.link} href="#values">Object.values()</a></li>
+            <li><a className={s.link} href="#assign">Object.entries()</a></li>
+            <li><a className={s.link} href="#entries">Object.assign()</a></li>
           </ul>
        </div>
       </div>
@@ -532,6 +567,20 @@ console.log(area);`}></Task>
           solution={`const string = 'Welcome to the future';
 const result = string.split(' ').slice(1, -1).join(' ').trim();
 console.log(result);`}></Task>
+        
+<div className='input'>
+          <h2>Методи об'єктів</h2>
+          <h3 id='keys'>Object.keys()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{objkeys}</SyntaxHighlighter>
+          <h3 id='values'>Object.values()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{objval}</SyntaxHighlighter>
+          <h3 id='entries'>Object.entries()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{objentr}</SyntaxHighlighter>
+          <h3 id='assign'>Object.assign()</h3>
+          <SyntaxHighlighter language="jsx" style={dracula}>{objass}</SyntaxHighlighter>
+</div>
+
+
         <Task
             problem=''
           solution={``}></Task>

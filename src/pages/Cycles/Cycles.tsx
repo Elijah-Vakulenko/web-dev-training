@@ -188,9 +188,38 @@ for (const fruit of fruits) {
 }
 `
 
-const forin = ``;
+const forin = `
+const feedback = {
+  good: 5,
+  neutral: 10,
+  bad: 3,
+};
 
-const forobj = ``;
+let totalFeedback = 0;
+
+for (const key in feedback) {
+  totalFeedback += feedback[key];
+}
+  console.log(totalFeedback);`;
+
+
+
+const forobj = `
+
+const feedback = {
+  good: 5,
+  neutral: 10,
+  bad: 3,
+};
+
+let totalFeedback = 0;
+
+const values = Object.values(feedback); // ← Створюємо масив зі значень нашого об'єкта
+console.log(values); // 5, 10, 3
+for (const value of values) {
+  totalFeedback += value
+};
+console.log(totalFeedback); //18`;
 
 const Cycles: React.FC = () => { 
 
@@ -392,7 +421,7 @@ createArrayOfNumbers(3, 9)//3,4,5,6,7,8,9
         {forin}
         </SyntaxHighlighter>
         
-          <h3>Цикл for</h3>
+          <h3>Цикл for of</h3>
         <p className='description'></p>
            <SyntaxHighlighter language="jsx" style={dracula}>
         {forobj}

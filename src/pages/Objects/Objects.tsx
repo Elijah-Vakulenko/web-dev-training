@@ -52,22 +52,32 @@ console.log(user);
 //occupation: (3) ['singer', 'songwriter', 'musician']
 //wife: "Linda Eastman"
 
+Видалення властивості:
+
+delete user.age;
 `;
+
+const foo =`Наприклад маємо об'єкт з параметрами x та y. 
+
+const object = {
+  x: 7,
+  y: 3,
+};
+
+Ми створюємо функцію, яка приймає якісь "значення" у вигляді об'єкту.
+В тілі функції ми робимо математичну операцію зі значенням.X  та значенням.Y.
+в тілі функції нам не важливо під якою назвою будуть ці значення, в нашому прикладі це values,
+Ми вказуємо, що з яким би об'єктом не працювала б функція, в ньому є ключ X та Y, до яких ми і звертаємось.
+
+function foo(values) {
+  console.log(values);
+  return values.x + values.y;
+}
+
+foo(object); // ← Тут ми передаємо наш об'єкт, а в ньому функція знайде потрібні ключі для обчислення.`
 
 
 const objxmpl = `
-const car = {
-  company: 'Honda',
-  model: 'Civic IMA',
-  year: 2005,
-  horsepowers: 85,
-  engineCapacity: '1.3L',
-  fuel: 'gasoline',
-  transmission: '5-Speed Manual',
-  acceleration: '11.6 seconds (0-60 mph)', 
-  fuelConsumption: '5.1 L/100 km (combined)', 
-  maxSpeed: 175, 
-}
 
 const pc = {
   CPU: 'Intel Core i7-12700K 3.6 GHz',
@@ -117,14 +127,54 @@ const images = [
   }
 ];`
 
+const keys = `
+Для створення гнучких, кастомних властивостей / ключів у об'єктів існують обчислювальні властивості.
+Синтаксично вони оформлюються в квадратних скобках ([]).
+В такому оформленні, над назвою ключа може застосовуватись якийсь метод або в якості назви ключа пережається якась зміна.
+
+Наприклад:
+
+const displacement = 'engineCapacity';
+
+const car = {
+  company: 'Honda',
+  ['model'.toUpperCase]: 'Civic IMA',
+  year: 2005,
+  horsepowers: 85,
+  [displacement]: '1.3L',
+  fuel: 'gasoline',
+  transmission: '5-Speed Manual',
+  acceleration: '11.6 seconds (0-60 mph)', 
+  fuelConsumption: '5.1 L/100 km (combined)', 
+  maxSpeed: 175, 
+}
+
+  console.log(car.engineCapacity); //'1.3L'
+  console.log(car)//MODEL: 'Civic IMA'
+
+  Або створемо об'єкт, з властивістю, яку ввів користувач:
+
+  const key = prompt('Enter your key title');
+  const value = prompt('type the value of your key');
+
+  const obj = {
+    [key]: value,
+  }
+
+  console.log(obj); //
+`
 
 const Objects: React.FC = () => {
   return (
     <div className='container'>
       <GoHomeBtn />
-
+<h2>Об'єкти</h2>
       <SyntaxHighlighter language="jsx" style={dracula}>{obj}</SyntaxHighlighter>
       <SyntaxHighlighter language="jsx" style={dracula}>{objxmpl}</SyntaxHighlighter>
+      <h3>Взаємодія функцій з об'єктами</h3>
+      <SyntaxHighlighter language="jsx" style={dracula}>{foo}</SyntaxHighlighter>
+      <h3>Обчислювальні властивості об'єктів</h3>
+      <SyntaxHighlighter language="jsx" style={dracula}>{keys}</SyntaxHighlighter>
 
 
                <Task
