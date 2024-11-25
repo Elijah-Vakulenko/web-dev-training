@@ -221,6 +221,35 @@ for (const value of values) {
 };
 console.log(totalFeedback); //18`;
 
+
+const arrobj = `
+Ми можемо використовувати звичні для нас методи for чи for...of. 
+
+
+ const friends = [
+   { name: 'Mango', online: false },
+   { name: 'Kiwi', online: true },
+   { name: 'Poly', online: false },
+   { name: 'Ajax', online: false },
+ ];
+
+ //Наприклад виведемо кожен елемент масиву у форматі шаблонного рядку зі зверненням до властивостей об'єкту
+ for (const friend of friends) {
+  console.log(\`\${friend.name} - \${friend.online}\`);
+}
+//Виведемо тих друзів, які знаходяться онлайн.
+for (const friend of friends) {
+  if (friend.online === true) {
+    console.log(friend);
+  }
+} 
+
+//А тут зробимо те саме, але через один елемент, використовуючи індекси через цикл for
+ for (let i = 0; i < friends.length; i += 2) {
+  console.log(\`\${friends[i].name} - \${friends[i].online}\`);
+} 
+`
+
 const Cycles: React.FC = () => { 
 
   const startGame = () => {
@@ -426,7 +455,60 @@ createArrayOfNumbers(3, 9)//3,4,5,6,7,8,9
            <SyntaxHighlighter language="jsx" style={dracula}>
         {forobj}
         </SyntaxHighlighter>
-    </div>
+        </div>
+        
+        <Task
+            problem= "У нас є об'єкт, де зберігаються зарплати нашої команди. Напишіть код для
+підсумовування всіх зарплат і збережіть результат у змінній sum. Повинно вийти 390. Якщо об'єкт salaries порожній, то результат має бути 0."
+          solution={`const salaries = {
+John: 100,
+Ann: 160,
+Pete: 130,
+};
+
+let total = 0;
+
+ for (const salary of Object.values(salaries)) {
+   total += salary;
+ }
+//або
+ for (const key in salaries) {
+   total += salaries[key];
+ }
+
+ console.log(total);
+`}></Task>
+        <Task
+            problem=''
+          solution={``}>
+        </Task>
+    
+       <div>
+          <h2 className='title'>Ітерація по масиву об'єктів</h2>
+          <h3>Цикл for чи for...of</h3>
+        <p className='description'></p>
+           <SyntaxHighlighter language="jsx" style={dracula}>
+        {arrobj}
+        </SyntaxHighlighter>
+      </div>
+          <Task
+        problem="Маємо масив об'єктів, це список людей які працюють на заводі. властивість OnDuty показує чи назараз людина працює на зміні чи ні. Напиши скрипт, який покаже працівників з наступної зміни. Тобто ті, хто зараз не працює будуть працювати в наступну зміну(зміни їх статус на протилежний. 
+              const workers = [{name: 'John', onDuty: false}, {name: 'Fred', onDuty: true}, {name: 'George', onDuty: false}, {name: 'Timothy', onDuty: true}, {name: 'Elijah', onDuty: true}, {name: 'Nicolas', onDuty: false}, {name: 'Richard', onDuty: true}, {name: 'Stanley', onDuty: false}, {name: 'William', onDuty: true}, {name: 'Drake', onDuty: false}]). "
+          solution={`const workers = [{name: 'John', onDuty: false}, {name: 'Fred', onDuty: true}, {name: 'George', onDuty: false}, {name: 'Timothy', onDuty: true}, {name: 'Elijah', onDuty: true}, {name: 'Nicolas', onDuty: false}, {name: 'Richard', onDuty: true}, {name: 'Stanley', onDuty: false}, {name: 'William', onDuty: true}, {name: 'Drake', onDuty: false}];
+const nextShift = [];
+
+for (const worker of workers) {
+worker.onDuty = !worker.onDuty;
+if(worker.onDuty === true){
+nextShift.push(worker)};
+}
+console.log(nextShift);
+//0: {name: 'John', onDuty: true}
+//1:{name: 'George', onDuty: true}
+//2:{name: 'Nicolas', onDuty: true}
+//3:{name: 'Stanley', onDuty: true}
+//4:{name: 'Drake', onDuty: true}`}>
+      </Task>
       </div>
 
     </div>

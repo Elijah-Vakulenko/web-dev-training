@@ -319,42 +319,34 @@ console.log(arr14); //THURSDAY has an index of 0,FRIDAY has an index of 1,SATURD
 
 
 const objkeys = `Повертає масив (array), який містить усі імена властивостей (ключі) переданого об'єкта.
-
+Використовуємо, коли ми змінюємо значення властивостей.
 const obj = { a: 1, b: 2, c: 3 };
 console.log(Object.keys(obj)); // ['a', 'b', 'c']
 `
 
 const objval = `Повертає масив, який містить значення властивостей переданого об'єкта.
-const data = { a: 10, b: 20, c: 5, d: 40 };
-
-// Знайти всі значення більше 15
-const filtered = Object.values(data).filter(value => value > 15);
-
-console.log(filtered); // [20, 40]
-
-const scores = { math: 90, science: 85, history: 88 };
-
-// Сумуємо всі оцінки
-const total = Object.values(scores).reduce((sum, value) => sum + value, 0);
-
-console.log(total); // 263
-
-const userRoles = { admin: "John", editor: "Jane", viewer: "Alice" };
-
-// Перевіряємо, чи є "Jane" серед значень
-const hasEditor = Object.values(userRoles).includes("Jane");
-
-console.log(hasEditor); // true
-
+Використовуємо, коли ми не змінюємо значення, а просто використовуємо їх для простих операцій.
 const userAges = { Alice: 25, Bob: 30, Charlie: 35 };
-
-// Отримуємо масив значень
 const ages = Object.values(userAges);
-
 console.log(ages); // [25, 30, 35]
 
-const temperatures = { morning: 15, afternoon: 20, evening: 10 };
+// Наприклад, робимо масив зі значеннями, які є більними за 15:
+const data = { a: 10, b: 20, c: 5, d: 40 };
+const filtered = Object.values(data).filter(value => value > 15);
+console.log(filtered); // [20, 40]
 
+// Сумуємо всі значення:
+const scores = { math: 90, science: 85, history: 88 };
+const total = Object.values(scores).reduce((sum, value) => sum + value, 0);
+console.log(total); // 263
+
+//Робимо просту перевірку на наявність якогось значення:
+const userRoles = { admin: "John", editor: "Jane", viewer: "Alice" };
+const hasEditor = Object.values(userRoles).includes("Jane");
+console.log(hasEditor); // true
+
+//З використанням стрілочної функції виведемо окремо кожне значення температури.
+const temperatures = { morning: 15, afternoon: 20, evening: 10 };
 Object.values(temperatures).forEach(temp => {
     console.log(\`emperature: \${temp}°C\`);
 });
@@ -477,8 +469,8 @@ const userNumber = userInput !== null ? Number(userInput) : NaN;
           <ul className={s.list}>
             <li><a className={s.link} href="#keys">Object.keys()</a></li>
             <li><a className={s.link} href="#values">Object.values()</a></li>
-            <li><a className={s.link} href="#assign">Object.entries()</a></li>
-            <li><a className={s.link} href="#entries">Object.assign()</a></li>
+            <li><a className={s.link} href="#entries">Object.entries()</a></li>
+            <li><a className={s.link} href="#assign">Object.assign()</a></li>
           </ul>
        </div>
       </div>
@@ -635,6 +627,19 @@ console.log(area);`}></Task>
 const result = string.split(' ').slice(1, -1).join(' ').trim();
 console.log(result);`}></Task>
         
+<Task
+          problem='Напиши скрипт, який перебере масив з елементами і залишить тільки унікальні значення (тобто елементи не мають повторюватись). Для вирішення див. Cycles/for...of. 
+            Наприклад маємо масив імен const names = [John, Miranda, Peter, Max, John, Carolina, Peter, Chloe, John, Anna, John, Peter, Max, Anna];'
+          solution={`const names = ['John', 'Miranda', 'Peter', 'Max', 'John', 'Carolina', 'Peter', 'Chloe', 'John', 'Anna', 'John', 'Peter', 'Max', 'Anna'];
+const result = [];
+
+for(const name of names) {
+if(!result.includes(name)){
+result.push(name);
+}
+}
+console.log(result);//John,Miranda,Peter,Max,Carolina,Chloe,Anna`}></Task>
+
 <div className='input'>
           <h2>Методи об'єктів</h2>
           <h3 id='keys'>Object.keys()</h3>
