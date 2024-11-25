@@ -458,8 +458,7 @@ createArrayOfNumbers(3, 9)//3,4,5,6,7,8,9
         </div>
         
         <Task
-            problem= "У нас є об'єкт, де зберігаються зарплати нашої команди. Напишіть код для
-підсумовування всіх зарплат і збережіть результат у змінній sum. Повинно вийти 390. Якщо об'єкт salaries порожній, то результат має бути 0."
+          problem= "У нас є об'єкт, де зберігаються зарплати нашої команди. Напишіть код для сумування всіх зарплат і збережіть результат у змінній sum. Повинно вийти 390. Якщо об'єкт salaries порожній, то результат має бути 0."
           solution={`const salaries = {
 John: 100,
 Ann: 160,
@@ -476,13 +475,11 @@ let total = 0;
    total += salaries[key];
  }
 
- console.log(total);
-`}></Task>
+ console.log(total);`}></Task>
         <Task
-            problem=''
+            problem=""
           solution={``}>
         </Task>
-    
        <div>
           <h2 className='title'>Ітерація по масиву об'єктів</h2>
           <h3>Цикл for чи for...of</h3>
@@ -510,8 +507,8 @@ console.log(nextShift);
 //4:{name: 'Drake', onDuty: true}`}>
       </Task>
       </div>
-
-    </div>
+      </div>
+  
   )
 }
 
