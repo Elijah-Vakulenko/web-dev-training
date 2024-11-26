@@ -200,9 +200,77 @@ let totalFeedback = 0;
 for (const key in feedback) {
   totalFeedback += feedback[key];
 }
-  console.log(totalFeedback);`;
+  console.log(totalFeedback);
+  
+//For...in використовується рідко, оскільки є вірогідність отримати не бажаний результат чи непередбачувану поведінку коду. 
+//Але іноді цей цикл може стати у нагоді, коли треба провірити складний об'єкт з декільками рівнями вкладеності, 
+//як у наступному прикладі, де нам треба підрахувати загальну суму компонентів (item) комп'ютера, зважаючи на ціну і кількість:
 
+  const pc = {
+  CPU: { model: 'Intel Core i7-12700K 3.6 GHz', price: 346.66,},
+  GPU: { model:'Gigabyte GeForce RTX 3060 GAMING OC 12GB GDDR6 Rev 2.0', price: 448.27, },
+  motherboard: { model:'MSI PRO Z690-A WIFI DDR4', price: 227.72, },
+  liquidCooler: {model: 'Tempest Gaming Liquid Cooler 240 RGB', price: 61.99},
+  RAM: { model:'Kingston Fury Beast DDR4 3600 MHz 64Gb', price: 190.62, },
+  HDD: [{ model:'Seagate Barracuda 4Tb', price: 89.99, }, { model:'Western Digital 750Gb', price: 25.84, }],
+  SDD: { model:'WD BLACK SN770 1TB NVMe', price: 75.54, },
+  powerSupply: { model:'DeepCool PQ650M 650W 80 Plus Gold Modular', price: 96.20, },
+  case: { model:'DeepCool Matrexx 55 Mesh ADD-RGB 4F', price: 75.11, },
+  otherDevices: {
+    keyboard: { model:'Tempest K9 RGB Backlit Teclado Gaming RGB', price: 13.71, },
+    mouse: {model: 'Jocca Ergonomic Mouse 1557 wireless', price: 9.99,},
+    monitor: { model:'LG Ultragear 24GQ50F-B 24" LED FullHD 165Hz FreeSync Premium', price: 165, quantity: 2, },
+    audioInterface: { model:'Focusrite Scarlett 8i6 3rd gen',  price: 245, },
+    speakers: { model:'M-Audio BX5 DX3', price: 92, quantity: 2, },
+    audioCable: {model: 'TRRS cable 6m Adam Hall K3BV0600', price: 9.99, quantity: 2},
+    webCam: { model: 'Logitech Brio', price: 160.90, },
+  },
+};
 
+function getTotalPCPrice(obj) { 
+  let totalPrice = 0; //← сюди будемо додавати почерзі ціну компонентів.
+
+  //Досить заплутаний приклад, розберемо покроково:
+
+  for (const key in obj) { // крок 1 - на кожній ітерації ми наче виймаємо з кожної властивості значення.
+    const item = obj[key]; // Ми кажемо, що значення ключа obj[key] це і є наш компонент. Нас не цікавить його обгортка (ключ), нам цікаво, що в середині.
+//Наприклад на першій ітерації ми отримаємо - { model: 'Intel Core i7-12700K 3.6 GHz', price: 346.66,}, - тут ми відкинули (CPU:)
+
+    if (Array.isArray(item)) { //Крок 2 - Ми запитуємо, що ми дістали з коробки, чи це масив (ще одна упаковка)...
+
+       for (const element of item) { // В нас є один компонент HDD, який є масивом об'єктів... перебираємо for...of
+        if ('price' in element) { // ми кажемо, якщо в нашому об'єкті (element) є ключ (price)
+          totalPrice += element.price; //тоді приплюсуй його значення до тотал
+        }
+      }
+    } else if (typeof item === 'object' && item !== null) { //...Крок 2 - Або ми дістали об'єкт (безпосередньо наш компонент)
+
+      if ('price' in item) { //Якщо в нашому об'єкті є ключ (price)
+        const quantity = item.quantity || 1;  //тут ми попередньо уточнюємо що таке quantity - це або значення ключа quantity, якщо він є або 1.
+        totalPrice += item.price * quantity; // тоді ми значення ключа (price) множимо на значення ключа (quantity) або 1 і додаємо до тотал
+      }
+
+//Тепер нам треба передбачити ще один момент, що якщо ми відкрили коробку і замість одного компонента (item) туди напхали кучу інших компонентів. Тобто в нас третій випадок, це не масив, не об'єкт, а ОБ'ЄКТ з ОБ'ЄКТАМИ.
+
+      for (const subKey in item) {//Тепер кожен наш компонент це (subKey)
+        const subItem = item[subKey];
+
+        if (typeof subItem === 'object' && subItem !== null) { // робимо аналогічну перевірку чи це об'єкт
+          if ('price' in subItem) { //якщо в ньому є ключ  (price)
+            const quantity = subItem.quantity || 1;
+            totalPrice += subItem.price * quantity; //додаємо його значення до тотал
+          }
+        }
+      }
+    }
+  }
+  
+  return \`The personal computer system of my dream would be cost about \${totalPrice.toFixed(2)} Euros\`;
+}
+
+console.log(getTotalPCPrice(pc)); //The personal computer system of my dream would be cost about 2601.52 Euros
+  
+  `;
 
 const forobj = `
 
@@ -220,7 +288,6 @@ for (const value of values) {
   totalFeedback += value
 };
 console.log(totalFeedback); //18`;
-
 
 const arrobj = `
 Ми можемо використовувати звичні для нас методи for чи for...of. 

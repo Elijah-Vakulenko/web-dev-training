@@ -134,25 +134,10 @@ function foo(values) {
 foo(object); // ← Тут ми передаємо наш об'єкт, а в ньому функція знайде потрібні ключі для обчислення.`
 
 
-const objxmpl = `
 
-const pc = {
-  CPU: 'Intel Core i7-12700K 3.6 GHz',
-  GPU: 'Gigabyte GeForce RTX 3060 GAMING OC 12GB GDDR6 Rev 2.0',
-  motherboard: 'MSI PRO Z690-A WIFI DDR4',
-  RAM: 'Kingston Fury Beast DDR4 3600 MHz 64Gb',
-  HDD: ['Seagate Barracuda 4Tb', 'Western Digital 750Gb'],
-  SDD: 'WD BLACK SN770 1TB NVMe',
-  powerSupply: 'DeepCool PQ650M 650W 80 Plus Gold Modular',
-  case: 'DeepCool Matrexx 55 Mesh ADD-RGB 4F',
-  otherDevices: {
-    keyboard: 'Tempest K9 RGB Backlit Teclado Gaming RGB',
-    monitor: 'LG Ultragear 24GQ50F-B 24" LED FullHD 165Hz FreeSync Premium',
-    audioInterface: 'Focusrite Scarlett 8i6 3rd gen',
-    speakers: 'M-Audio BX5 DX3',
-    webCam: 'Logitech',
-  },
-};
+
+
+const objxmpl = `
 
 const images = [
   {
