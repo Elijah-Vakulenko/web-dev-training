@@ -225,7 +225,6 @@ console.log(totalFeedback); //18`;
 const arrobj = `
 Ми можемо використовувати звичні для нас методи for чи for...of. 
 
-
  const friends = [
    { name: 'Mango', online: false },
    { name: 'Kiwi', online: true },
@@ -247,8 +246,11 @@ for (const friend of friends) {
 //А тут зробимо те саме, але через один елемент, використовуючи індекси через цикл for
  for (let i = 0; i < friends.length; i += 2) {
   console.log(\`\${friends[i].name} - \${friends[i].online}\`);
-} 
-`
+}`
+
+
+
+
 
 const Cycles: React.FC = () => { 
 
@@ -488,7 +490,7 @@ let total = 0;
         {arrobj}
         </SyntaxHighlighter>
       </div>
-          <Task
+      <Task
         problem="Маємо масив об'єктів, це список людей які працюють на заводі. властивість OnDuty показує чи назараз людина працює на зміні чи ні. Напиши скрипт, який покаже працівників з наступної зміни. Тобто ті, хто зараз не працює будуть працювати в наступну зміну(зміни їх статус на протилежний. 
               const workers = [{name: 'John', onDuty: false}, {name: 'Fred', onDuty: true}, {name: 'George', onDuty: false}, {name: 'Timothy', onDuty: true}, {name: 'Elijah', onDuty: true}, {name: 'Nicolas', onDuty: false}, {name: 'Richard', onDuty: true}, {name: 'Stanley', onDuty: false}, {name: 'William', onDuty: true}, {name: 'Drake', onDuty: false}]). "
           solution={`const workers = [{name: 'John', onDuty: false}, {name: 'Fred', onDuty: true}, {name: 'George', onDuty: false}, {name: 'Timothy', onDuty: true}, {name: 'Elijah', onDuty: true}, {name: 'Nicolas', onDuty: false}, {name: 'Richard', onDuty: true}, {name: 'Stanley', onDuty: false}, {name: 'William', onDuty: true}, {name: 'Drake', onDuty: false}];
@@ -505,7 +507,83 @@ console.log(nextShift);
 //2:{name: 'Nicolas', onDuty: true}
 //3:{name: 'Stanley', onDuty: true}
 //4:{name: 'Drake', onDuty: true}`}>
-      </Task>
+        </Task>
+        <Task
+          problem="1.Напиши функцію findFriendByName для пошуку друга серед масиву об'єктів. Функція приймає першим аргументом об'єкт, а другим рядок з іменем. 2. Напиши фунцію getTheMostFamousInfluencers, яка створює новий масив тільки з тими друзями, які мають більше підписників ніж зазначено у виклику функції. Тобто функція приймає масив об'єктів та мінімальну кількість підписників. Додатково функція повертає ще один масив зі значенням властивості occupation тих друзів які не популярні. Має повертатися шаблонний рядок що такі-то напрямки не популярні. 3. Напиши функцію getTotalAudience, яка порахує загальну кількість підписників ваших друзів та середнє арифметичне скільки підписників припадає на одного друга. 
+  const friends = [
+  { name: 'Anna', subscribers: 15000, occupation: 'YouTube Blogger' },
+  { name: 'Max', subscribers: 3200, occupation: 'Instagram Photographer' },
+  { name: 'Sophia', subscribers: 45000, occupation: 'TikTok Dancer' },
+  { name: 'Daniel', subscribers: 8700, occupation: 'Twitch Streamer' },
+  { name: 'Lana', subscribers: 12000, occupation: 'Food Blogger' },
+  { name: 'Lucas', subscribers: 2200, occupation: 'Indie Game Developer' },
+  { name: 'Mia', subscribers: 29000, occupation: 'Podcast Host' },
+  { name: 'Ethan', subscribers: 5600, occupation: 'Travel Vlogger' },
+  { name: 'Olivia', subscribers: 48000, occupation: 'Fitness Influencer' },"
+          solution={`const friends = [
+  { name: 'Anna', subscribers: 15000, occupation: 'YouTube Blogger' },
+  { name: 'Max', subscribers: 3200, occupation: 'Instagram Photographer' },
+  { name: 'Sophia', subscribers: 45000, occupation: 'TikTok Dancer' },
+  { name: 'Daniel', subscribers: 8700, occupation: 'Twitch Streamer' },
+  { name: 'Lana', subscribers: 12000, occupation: 'Food Blogger' },
+  { name: 'Lucas', subscribers: 2200, occupation: 'Indie Game Developer' },
+  { name: 'Mia', subscribers: 29000, occupation: 'Podcast Host' },
+  { name: 'Ethan', subscribers: 5600, occupation: 'Travel Vlogger' },
+  { name: 'Olivia', subscribers: 48000, occupation: 'Fitness Influencer' },
+];
+//1
+function findFriendByName(myFriends, friendName) {
+  for (const friend of myFriends) {
+    if (friend.name === friendName) {
+      return friend;
+    }
+  }
+  return null;
+}
+
+//2
+function getTheMostFamousInfluencers(myFriends, minSubscribers) {
+const best = [];
+const worst = [];
+
+  for (const friend of myFriends) {
+    if (friend.subscribers > minSubscribers) { best.push(friend.name)
+    } else {worst.push(friend.occupation)}
+  }
+
+   const bestlist = \`These guys are best internet celebrities: \${best.join(', ')}\`;
+   const worstlist = \`These activities are not popular nowadays: \${worst.join(', ')}\`;
+  
+  return \`\${bestlist}\n\${worstlist}\`;
+ };
+
+//3
+function getTotalAudience(myFriends) {
+  let total = 0;
+
+  for (const friend of myFriends) {
+    total += friend.subscribers;
+  }
+
+  const average = Math.round(total / myFriends.length);
+
+  return \`The total audience is approximately \${total} people with an average of about \${average} followers per friend\`;
+ };
+
+ console.log(findFriendByName(friends, 'Olivia'));
+ console.log(findFriendByName(friends, 'Chelsy'));
+ console.log(findFriendByName(friends, 'Max'));
+ console.log(getTheMostFamousInfluencers(friends, 10000));
+ console.log(getTheMostFamousInfluencers(friends, 20000));
+ console.log(getTheMostFamousInfluencers(friends, 40000));
+ console.log(getTotalAudience(friends));
+
+`}>
+        </Task>
+        <Task
+            problem=""
+          solution={``}>
+        </Task>
       </div>
       </div>
   
