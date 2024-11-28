@@ -9,6 +9,7 @@ const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const Arrays = lazy(() => import('./pages/Arrays/Arrays'));
 const Tags = lazy(() => import('./pages/Tags/Tags'));
 const Text = lazy(() => import('./pages/Text/Text'));
+const Font = lazy(() => import('./pages/Font/Font'));
 const QuickGuide = lazy(() => import('./pages/QuickGuide/QuickGuide'));
 const Grid = lazy(() => import('./pages/Grid/Grid'));
 const Img = lazy(() => import('./pages/Img/Img'));
@@ -18,6 +19,7 @@ const Calc = lazy(() => import('./pages/Calc/Calc'));
 const Test = lazy(() => import('./pages/Test/Test'));
 const Shapes = lazy(() => import('./pages/Shapes/Shapes'));
 const Animations = lazy(() => import('./pages/Animations/Animations'));
+const KeyFrames= lazy(() => import('./pages/KeyFrames/KeyFrames'));
 const Galleries = lazy(() => import('./pages/Galleries/Galleries'));
 const Cycles = lazy(() => import('./pages/Cycles/Cycles'));
 const BasicStatements = lazy(() => import('./pages/BasicStatements/BasicStatements'));
@@ -37,11 +39,13 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/tags" element={<Tags />} />
           <Route path="/text" element={<Text />} />
+          <Route path="/font" element={<Font />} />
           <Route path="/quick-guide" element={<QuickGuide />} />
           <Route path="/grid" element={<Grid />} />
           <Route path="/img" element={<Img />} />
           <Route path="/shapes" element={<Shapes />} />
           <Route path="/animations" element={<Animations />} />
+          <Route path="/keyframes" element={<KeyFrames />} />
           <Route path="/galleries" element={<Galleries />} />
           <Route path="/basic-statements" element={<BasicStatements />} />
           <Route path="/methods" element={<Methods />} />
